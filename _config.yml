@@ -1,11 +1,12 @@
-title: John Doe # your name (or website title) here
-logo: "/images/logo.png?raw=true" # your photo (or logo) here
+title: Denis Rodrigues # your name (or website title) here
+logo: "/images/new.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  First description 
+  Possui graduação em Geografia (Bacharelado e Licenciatura) pela Universidade Federal de Alfenas - UNIFAL-MG (2015/2019) e Tecnologia de Gestão Pública pela Faculdade de Curitiba - Uninter (2008). Atualmente é Mestrando em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Possui experiência na área de Saúde Pública, com ênfase em Epidemiologia, atuando principalmente com análise de dados, análise de dados espaciais e em métodos estatísticos, com conhecimento em Data Science.
   <br><br>
-  Second description 
-  <br><br>
-  <a href="https://www.linkedin.com/in/example/">View My LinkedIn Profile</a> 
+  <a href="https://orcid.org/0000-0003-3748-876X">Orcid</a>
+  <a href="https://lattes.cnpq.br/7838408308841051">Lattes</a>
+  <a href="https://www.linkedin.com/in/denis-or">Linkedin</a>
+  <a href="https://catoper.blogspot.com">Blog</a>
   
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
