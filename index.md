@@ -2,28 +2,20 @@
 
 ---
 
-### Category Name 1 
+### Séries Temporais
 
-[Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Série Animada dos Nascimentos no Brasil ](/sample_page)
+<img src="images/birth.gif?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
+[Cotação diária do dólar](/pdf/sample_presentation.pdf)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
 
-### Category Name 2
+### Meus artigos no LinkedIn
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+- [Cotação do dólar](https://www.linkedin.com/pulse/webscraping-da-cotação-diária-do-dólar-banco-central-denis-rodrigues/)
 
 ---
 
@@ -31,5 +23,3 @@
 
 
 ---
-<p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
-<!-- Remove above link if you don't want to attibute -->
