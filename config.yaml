@@ -29,16 +29,16 @@ params:
   socialIcons:
     - icon: fab fa-linkedin
       title: Linkedin
-      url: https://de.linkedin.com/
+      url: https://www.linkedin.com/in/denis-or/
     - icon: fab fa-github
       title: GitHub
-      url: https://github.com/lxndrblz/anatole/
+      url: https://github.com/denis-or
     - icon: fab fa-instagram
       title: instagram
-      url: https://www.instagram.com/
+      url: https://www.instagram.com/catoper.mg/
     - icon: fas fa-envelope
       title: e-mail
-      url: mailto:mail@example.com
+      url: mailto:catoper@gmail.com
   title: Denis Rodrigues
 menu:
   main:
