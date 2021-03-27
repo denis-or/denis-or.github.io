@@ -27,7 +27,7 @@ library(dplyr)
 
 ```{r echo=FALSE, message=FALSE}
 
-pasis <- tibbe::tibbe(
+pasis <- tibble::tibble(
           pa = c(144,220,138,145,162,142,170,
                  124,158,154,162,150,140,110,128,130,135,114,
                  116,124,136,142,120,120,160,158,144,130,
