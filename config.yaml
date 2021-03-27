@@ -9,7 +9,7 @@ enableRobotsTXT: yes
 pygmentsUseClasses: yes
 pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
-publishDir: "docs/"
+publishDir: docs/
 params:
   author: Jane Doe
   customCss: []
