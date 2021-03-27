@@ -1,7 +1,7 @@
 baseURL: https://denis-or.github.io/
-languageCode: en
-DefaultContentLanguage: en
-title: Website of Jane Doe
+languageCode: pt_br
+DefaultContentLanguage: pt_br
+title: Geoepidemiologia
 theme: anatole
 summarylength: 10
 enableEmoji: yes
@@ -11,10 +11,10 @@ pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
 publishDir: docs/
 params:
-  author: Jane Doe
+  author: Denis Rodrigues
   customCss: []
   customJs: []
-  description: Call me Jane
+  description: "Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde."
   doNotLoadAnimations: no
   favicon: favicons/
   images: images/site-feature-image.png
@@ -23,7 +23,8 @@ params:
   math:
     enable: no
     use: katex
-  profilePicture: images/profile.jpg
+  # profilePicture: images/profile.jpg
+  profilePicture: images/pp.jpg
   simpleAnalytics: {}
   socialIcons:
     - icon: fab fa-linkedin
@@ -38,7 +39,7 @@ params:
     - icon: fas fa-envelope
       title: e-mail
       url: mailto:mail@example.com
-  title: I'm Jane Doe
+  title: Denis Rodrigues
 menu:
   main:
     - identifier: home
@@ -49,11 +50,11 @@ menu:
       name: Posts
       url: /post/
       weight: 200
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 300
-    - identifier: contact
-      name: Contact
-      url: /contact/
-      weight: 400
+    # - identifier: about
+    #   name: About
+    #   url: /about/
+    #   weight: 300
+    # - identifier: contact
+    #   name: Contact
+    #   url: /contact/
+    #   weight: 400
