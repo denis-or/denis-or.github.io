@@ -23,7 +23,7 @@ params:
   math:
     enable: no
     use: katex
-  profilePicture: images/profile.jpeg
+  profilePicture: images/profile.jpg
   simpleAnalytics: {}
   socialIcons:
     - icon: fab fa-linkedin
