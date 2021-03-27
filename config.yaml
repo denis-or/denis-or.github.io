@@ -9,7 +9,7 @@ enableRobotsTXT: yes
 pygmentsUseClasses: yes
 pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
-publishDir: "docs/"
+publishDir: docs/
 params:
   author: Jane Doe
   customCss: []
@@ -23,7 +23,7 @@ params:
   math:
     enable: no
     use: katex
-  profilePicture: images/profile.jpeg
+  profilePicture: images/profile.jpg
   simpleAnalytics: {}
   socialIcons:
     - icon: fab fa-linkedin
