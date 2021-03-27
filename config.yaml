@@ -14,7 +14,7 @@ params:
   author: Jane Doe
   customCss: []
   customJs: []
-  description: Call me Jane
+  description: Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde.
   doNotLoadAnimations: no
   favicon: favicons/
   images: images/site-feature-image.png
@@ -23,7 +23,7 @@ params:
   math:
     enable: no
     use: katex
-  profilePicture: images/profile.jpg
+  profilePicture: images/profile.jpeg
   simpleAnalytics: {}
   socialIcons:
     - icon: fab fa-linkedin
