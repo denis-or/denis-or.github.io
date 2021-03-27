@@ -1,0 +1,308 @@
+---
+title: Correlação
+author: 'Denis'
+date: '2021-03-27'
+slug: []
+categories: []
+tags: []
+Description: ''
+Tags: []
+Categories: []
+DisableComments: no
+---
+
+### Correlação
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo      = FALSE, 
+                      warning   = FALSE, 
+                      message   = FALSE, 
+                      fig.align = 'center')
+
+```
+
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+```
+
+```{r echo=FALSE, message=FALSE}
+
+pasis <- tibbe::tibbe(
+          pa = c(144,220,138,145,162,142,170,
+                 124,158,154,162,150,140,110,128,130,135,114,
+                 116,124,136,142,120,120,160,158,144,130,
+                 125,175),
+          id = c(39,47,45,47,65,46,67,42,67,
+                 56,64,56,59,34,42,48,45,17,20,19,36,
+                 50,39,21,44,53,63,29,25,69)
+)
+
+```
+
+Visualizando a estrutura do banco de dados
+
+```{r}
+glimpse(pasis)
+```
+
+a.  **primeiro avaliamos a normalidade: No Rbase usando a densidade**
+
+```{r}
+
+plot(density(pasis$pa),
+     ylim = c(0,0.02),
+     main = "",
+     xlab = "Pressão Arterial Sistólica",
+     ylab = "Densidade",
+     frame = FALSE)
+polygon(density(pasis$pa), col = "steelblue")
+
+```
+
+No Rbase usando qqplot. No qqnorm espera-se que para dados com distribuição normal os pontos posicionem-se em cima da reta.
+
+```{r}
+qqnorm(pasis$pa, main="QQNorm da Pressão Arterial Sistólica",
+xlab="Quantis Teóricos",ylab="Quantis da Amostra")
+qqline(pasis$pa)
+```
+
+Usando o qqplot no ggplot
+
+No ggplot usando densidade.
+
+```{r}
+ggplot(pasis)+
+  stat_density(aes(x = pa), alpha = 0.3) +
+  labs(x= "Pressão arterial sistólica")
+```
+
+Pela inspeçao visual, nota-se que a distribuição não segue a normalidade. Vamos analisar com qqplot.
+
+```{r}
+ggplot(pasis, aes(sample = pa))+
+  stat_qq(size=3, alpha = 0.5) +
+  stat_qq_line(color = "red") +
+  labs(x="Quantis teóricos",
+       y= "Quantis da amostra",
+       title = "Análise de normalidade pressão sistólica")
+```
+
+Nota-se também que há alguns desvios da reta e, caso a amostra tivesse uma distribuição normal, os pontos ficariam sobrepostos à linha vermelha.
+
+Também podemos testar a normalidade pelo teste shapiro wilk
+
+```{r}
+shapiro.test(pasis$pa)
+```
+
+A hipótese nula do teste de Shapiro-Wilk é que a população possui distribuição normal. Portanto, o p-valor menor que 0,05 apresenta evidência para rejeitar a hipotese nula de normalidade e a amostra não provem de uma população normal.
+
+Analisando a distribuição da idade
+
+```{r}
+ggplot(pasis)+
+  stat_density(aes(x = id), alpha = 0.3) +
+  labs(x= "Idade")
+```
+
+```{r}
+shapiro.test(pasis$id)
+```
+
+O p-valor maior que 0,05 apresenta evidência para não rejeitar a hipotese nula de normalidade e que a amostra provem de uma população normal.
+
+b.  **há relação linear? vamos conferir com o cor que mostra somente o coeficiente de correlação.**
+
+```{r}
+cor(pasis$pa, pasis$id)
+```
+
+Método 1: Usando a fórmula
+$$
+\rho=\frac{cov(x,y)}{s_x s_y}
+$$
+
+```{r}
+r1 <- round(cov(pasis$id, pasis$pa) / (sd(pasis$id) * sd(pasis$pa)),2)
+r1
+```
+
+Método 2: Usando a fórmula
+$$
+\rho=\frac {1}{n-1}\sum \left( \frac{x_i - \overline{X}}{S_x} \right) \left( \frac{y_i - \overline{Y}}{S_y} \right)
+$$
+
+```{r}
+x <- pasis$id
+y <- pasis$pa
+xbarra <- mean(x)
+ybarra <- mean(y)
+sx <- sd(x)
+sy <- sd(y)
+r2 <- round((1/(length(x)-1))*sum(((x-xbarra)/sx)*((y-ybarra)/sy)),2)
+r2
+
+```
+
+Método 3: Usando a fórmula
+$$
+\rho = \frac{\sum x_i y_i - \frac{\sum x_i \sum y_i}{n}}{\sqrt{ \left(\sum x_i^2 - \frac{\left( \sum x_i\right)^2}{n} \right) \left(\sum y_i^2 - \frac{\left( \sum y_i\right)^2}{n} \right) }}
+$$
+
+```{r}
+pasis <- pasis %>% mutate(XY = pa * id,
+                    Y2 = pa ^ 2,
+                    X2 = id ^ 2)
+
+soma_xy <- sum(pasis$XY)
+soma_x <- sum(pasis$id)
+soma_y <- sum(pasis$pa)
+total <- length(pasis$id)
+soma_x2 <- sum(pasis$X2)
+soma_y2 <- sum(pasis$Y2)
+soma_x_2 <- soma_x ^ 2
+soma_y_2 <- soma_y ^ 2
+
+r3 <- round(((soma_xy - ((soma_x * soma_y)/ total)) / sqrt((soma_x2 - (soma_x_2 / total)) * (soma_y2 - (soma_y_2 / total)) )),2)
+r3
+```
+
+Obviamente, todos as fórmulas apresentaram o mesmo valor (0,66), o que representa uma correlação linear positiva moderada entre idade e pressão arterial sistólica.
+
+c.  **A dispersão da pressão varia com a idade?**
+
+```{r}
+ggplot(pasis, aes( x= id , y = pa))+
+  geom_point() +
+    labs(x="Idade",
+       y= "Pressão arterial sistólica",
+       title = "Scaterplot")
+```
+
+Sim, o gráfico apresenta um comportamento onde há uma tendência de aumento na idade acompanhada pela pressão arterial sistólica. Nota-se ainda um possível outlier que deve ser inspecionado quanto o valor correto que representa.
+
+<!-- [a cada aumento em x (idade) há um aumento em y (pressão arterial sistólica)] -->
+
+d.  **De que forma pode-se relacionar pressão e idade? Vamos testar a função correlation do pacote correlation**
+
+```{r}
+pasis %>% select(id, pa) %>% correlation::correlation()
+
+```
+
+O valor do coeficiente foi de `r round(correlation::cor_test(pasis, "pa", "id")[3][[1]],2)` com IC de `r paste0("(",round(correlation::cor_test(pasis, "pa", "id")[4][[1]],2),"-",round(correlation::cor_test(pasis, "pa", "id")[5][[1]],2),")")`. Nota-se que o IC `r if_else(0 %in% seq(correlation::cor_test(pasis, "pa", "id")[4][[1]],correlation::cor_test(pasis, "pa", "id")[5][[1]],0.1),"contém o zero e, dessa forma, é um valor possível na relação e aponta para não rejeição da H0, ou seja, não há correlação linear.","não contém o zero e, dessa forma, não é um valor possível na relação e aponta para rejeição da H0, ou seja, há a presença de correlação linear entre as variáveis.")`. Também o valor de p menor que 0,05 (nível de significância do teste) fortalece a rejeição da hipótese nula de não existir correlação linear. Ou seja, há evidência significativa de uma associação moderada positiva entre idade e pressão arterial sistólica.
+
+Já com cor.test sao apresentadas informações da estatística de teste, p-valor, de forma bem semelhante.
+
+```{r}
+cor.test(pasis$pa, pasis$id)
+```
+
+Agora, vamos montar nosso teste de hipótese, como exercício:
+
+1. Definir as hipoteses: $H_0 : \rho = 0$ (não há correlação linear) e $H_1 : \rho \neq 0$ (há correlação linear);
+2. Define o $\alpha$ (nível de significância);
+3. Calcula a estatística de teste (no caso a $t=  \frac{r}{ \sqrt{  \frac{1-r_2}{n-2} }}$);
+4. Calculamos os valores críticos ($t_{(\alpha / 2; n-2)}$) ou p-valor;
+5. Regra de decisão (comparar valor da estatística de teste com valor crítico: [se estatística t for maior ou igual que valor crítico de t] ou [p for menor que $\alpha$] -> rejeito a $H_0$)
+
+Na prática (de forma mais manual):
+```{r}
+x <- pasis$id
+y <- pasis$pa
+n <- length(x)
+
+#coeficiente correlação
+r <- cor(pasis$pa, pasis$id)
+
+#valor crítico
+#distribuição t bicaudal
+alpha <- 0.05
+var1 <- alpha / 2
+var2 <- n-2
+
+criticot_l <- qt(var1, var2, lower.tail = FALSE)
+criticot_r <- qt(var1, var2, lower.tail = TRUE)
+
+#estatística de teste t
+testet <- r /(sqrt((1-(r)^2)/(n-2)))
+
+#valor de p
+valorp <- if_else(testet < 0, 2 * pt(testet, n-2, lower.tail = TRUE), 2 * pt(testet, n-2, lower.tail = FALSE))
+
+```
+
+Decidindo pelo **método tradicional** temos que, considerando o valor da estatística de teste `r round(testet,2)` e o valores críticos entre `r round(criticot_r,2)` e `r round(criticot_l,2)`, então eu `r if_else(testet > criticot_l & testet < criticot_r, "rejeito H0, ou seja, há evidência de correlação linear", "não rejeito H0 e defino que não há correlação linear")`.
+
+Decidindo pelo **valor de p**: considerando o valor do nível de significância `r alpha` e o valor de p `r format(round(valorp,5), scientific = FALSE)`, então eu `r if_else(valorp < alpha, "rejeito H0, ou seja, há evidência de correlação linear", "não rejeito H0 e defino que não há correlação linear")`.
+
+e.  **Qual o efeito da idade na pressão arterial?**
+
+```{r}
+pasis.reg <- lm(pa ~ id, data=pasis)
+pasis.reg
+summary(pasis.reg)
+
+```
+
+Este valor significa que a cada aumento de 1 ano na idade há o aumento médio de 0,9709 milímetros de mercurio na pressão arterial sistólica média.
+
+```{r}
+plot(pasis$id, pasis$pa, col="blue",
+main="Relação entre Pressão Arterial Sistólica \n e Idade em 30 indivíduos adultos",
+xlab="Idade", ylab="Pressão Arterial Sistólica")
+abline(pasis.reg, col="red")
+```
+
+```{r}
+ggplot(pasis, aes( x= id , y = pa))+
+  geom_point(size = 3, alpha = .7) +
+  stat_smooth(method = "lm", formula = "y~x", color = "red")+
+  # geom_hline(yintercept = mean(pasis$pa))
+    labs(x="Idade",
+       y= "Pressão arterial sistólica",
+       title = "Relação entre Pressão Arterial Sistólica e Idade em 30 indivíduos adultos")
+```
+
+Para estimar os intervalos de confiança das estimativas do modelo
+
+```{r}
+confint(pasis.reg)
+```
+
+```{r}
+data.frame(cbind(Estimate = coef(pasis.reg), confint(pasis.reg))) %>% 
+  mutate(covariaveis = names(coef(pasis.reg))) %>% 
+  ggplot()+
+  geom_point(aes(y=covariaveis,x = Estimate)) +
+  geom_errorbar(aes(y=covariaveis,xmin=X2.5.., xmax=X97.5..), width=.2) +
+  geom_vline(xintercept = 0, color = "red", linetype = "dashed") +
+  labs(x="Medidas estiamdas",
+       y = "Covariaveis",
+       title = "Regressão linear de idade e pressão")
+
+
+```
+
+f.  **Diferença de 10 anos de idade**
+
+```{r}
+intercepto <- 0.9709
+idade <- 35
+diferenca <- 4
+intercepto*(idade-(idade-diferenca))
+
+```
+
+Considerando que a cada aumento de 1 ano na idade temos o aumento de 0,9709 milímetros de mercúrio (mmHg) na pressão arterial sistólica média, a diferença na pressão arterial estimada pelo modelo entre será de 9,709 mmHg quando a diferença de idade entre dois indivíduos adultos for de 10 anos.
+
+g. **E para um indivíduo com 4 anos?**
+
+```{r}
+range(pasis$id)
+```
+
+A faixa de idade varia entre 17 e 69 anos. A regressão linear não é adequada em uma faixa mais ampla do que o intervaldo de dados coeltados, pois não há garantia de que a relação encontrada entre idade e pressao arterial sistólica em individuos entre 17 e 69 anos, será a mesma se extrapolarmos os resultados do modelo para indivíduos com 4 anos. É possível até ausência de relação, pois outros fatores podem agir entre um e outro e simplesmente diminuir a porcentagem explicada pelo modelo.
+
+<!-- $Y = \beta_0 + \beta_1 x + \epsilon$ -->
