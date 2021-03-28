@@ -19,7 +19,7 @@ params:
   # favicon: favicons/
   # images: images/site-feature-image.png
   keywords: ''
-  mainSections: post
+  mainSections: post/
   math:
     enable: no
     use: katex
