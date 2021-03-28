@@ -1,7 +1,7 @@
 baseURL: https://denis-or.github.io/
 languageCode: pt_br
 DefaultContentLanguage: pt_br
-title: Geoepidemiologia
+# title: Geoepidemiologia
 theme: anatole
 summarylength: 10
 enableEmoji: yes
