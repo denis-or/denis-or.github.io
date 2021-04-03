@@ -53,10 +53,10 @@ menu:
       name: Posts
       url: /post/
       weight: 200
-    # - identifier: about
-    #   name: About
-    #   url: /about/
-    #   weight: 300
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 300
     # - identifier: contact
     #   name: Contact
     #   url: /contact/
