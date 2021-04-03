@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Geoepidemiologia</title>
+    <title></title>
     <link>https://denis-or.github.io/</link>
-    <description>Recent content on Geoepidemiologia</description>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt_br</language><atom:link href="https://denis-or.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt_br</language>
+    <lastBuildDate>Sat, 03 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>teste</title>
+      <link>https://denis-or.github.io/post/2021-04-03-teste/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.github.io/post/2021-04-03-teste/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>hello world 2</title>
+      <link>https://denis-or.github.io/post/2021-03-28-hello-world-2/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.github.io/post/2021-03-28-hello-world-2/</guid>
+      <description>teste 2</description>
+    </item>
+    
     <item>
       <title></title>
       <link>https://denis-or.github.io/archives/</link>
