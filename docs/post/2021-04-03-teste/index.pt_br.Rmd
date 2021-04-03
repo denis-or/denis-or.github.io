@@ -11,7 +11,8 @@ Categories: []
 DisableComments: no
 ---
 ```{r}
-hist(rnorm(150))
+x<-rnorm(10)
+x
 ```
 
 
