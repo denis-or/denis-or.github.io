@@ -11,7 +11,7 @@ pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
 publishDir: docs/
 params:
-  author: Denis Rodrigues
+  author: Denis RodriguesT
   customCss: []
   customJs: []
   description: "Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde."
@@ -19,7 +19,7 @@ params:
   # favicon: favicons/
   # images: images/site-feature-image.png
   keywords: ''
-  mainSections: Posts
+  mainSections: post
   math:
     enable: no
     use: katex
