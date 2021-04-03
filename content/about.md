@@ -9,7 +9,7 @@ description: Sobreo novo site
 title: About
 ---
 
-Este site é é um produto de um projeto de concentrar todas as iniciativas que tive em montar um site e montar um blog. Além disso, havia a necessidade de ter um local onde minhas experiências profissionais e acadêmicas estivessem acessíveis, de forma simples, num formato que atendesse aos devaneios da minha criatividade e, claro, uma plataforma open source (embora o github tenha suas considerações por ser filhote da microsoft).
+Este site é um produto de um projeto pessoal que tem como objetivo concentrar todas as minhas iniciativas de ter um site e um blog. Além disso, havia a necessidade de ter um local onde minhas experiências profissionais e acadêmicas estivessem acessíveis, de forma simples, num formato que atendesse aos devaneios da minha criatividade e, claro, utilizando uma plataforma open source (embora o github tenha suas considerações por ser filhote da microsoft).
 
 As fases deste projeto são:
 
@@ -23,15 +23,15 @@ As fases deste projeto são:
 -   configurar os *pulls* e *pushs*;
 -   criar um blogdown usando o hugo;
 -   fazer as paradas funcionarem via R;
--   finalizar o layout da página;
+-   finalizar o layout;
 -   comprar um domínio personalizado.
 
-Boa parte das fases estão completadas ou em andamento. Neste momento, ainda tenho informação compartilhada nos sites:
+Boa parte das fases estão completas ou em andamento. Neste momento, ainda tenho informação compartilhada nos sites:
 
 -   [Linkedin](https://www.linkedin.com/in/denis-or/)
 -   [Lattes](http://lattes.cnpq.br/7838408308841051)
 -   [Blogger](https://catoper.blogspot.com)
 
-Está sendo um desafio porque o funcionamento do github e hugo não são nada intuitivos e os erros são bem atípicos.
+Está sendo um desafio, pois o funcionamento do github e hugo não são tão intuitivos, os erros são bem atípicos e temos uma curva de aprendizado meio ardilosa.
 
 Vamos caminhando.
