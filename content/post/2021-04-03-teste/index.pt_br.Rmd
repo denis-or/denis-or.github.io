@@ -10,8 +10,15 @@ Tags: []
 Categories: []
 DisableComments: no
 ---
+
+Criando um vetor de dados aleatórios com uma distribuição normal para testar o chunk do R:
 ```{r}
 x<-rnorm(10)
+```
+
+
+Agora, vou apresentar o vetor x, criado acima:
+```{r}
 x
 ```
 

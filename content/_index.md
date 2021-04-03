@@ -3,14 +3,14 @@ author: Hugo Authors
 ---
 
 <!--
-This file is left intentionally empty by default to be backward compatible with initial theme setup.
+Este arquivo é deixado intencionalmente vazio por padrão para ser compatível com a configuração anterior do tema.
 
-Although the theme has advanced a little bit and it now allows to specify the content on the main page (even if the list of posts/articles is not intended).
-This can be:
-- with the list of posts/articles (default: `mainSections = ["post"]) or
-- without the list of posts/articles (by setting `mainSections = [""]`)
+Embora o tema tenha avançado um pouco e agora permite especificar o conteúdo da página principal (mesmo se a lista de posts/articles não é suposta).
+Isso pode ser: 
+- com a lista de posts/articles (padrão: `mainSections = ["post"]`) ou 
+- sem a lista de posts/articles (configurando `mainSections = [""]`)
 
-Markdown supported, ie:
+Markdown suporta, por exemplo:
 
 ```
 # Welcome

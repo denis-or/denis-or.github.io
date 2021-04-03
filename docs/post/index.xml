@@ -13,7 +13,7 @@
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://denis-or.github.io/post/2021-04-03-teste/</guid>
-      <description>x&amp;lt;-rnorm(10) x ## [1] 0.4933823 0.2125111 -0.6100981 -0.4915523 1.</description>
+      <description>Criando um vetor de dados aleatórios com uma distribuição normal para testar o chunk do R:</description>
     </item>
     
     <item>
@@ -22,7 +22,8 @@
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://denis-or.github.io/post/2021-03-28-hello-world-2/</guid>
-      <description>teste 2</description>
+      <description>Lorem Ipsum gerado via https://www.lipsum.com/
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
     </item>
     
   </channel>
