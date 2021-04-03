@@ -10,4 +10,8 @@ Tags: []
 Categories: []
 DisableComments: no
 ---
-lorem ipsum
+```{r}
+hist(rnorm(150))
+```
+
+
