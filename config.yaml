@@ -51,7 +51,7 @@ menu:
       weight: 100
     - identifier: posts
       name: Posts
-      url: /post/
+      url: Posts/
       weight: 200
     # - identifier: about
     #   name: About
