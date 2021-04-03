@@ -5,24 +5,33 @@ aliases:
 - contact
 author: Hugo Authors
 date: "2019-02-28"
-description: Hugo, the world's fastest framework for building websites
+description: Sobreo novo site
 title: About
 ---
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Este site é é um produto de um projeto de concentrar todas as iniciativas que tive em montar um site e montar um blog. Além disso, havia a necessidade de ter um local onde minhas experiências profissionais e acadêmicas estivessem acessíveis, de forma simples, num formato que atendesse aos devaneios da minha criatividade e, claro, uma plataforma open source (embora o github tenha suas considerações por ser filhote da microsoft).
 
-Hugo makes use of a variety of open source projects including:
+As fases deste projeto são:
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+-   criar um github;
+-   habilitar uma chave SSH;
+-   vincular a chave SSH ao Github;
+-   criar um página no github;
+-   instalar o git e o github no nivel local;
+-   instalar o Go Hugo no R;
+-   criar um projeto da página no nível local;
+-   configurar os *pulls* e *pushs*;
+-   criar um blogdown usando o hugo;
+-   fazer as paradas funcionarem via R;
+-   finalizar o layout da página;
+-   comprar um domínio personalizado.
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+Boa parte das fases estão completadas ou em andamento. Neste momento, ainda tenho informação compartilhada nos sites:
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+-   [Linkedin](https://www.linkedin.com/in/denis-or/)
+-   [Lattes](http://lattes.cnpq.br/7838408308841051)
+-   [Blogger](https://catoper.blogspot.com)
 
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
+Está sendo um desafio porque o funcionamento do github e hugo não são nada intuitivos e os erros são bem atípicos.
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+Vamos caminhando.
