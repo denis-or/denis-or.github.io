@@ -9,7 +9,7 @@
     --border-color: rgba(0, 0, 0, 0.15);
     --form-border-color: #9f9f9f;
     --form-button-hover-border-color: #000;
-    --pre-bg-color: #f9f9fd;
+    --pre-bg-color: #f5f5f5;
     --nav-text-color: #5a5a5a;
     --tag-color: #424242;
     --blockquote-text-color: #858585;
@@ -86,10 +86,21 @@ blockquote {
 }
 
 pre {
-    background-color: var(--pre-bg-color);
-    padding: 5px;
     display: block;
-    overflow-x: auto;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+pre:not([class]) {
+    background-color: white;
 }
 
 .info i {
@@ -179,8 +190,9 @@ a:active {
 .content {
     height: auto;
     float: right;
-    width: 80%;
+    width: 65%;
     margin-top: 60px;
+    margin-right: 10%;
 }
 
 .page-top {
@@ -197,7 +209,7 @@ a:active {
     list-style: none;
     padding: 11px 30px;
     float: left;
-    font-size: 12px;
+    font-size: 14px;
     display: block;
     width: calc(100% - 30px);
 }
@@ -618,7 +630,9 @@ a:active {
 }
 
 .list-with-title .listing {
-    padding: 0;
+    font-size: 16px;
+    line-height: 1.8em;
+
 }
 
 .list-with-title .listing .listing-post {
@@ -635,7 +649,7 @@ a:active {
 
 .list-with-title .listing .listing-post a {
     color: #8F8F8F;
-    width: 90%;
+    width: 65%;
     display: inline-block;
 }
 
