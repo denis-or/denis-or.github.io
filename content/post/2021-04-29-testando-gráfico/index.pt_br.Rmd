@@ -13,7 +13,9 @@ DisableComments: no
 
 ### Avaliando covariância
 
-Aula da Professora Fernanda no Youtube
+Aula da Professora Fernanda no Youtube:
+
+
 https://www.youtube.com/watch?v=EyqkuCNgj2Y&ab_channel=FernandaPeres
 ```{r}
 dados <- data.frame(
