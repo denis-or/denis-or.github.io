@@ -125,7 +125,7 @@ DisableComments: no
 ## data:  aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals
 ## W = 0.96498, p-value = 0.4122</code></pre>
 <p>No teste de shapiro, temos que a <span class="math inline">\(H_0\)</span> define a distribuição do dados como normal (p &gt;0.05).</p>
-<p>7 - Verificar se há homocedasticidade e outliers</p>
+<p>7 - Verificar se há homocedasticidade e outliers:</p>
 <pre class="r"><code>boxplot(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)</code></pre>
 <p><img src="/post/2021-04-29-testando-gráfico/index.pt_br_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)</code></pre>

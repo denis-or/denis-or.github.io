@@ -110,7 +110,7 @@ shapiro.test(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)
 
 No teste de shapiro, temos que a $H_0$ define a distribuição do dados como normal (p >0.05).
 
-7 - Verificar se há homocedasticidade e outliers
+7 - Verificar se há homocedasticidade e outliers:
 
 ```{r}
 boxplot(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)
