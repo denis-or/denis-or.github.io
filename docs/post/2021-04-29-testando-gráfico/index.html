@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt_br" data-theme=""><head>
+    <title> Denis Rodrigues | Testando gráfico </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde.">
+    
+    <link rel="stylesheet"
+          href="https://denis-or.github.io/css/style.min.d1a85cc2d66015f488efd0e4b45e3373687e7d104dc62af1e168507b6e20ccbe.css"
+          integrity="sha256-0ahcwtZgFfSI79DktF4zc2h&#43;fRBNxirx4WhQe24gzL4="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://denis-or.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://denis-or.github.io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://denis-or.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://denis-or.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://denis-or.github.io/favicon-16x16.png">
+
+    <link rel="canonical" href="https://denis-or.github.io/post/2021-04-29-testando-gr%C3%A1fico/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://denis-or.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="https://denis-or.github.io/js/anatole-theme-switcher.min.8ef71e0fd43f21a303733dbbecae5438b791d2b826c68a9883bd7aa459a076d2.js"
+                integrity="sha256-jvceD9Q/IaMDcz277K5UOLeR0rgmxoqYg716pFmgdtI="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Testando gráfico"/>
+<meta name="twitter:description" content="Avaliando covariância Aula da Professora Fernanda no Youtube:"/>
+
+
+    
+
+</head>
+<body><div class="sidebar . ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://denis-or.github.io/images/pp.jpg" alt="profile picture">
+            <h3 title=""><a href="/">Denis Rodrigues</a></h3>
+            <div class="description">
+                <p>Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde.</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/denis-or/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="http://lattes.cnpq.br/7838408308841051" rel="me" aria-label="lattes">
+                    <i class="fas fa-graduation-cap fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/denis-or" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.instagram.com/catoper.mg/" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://twitter.com/Catoper" rel="me" aria-label="twitter">
+                    <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:catoper@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Denis Rodrigues  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  . ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Inicio</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Blog</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">Sobre</a></li>
+        
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  . ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Testando gráfico</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Thu, Apr 29, 2021 
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time"></span>
+                    </div>
+                
+            </div>
+
+            
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="avaliando-covariância" class="section level3">
+<h3>Avaliando covariância</h3>
+<p>Aula da Professora Fernanda no Youtube:</p>
+<p><a href="https://www.youtube.com/watch?v=EyqkuCNgj2Y&amp;ab_channel=FernandaPeres" class="uri">https://www.youtube.com/watch?v=EyqkuCNgj2Y&amp;ab_channel=FernandaPeres</a></p>
+<pre class="r"><code>dados &lt;- data.frame(
+  stringsAsFactors = T,
+           Sujeito = c(1L,2L,3L,4L,5L,6L,7L,8L,
+                       9L,10L,11L,12L,13L,14L,15L,16L,17L,18L,19L,
+                       20L,21L,22L,23L,24L,25L,26L,27L,28L,29L,30L),
+            Gênero = c(&quot;M&quot;,&quot;F&quot;,&quot;M&quot;,&quot;M&quot;,&quot;F&quot;,&quot;F&quot;,
+                       &quot;M&quot;,&quot;M&quot;,&quot;M&quot;,&quot;M&quot;,&quot;F&quot;,&quot;F&quot;,&quot;F&quot;,&quot;F&quot;,&quot;F&quot;,&quot;M&quot;,&quot;M&quot;,&quot;M&quot;,
+                       &quot;F&quot;,&quot;M&quot;,&quot;M&quot;,&quot;F&quot;,&quot;F&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;,&quot;F&quot;,&quot;M&quot;,&quot;M&quot;,
+                       &quot;F&quot;),
+    Grau_Instrução = c(&quot;Superior&quot;,&quot;Superior&quot;,
+                       &quot;Superior&quot;,&quot;Ens Fundamental&quot;,&quot;Ensino Médio&quot;,&quot;Superior&quot;,
+                       &quot;Ens Fundamental&quot;,&quot;Superior&quot;,&quot;Superior&quot;,&quot;Ensino Médio&quot;,
+                       &quot;Superior&quot;,&quot;Ensino Médio&quot;,&quot;Ensino Médio&quot;,&quot;Ensino Médio&quot;,
+                       &quot;Ensino Médio&quot;,&quot;Superior&quot;,&quot;Superior&quot;,&quot;Superior&quot;,
+                       &quot;Ensino Médio&quot;,&quot;Ensino Médio&quot;,&quot;Ens Fundamental&quot;,
+                       &quot;Ens Fundamental&quot;,&quot;Ensino Médio&quot;,&quot;Superior&quot;,&quot;Ensino Médio&quot;,
+                       &quot;Ens Fundamental&quot;,&quot;Superior&quot;,&quot;Ens Fundamental&quot;,&quot;Superior&quot;,
+                       &quot;Superior&quot;),
+          n_Filhos = c(1L,0L,0L,0L,0L,2L,0L,0L,
+                       1L,2L,0L,3L,0L,0L,1L,1L,0L,0L,2L,2L,2L,0L,
+                       0L,2L,4L,1L,1L,0L,0L,1L),
+             Idade = c(31L,25L,33L,20L,23L,37L,
+                       38L,37L,34L,40L,41L,46L,26L,41L,43L,27L,26L,42L,
+                       43L,30L,35L,33L,30L,32L,29L,40L,36L,34L,31L,
+                       35L),
+           Salário = c(8.2,5.3,9.4,2.9,3.7,4.4,
+                       4.7,5.4,5.8,3.2,6,6.9,2,3.4,3.7,4.2,6.4,11.6,
+                       8.6,5.5,6.8,4.1,4.6,6.6,7.3,7.3,8.3,3.8,6.2,8)
+)</code></pre>
+<pre class="r"><code>summary(dados)</code></pre>
+<pre><code>##     Sujeito      Gênero         Grau_Instrução    n_Filhos          Idade      
+##  Min.   : 1.00   F:15   Ens Fundamental: 6     Min.   :0.0000   Min.   :20.00  
+##  1st Qu.: 8.25   M:15   Ensino Médio   :10     1st Qu.:0.0000   1st Qu.:30.00  
+##  Median :15.50          Superior       :14     Median :0.5000   Median :34.00  
+##  Mean   :15.50                                 Mean   :0.8667   Mean   :33.93  
+##  3rd Qu.:22.75                                 3rd Qu.:1.7500   3rd Qu.:39.50  
+##  Max.   :30.00                                 Max.   :4.0000   Max.   :46.00  
+##     Salário      
+##  Min.   : 2.000  
+##  1st Qu.: 4.125  
+##  Median : 5.650  
+##  Mean   : 5.810  
+##  3rd Qu.: 7.200  
+##  Max.   :11.600</code></pre>
+<p>Neste exemplo, queremos analisar se o grau de instrução desses indivíduos tem efeito sobre os salários, controlando esse efeito pela idade.</p>
+<p>Mas, primeiro, vamos analisar os pressupostos de uma análise de covariância. Neste banco temos como variável dependente a variável <em>Salário</em>, variável independente <em>Grau de instrução</em> e como covariável <em>idade</em>:</p>
+<p>1 - vamos verificar se há efeito da variável independente sobre a covariável:</p>
+<p>iniciamos com nossa hipótese nula <span class="math inline">\(H_0\)</span>: não há efeito da variável independente na covariável (p&gt;0,05).</p>
+<pre class="r"><code>summary(aov(Idade ~ Grau_Instrução, data = dados))</code></pre>
+<pre><code>##                Df Sum Sq Mean Sq F value Pr(&gt;F)
+## Grau_Instrução  2   20.4   10.21   0.227  0.799
+## Residuals      27 1215.4   45.02</code></pre>
+<p>Dessa forma, temos evidência para não rejeitar <span class="math inline">\(H_0\)</span> e constatar que não há efeito do grau de instrução na idade.</p>
+<p>2 - verificar se a relação entre a covariável e a variável dependente é linear (VD ~ cov)</p>
+<pre class="r"><code>ggplot2::ggplot(dados, ggplot2::aes(x = Idade, y = Salário, group = Grau_Instrução, color = Grau_Instrução))+
+  ggplot2::geom_point(size = 2) +
+  ggplot2::geom_smooth(method = &quot;lm&quot;, se = F, size = .5)</code></pre>
+<p><img src="/post/2021-04-29-testando-gráfico/index.pt_br_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>3 - verificar se o efeito da covariável e o mesmo para todos os níveis da variável independente (VD ~ VI * cov). Vamos comparar as inclinações das retas para cada grupo da VI. Ou seja, se houver homogeineidade nos parâmetros da regressão, observaremos retas com inclinações parecidas.</p>
+<pre class="r"><code>summary(aov(Salário ~ Grau_Instrução*Idade, dados))</code></pre>
+<pre><code>##                      Df Sum Sq Mean Sq F value Pr(&gt;F)  
+## Grau_Instrução        2  28.01  14.005   3.779 0.0374 *
+## Idade                 1  18.47  18.470   4.984 0.0352 *
+## Grau_Instrução:Idade  2   2.52   1.261   0.340 0.7150  
+## Residuals            24  88.95   3.706                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>car::Anova(aov(Salário ~ Grau_Instrução*Idade, dados), Type = &quot;III&quot;)</code></pre>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: Salário
+##                      Sum Sq Df F value  Pr(&gt;F)  
+## Grau_Instrução       31.968  2  4.3130 0.02511 *
+## Idade                18.470  1  4.9836 0.03518 *
+## Grau_Instrução:Idade  2.522  2  0.3402 0.71501  
+## Residuals            88.946 24                  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>É necessário que a interação entre grau de instrução e idade não seja significativo. Neste teste, vamos ter a <span class="math inline">\(H_0\)</span> de que há homogeneidade dos parâmetros da regressão (p &gt; 0.05).</p>
+<p>4 - Verificar se há homogeneidade de variâncias (VD ~ VI)</p>
+<pre class="r"><code>car::leveneTest(Salário ~ Grau_Instrução, center = mean,  dados)</code></pre>
+<pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = mean)
+##       Df F value Pr(&gt;F)
+## group  2  0.1854 0.8318
+##       27</code></pre>
+<p>Temos que a <span class="math inline">\(H_0\)</span> é que as variâncias são homogêneas (P&gt;0.05).</p>
+<p>5 - Ajustar o modelo de ANCOVA (VD ~ cov + VI)</p>
+<pre class="r"><code>car::Anova(aov(Salário ~ Idade + Grau_Instrução, data = dados), type = &quot;III&quot;)</code></pre>
+<pre><code>## Anova Table (Type III tests)
+## 
+## Response: Salário
+##                Sum Sq Df F value  Pr(&gt;F)  
+## (Intercept)     0.629  1  0.1787 0.67596  
+## Idade          18.470  1  5.2501 0.03030 *
+## Grau_Instrução 31.968  2  4.5436 0.02031 *
+## Residuals      91.467 26                  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Temos que a <span class="math inline">\(H_0\)</span> é que não há efeito (p &gt;.05). Neste caso, temos o efeito do grau de instrução contralado pela idade.</p>
+<p>6 - Verificar a normalidade dos resíduos</p>
+<pre class="r"><code>shapiro.test(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)</code></pre>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals
+## W = 0.96498, p-value = 0.4122</code></pre>
+<p>No teste de shapiro, temos que a <span class="math inline">\(H_0\)</span> define a distribuição do dados como normal (p &gt;0.05).</p>
+<p>7 - Verificar se há homocedasticidade e outliers:</p>
+<pre class="r"><code>boxplot(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)</code></pre>
+<p><img src="/post/2021-04-29-testando-gráfico/index.pt_br_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)</code></pre>
+<p><img src="/post/2021-04-29-testando-gráfico/index.pt_br_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade, veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando ao contrario, veríamos um funil.</p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://denis-or.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script></body>
+
+</html>
