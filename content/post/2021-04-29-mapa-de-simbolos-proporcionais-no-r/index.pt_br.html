@@ -20,9 +20,9 @@ DisableComments: no
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas. Eu atribuo isso a ampla divulgação das técnicas, softwares, disponibilidade de dados, a “chegada” ciência de dados e dos cientistas de dados… Embora seja importante a disseminação do conhecimento, sempre me pergunto qual o problema de não fazê-lo adequadamente?</p>
-<p>Digo isso lembrando das minhas aulas de cartografia temática na faculdade de Geografia na <a href="https://www.unifal-mg.edu.br/geografia/">Unifal</a>, quando estudávamos que variáveis quantitativas (ou dados de contagem ou valores absolutos, como preferir) são representadas variando o tamanho para demonstrar a proporcionalidade. Eu acho importante porque o espaço é contínuo e quando expressamos número absolutos usando polígonos com intervalos de dados me parece não adequado. Quando uso a palavra adequado, penso que poderia usar “errado”. Enfim, mais pra frente pretendo fazer uma pequena revisão da literatura para demonstrar isso.</p>
-<p>Neste blog, ainda em fase de teste, quero compartilhar alguns codigos de programação em R também. E sobre o assunto de produtos cartográficos, recentemente, descobri o pacote <code>mapsf</code>, uma evolução do <code>cartography</code>. Este pacote tem como objetivo permitir a obtenção de um mapa temático com uma qualidade visual similar aos que elaboramos nos sistemas de informação geográfica. Vou mostrar a montagem de um mapa simples de <strong>símbolos proporcionais</strong> quando temos <strong>números absolutos</strong>.</p>
+<p>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas. Eu atribuo isso a ampla divulgação das técnicas, softwares, disponibilidade de dados, a “chegada” ciência de dados e dos cientistas de dados… Embora seja importante a disseminação do conhecimento, sempre me pergunto qual o problema de não fazê-la adequadamente?</p>
+<p>Digo isso lembrando das minhas aulas de cartografia temática na faculdade de Geografia na <a href="https://www.unifal-mg.edu.br/geografia/">Unifal</a>, quando estudávamos que variáveis quantitativas (ou dados de contagem ou valores absolutos, como preferir) são representadas variando o tamanho, justamente para demonstrar a proporcionalidade. Eu acho isso muito importante. Primeiro porque o espaço é contínuo e, segundo, quando expressamos número absolutos usando polígonos, não me parece adequado. Quando uso a palavra adequado, penso que poderia usar “errado”. Enfim, mais pra frente pretendo fazer uma pequena revisão da literatura para demonstrar isso.</p>
+<p>Neste blog, ainda em fase de teste, quero compartilhar alguns códigos de programação em <code>R</code> também. E sobre o assunto de produtos cartográficos, recentemente, descobri o pacote <code>mapsf</code>, uma evolução do <code>cartography</code>. Este pacote tem como objetivo permitir a obtenção de um mapa temático com uma qualidade visual similar aos que elaboramos nos sistemas de informação geográfica. Vou mostrar a montagem de um mapa simples de <strong>símbolos proporcionais</strong> quando temos <strong>números absolutos</strong>.</p>
 <p>Primeiro eu carrego os pacotes que usarei. já existe muito conteúdo sobre o <code>magrittr</code> e <code>dplyr</code> na internet. Prefiro focar no <code>mapsf</code>.</p>
 <pre class="r"><code>library(magrittr)
 library(dplyr)
@@ -44,31 +44,39 @@ bd &lt;- data.frame(
 <pre class="r"><code>map &lt;- mtq %&gt;% left_join(bd)</code></pre>
 <pre><code>## Joining, by = &quot;munic_res&quot;</code></pre>
 <p>Pronto. Agora plotamos nosso mapa. O <code>mapsf</code> possui uma função para cada abordagem na cartografia temática como símbolos proporcionais (que usaremos aqui), mapas corpléticos, mapas de tipologia, símbolos graduados, entre outros. Aqui mostrarei uma visão mais simplificada, mas muito útil e mais elegante do que aqueles “mapas” feitos no <code>ggplot</code>, embora eu use muito.</p>
-<pre class="r"><code>mf_theme(&quot;candy&quot;)
+<pre class="r"><code># [1]
+mf_theme(x = &quot;candy&quot;)
+# [2]
 map %&gt;%
   mf_map() %&gt;%
-  mf_map(c(&quot;num_casos&quot;), &quot;prop&quot;, border = &quot;white&quot;, col = &quot;#6B1767&quot;,
+# [3]
+  mf_map(var = c(&quot;num_casos&quot;), 
+         type = &quot;prop&quot;,
+         border = &quot;white&quot;,
+         col = &quot;#6B1767&quot;,
          lwd = 0.5,
          leg_pos = &quot;topleft&quot;,
-         leg_title = &quot;Número de casos&quot;)</code></pre>
-<pre><code>## Warning in st_centroid.sfc(x = st_geometry(x), of_largest_polygon = TRUE):
-## st_centroid does not give correct centroids for longitude/latitude data</code></pre>
-<pre class="r"><code>mf_layout(title = &quot;Casos de doença X em Roraima&quot;,
+         leg_title = &quot;Número de casos&quot;)
+# [4]
+mf_layout(title = &quot;Casos de doença X em Roraima&quot;,
           arrow = FALSE,
+          frame = TRUE,
           credits = paste0(&quot;Visualização:\n  Denis de Oliveira Rodrigues
             Escola Nacional de Saúde Pública Sérgio Arouca\n&quot;,
                            &quot;mapsf &quot;,
                            packageVersion(&quot;mapsf&quot;)))
+# [5]
 mf_arrow(pos =&#39;topright&#39;)</code></pre>
 <p><img src="/post/2021-04-29-mapa-de-simbolos-proporcionais-no-r/index.pt_br_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Bom, explicarei sucintamente as partes do código acima. Coloquei alguns marcadores numerados para facilitar a explicação. No marcador [1] defino o tema. Neste caso, usei o tema <em>candy</em>. No marcador [2] uso a função <code>mf_map</code> para plotar o mapa base. Como bem sabemos (ou deveríamos saber), a montagem de um mapa envolve várias camadas. Esta é a primeira. No marcador [3] temos mais uma camada que, neste caso, está trazendo os dados da variável <em>num_casos</em> e usando o tipo de mapa <code>prop</code>. Eu poderia usar a função <code>mf_prop</code> que daria no mesmo. O símbolo padrão do tipo <code>prop</code> é o círculo, mas é possível especificar outro. Cores, bordas e tamanho são configuráveis. Aconselho olhar o help ára conhecer todos os parâmetros. Notem que já posiciono a legenda no topo à esquerda ( <em>topleft</em>). No marcador [4], eu declaro o layout, colocando título, créditos, escala e o <em>frame</em>, que é uma moldura no conjunto. Notem que preferi desabilitar a seta dentro desta função para usá-la de outra forma (marcador [5]). Assim, eu consigo posicionar ela conforme convencionado: escala e seta à direita. Não sei exatamente como essa convenção começou. Só acho que é quase uma boa prática e sigo.</p>
 <p>Gostaria de destacar algumas vantagens deste pacote:</p>
 <ul>
 <li><p>visual agradável e muito bem comportado;</p></li>
-<li><p>podemos usar temas: embora não possua um amplo leque de temas, podemos criar e usar estes temas de maneira bem simples;</p></li>
+<li><p>podemos usar os temas. Embora não possua um amplo leque de temas, podemos criar e usaá-los de maneira bem simples;</p></li>
 <li><p>podemos usar o <em>pipe</em> do <code>magrittr</code>;</p></li>
 <li><p>temos autonomia para alocar os componentes cartográficos como seta do norte, legenda, título, de uma maneira fácil, relativamente;</p></li>
 <li><p>a legenda fica adequada e própria de um produto cartográfico decente;</p></li>
 <li><p>a programação é, também relativamente, fácil e sem muitos rodeios (ou caixas pretas).</p></li>
 </ul>
 <p>Como desvantagem, já notei que ainda é um pouco lento com bases muito pesadas. Mas tem aí o problema do R também, já que este não tem toda a estrutura dos tradicionais e muito bem conservados sistemas de informação geográfica.</p>
-<p>Usem a cartografia!!</p>
+<p>Bom, era isso que queria mostrar. Sugestão: estudem e usem a cartografia!! Não caiam na tentação de criar mapas de forma fácil mas que não apresentam o objeto de forma intuitiva.</p>
