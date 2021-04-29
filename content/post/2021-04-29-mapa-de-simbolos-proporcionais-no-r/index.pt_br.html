@@ -1,0 +1,74 @@
+---
+title: Mapa de símbolos proporcionais no R
+author: Denis
+date: '2021-04-29'
+slug: mapa-de-simbolos-proporcionais-no-r
+categories:
+  - map
+  - cartography
+  - R
+  - mapsf
+  - sf
+  - rstats
+tags: []
+Description: ''
+Tags: []
+Categories: []
+DisableComments: no
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas. Eu atribuo isso a ampla divulgação das técnicas, softwares, disponibilidade de dados, a “chegada” ciência de dados e dos cientistas de dados… Embora seja importante a disseminação do conhecimento, sempre me pergunto qual o problema de não fazê-lo adequadamente?</p>
+<p>Digo isso lembrando das minhas aulas de cartografia temática na faculdade de Geografia na <a href="https://www.unifal-mg.edu.br/geografia/">Unifal</a>, quando estudávamos que variáveis quantitativas (ou dados de contagem ou valores absolutos, como preferir) são representadas variando o tamanho para demonstrar a proporcionalidade. Eu acho importante porque o espaço é contínuo e quando expressamos número absolutos usando polígonos com intervalos de dados me parece não adequado. Quando uso a palavra adequado, penso que poderia usar “errado”. Enfim, mais pra frente pretendo fazer uma pequena revisão da literatura para demonstrar isso.</p>
+<p>Neste blog, ainda em fase de teste, quero compartilhar alguns codigos de programação em R também. E sobre o assunto de produtos cartográficos, recentemente, descobri o pacote <code>mapsf</code>, uma evolução do <code>cartography</code>. Este pacote tem como objetivo permitir a obtenção de um mapa temático com uma qualidade visual similar aos que elaboramos nos sistemas de informação geográfica. Vou mostrar a montagem de um mapa simples de <strong>símbolos proporcionais</strong> quando temos <strong>números absolutos</strong>.</p>
+<p>Primeiro eu carrego os pacotes que usarei. já existe muito conteúdo sobre o <code>magrittr</code> e <code>dplyr</code> na internet. Prefiro focar no <code>mapsf</code>.</p>
+<pre class="r"><code>library(magrittr)
+library(dplyr)
+library(mapsf)</code></pre>
+<p>Para este exemplo, usarei a malha digital de Roraima. É uma base pequena e rápida para download pelo <code>geobr</code>.</p>
+<pre class="r"><code>mtq &lt;- geobr::read_municipality(&quot;RR&quot;, showProgress = F) %&gt;%
+  mutate(munic_res = as.character(substr(code_muni, 1,6))) %&gt;%
+  select(munic_res, everything())</code></pre>
+<p>A partir daí, crio uma banco de dados para exemplo, simulando a distribuição de um evento ou doença qualquer. Apenas para treinar.</p>
+<pre class="r"><code>set.seed(15)
+bd &lt;- data.frame(
+  munic_res = c(&quot;140002&quot;,&quot;140005&quot;,&quot;140010&quot;,&quot;140015&quot;,
+                &quot;140017&quot;,&quot;140020&quot;,&quot;140023&quot;,&quot;140028&quot;,
+                &quot;140030&quot;,&quot;140040&quot;,&quot;140045&quot;,&quot;140047&quot;,
+                &quot;140050&quot;,&quot;140060&quot;,&quot;140070&quot;),
+  num_casos = as.integer(rnorm(15, mean = 150, sd = 88.42953))
+)</code></pre>
+<p>E agora, faço um <em>join</em> da base de dados com a base cartográfica.</p>
+<pre class="r"><code>map &lt;- mtq %&gt;% left_join(bd)</code></pre>
+<pre><code>## Joining, by = &quot;munic_res&quot;</code></pre>
+<p>Pronto. Agora plotamos nosso mapa. O <code>mapsf</code> possui uma função para cada abordagem na cartografia temática como símbolos proporcionais (que usaremos aqui), mapas corpléticos, mapas de tipologia, símbolos graduados, entre outros. Aqui mostrarei uma visão mais simplificada, mas muito útil e mais elegante do que aqueles “mapas” feitos no <code>ggplot</code>, embora eu use muito.</p>
+<pre class="r"><code>mf_theme(&quot;candy&quot;)
+map %&gt;%
+  mf_map() %&gt;%
+  mf_map(c(&quot;num_casos&quot;), &quot;prop&quot;, border = &quot;white&quot;, col = &quot;#6B1767&quot;,
+         lwd = 0.5,
+         leg_pos = &quot;topleft&quot;,
+         leg_title = &quot;Número de casos&quot;)</code></pre>
+<pre><code>## Warning in st_centroid.sfc(x = st_geometry(x), of_largest_polygon = TRUE):
+## st_centroid does not give correct centroids for longitude/latitude data</code></pre>
+<pre class="r"><code>mf_layout(title = &quot;Casos de doença X em Roraima&quot;,
+          arrow = FALSE,
+          credits = paste0(&quot;Visualização:\n  Denis de Oliveira Rodrigues
+            Escola Nacional de Saúde Pública Sérgio Arouca\n&quot;,
+                           &quot;mapsf &quot;,
+                           packageVersion(&quot;mapsf&quot;)))
+mf_arrow(pos =&#39;topright&#39;)</code></pre>
+<p><img src="/post/2021-04-29-mapa-de-simbolos-proporcionais-no-r/index.pt_br_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Gostaria de destacar algumas vantagens deste pacote:</p>
+<ul>
+<li><p>visual agradável e muito bem comportado;</p></li>
+<li><p>podemos usar temas: embora não possua um amplo leque de temas, podemos criar e usar estes temas de maneira bem simples;</p></li>
+<li><p>podemos usar o <em>pipe</em> do <code>magrittr</code>;</p></li>
+<li><p>temos autonomia para alocar os componentes cartográficos como seta do norte, legenda, título, de uma maneira fácil, relativamente;</p></li>
+<li><p>a legenda fica adequada e própria de um produto cartográfico decente;</p></li>
+<li><p>a programação é, também relativamente, fácil e sem muitos rodeios (ou caixas pretas).</p></li>
+</ul>
+<p>Como desvantagem, já notei que ainda é um pouco lento com bases muito pesadas. Mas tem aí o problema do R também, já que este não tem toda a estrutura dos tradicionais e muito bem conservados sistemas de informação geográfica.</p>
+<p>Usem a cartografia!!</p>
