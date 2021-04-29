@@ -90,7 +90,6 @@ mf_arrow(pos ='topright')
 
 Bom, explicarei sucintamente as partes do código acima. Coloquei alguns marcadores numerados para facilitar a explicação. No marcador [1] defino o tema. Neste caso, usei o tema _candy_. No marcador [2] uso a função `mf_map` para plotar o mapa base. Como bem sabemos (ou deveríamos saber), a montagem de um mapa envolve várias camadas. Esta é a primeira. No marcador [3] temos mais uma camada que, neste caso, está trazendo os dados da variável _num_casos_ e usando o tipo de mapa `prop`. Eu poderia usar a função `mf_prop` que daria no mesmo. O símbolo padrão do tipo `prop` é o círculo, mas é possível especificar outro. Cores, bordas e tamanho são configuráveis. Aconselho olhar o help ára conhecer todos os parâmetros. Notem que já posiciono a legenda no topo à esquerda ( _topleft_). No marcador [4], eu declaro o layout, colocando título, créditos, escala e o _frame_, que é uma moldura no conjunto. Notem que preferi desabilitar a seta dentro desta função para usá-la de outra forma (marcador [5]). Assim, eu consigo posicionar ela conforme convencionado: escala e seta à direita. Não sei exatamente como essa convenção começou. Só acho que é quase uma boa prática e sigo.
 
-
 Gostaria de destacar algumas vantagens deste pacote: 
 
  - visual agradável e muito bem comportado;
