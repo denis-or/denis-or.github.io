@@ -61,6 +61,14 @@ menu:
       name: Sobre
       url: /about/
       weight: 300
+    - identifier: cv
+      name: Currículo
+      url: /cv/
+      weight: 300
+    - identifier: experience
+      name: Experiência Profissional
+      url: /experience/
+      weight: 300
     # - identifier: contact
     #   name: Contact
     #   url: /contact/

@@ -71,5 +71,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
       <description>Este site é um produto de um projeto pessoal que tem como objetivo concentrar todas as minhas iniciativas de ter um site e um blog.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://denis-or.github.io/cv/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.github.io/cv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://denis-or.github.io/experience/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.github.io/experience/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
