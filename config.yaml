@@ -30,7 +30,8 @@ params:
     - icon: fab fa-linkedin
       title: Linkedin
       url: https://www.linkedin.com/in/denis-or/
-    - icon: fas fa-graduation-cap
+    #- icon: fas fa-graduation-cap
+    - icon: ai lattes
       title: lattes
       url: http://lattes.cnpq.br/7838408308841051
     - icon: fab fa-github
