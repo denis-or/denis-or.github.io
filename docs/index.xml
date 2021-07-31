@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>https://denis-or.github.io/</link>
-    <description>Recent content on </description>
+    <title>Denis OR</title>
+    <link>https://denis-or.com.br/</link>
+    <description>Recent content on Denis OR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt_br</language>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mapa de símbolos proporcionais no R</title>
-      <link>https://denis-or.github.io/post/mapa-de-simbolos-proporcionais-no-r/</link>
+      <link>https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/post/mapa-de-simbolos-proporcionais-no-r/</guid>
+      <guid>https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/</guid>
       <description>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas.</description>
     </item>
     
     <item>
       <title>Testando gráfico</title>
-      <link>https://denis-or.github.io/post/2021-04-29-testando-gr%C3%A1fico/</link>
+      <link>https://denis-or.com.br/post/2021-04-29-testando-gr%C3%A1fico/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/post/2021-04-29-testando-gr%C3%A1fico/</guid>
+      <guid>https://denis-or.com.br/post/2021-04-29-testando-gr%C3%A1fico/</guid>
       <description>Avaliando covariância Aula da Professora Fernanda no Youtube:</description>
     </item>
     
     <item>
       <title>teste</title>
-      <link>https://denis-or.github.io/post/2021-04-03-teste/</link>
+      <link>https://denis-or.com.br/post/2021-04-03-teste/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/post/2021-04-03-teste/</guid>
+      <guid>https://denis-or.com.br/post/2021-04-03-teste/</guid>
       <description>Criando um vetor de dados aleatórios com uma distribuição normal para testar o chunk do R:</description>
     </item>
     
     <item>
       <title>hello world 2</title>
-      <link>https://denis-or.github.io/post/2021-03-28-hello-world-2/</link>
+      <link>https://denis-or.com.br/post/2021-03-28-hello-world-2/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/post/2021-03-28-hello-world-2/</guid>
+      <guid>https://denis-or.com.br/post/2021-03-28-hello-world-2/</guid>
       <description>Lorem Ipsum gerado via https://www.lipsum.com/
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://denis-or.github.io/archives/</link>
+      <link>https://denis-or.com.br/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/archives/</guid>
+      <guid>https://denis-or.com.br/archives/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>https://denis-or.github.io/contact/</link>
+      <link>https://denis-or.com.br/contact/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/contact/</guid>
+      <guid>https://denis-or.com.br/contact/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://denis-or.github.io/about/</link>
+      <link>https://denis-or.com.br/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/about/</guid>
+      <guid>https://denis-or.com.br/about/</guid>
       <description>Este site é um produto de um projeto pessoal que tem como objetivo concentrar todas as minhas iniciativas de ter um site e um blog.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://denis-or.github.io/cv/</link>
+      <link>https://denis-or.com.br/cv/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/cv/</guid>
+      <guid>https://denis-or.com.br/cv/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://denis-or.github.io/experience/</link>
+      <link>https://denis-or.com.br/experience/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/experience/</guid>
+      <guid>https://denis-or.com.br/experience/</guid>
       <description></description>
     </item>
     

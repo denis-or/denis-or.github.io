@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on </title>
-    <link>https://denis-or.github.io/post/</link>
-    <description>Recent content in Posts on </description>
+    <title>Posts on Denis OR</title>
+    <link>https://denis-or.com.br/post/</link>
+    <description>Recent content in Posts on Denis OR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt_br</language>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mapa de símbolos proporcionais no R</title>
-      <link>https://denis-or.github.io/post/mapa-de-simbolos-proporcionais-no-r/</link>
+      <link>https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/post/mapa-de-simbolos-proporcionais-no-r/</guid>
+      <guid>https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/</guid>
       <description>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas.</description>
     </item>
     
     <item>
       <title>Testando gráfico</title>
-      <link>https://denis-or.github.io/post/2021-04-29-testando-gr%C3%A1fico/</link>
+      <link>https://denis-or.com.br/post/2021-04-29-testando-gr%C3%A1fico/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/post/2021-04-29-testando-gr%C3%A1fico/</guid>
+      <guid>https://denis-or.com.br/post/2021-04-29-testando-gr%C3%A1fico/</guid>
       <description>Avaliando covariância Aula da Professora Fernanda no Youtube:</description>
     </item>
     
     <item>
       <title>teste</title>
-      <link>https://denis-or.github.io/post/2021-04-03-teste/</link>
+      <link>https://denis-or.com.br/post/2021-04-03-teste/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/post/2021-04-03-teste/</guid>
+      <guid>https://denis-or.com.br/post/2021-04-03-teste/</guid>
       <description>Criando um vetor de dados aleatórios com uma distribuição normal para testar o chunk do R:</description>
     </item>
     
     <item>
       <title>hello world 2</title>
-      <link>https://denis-or.github.io/post/2021-03-28-hello-world-2/</link>
+      <link>https://denis-or.com.br/post/2021-03-28-hello-world-2/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://denis-or.github.io/post/2021-03-28-hello-world-2/</guid>
+      <guid>https://denis-or.com.br/post/2021-03-28-hello-world-2/</guid>
       <description>Lorem Ipsum gerado via https://www.lipsum.com/
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
     </item>
