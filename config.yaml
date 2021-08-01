@@ -1,7 +1,7 @@
 baseURL: https://denis-or.com.br/
 languageCode: pt_br
 DefaultContentLanguage: pt_br
-title: Denis OR
+title: "Denis OR"
 theme: anatole
 summarylength: 10
 enableEmoji: yes
@@ -11,7 +11,7 @@ pygmentsCodeFences: yes
 pygmentsCodefencesGuessSyntax: yes
 publishDir: docs/
 params:
-  author: Denis Rodrigues
+  author: "Denis Rodrigues"
   customCss: []
   customJs: []
   description: "Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde."
@@ -21,7 +21,7 @@ params:
   keywords: ''
   mainSections: post
   math:
-    enable: no
+    enable: true
     use: katex
   # profilePicture: images/profile.jpg
   profilePicture: images/pp.jpg

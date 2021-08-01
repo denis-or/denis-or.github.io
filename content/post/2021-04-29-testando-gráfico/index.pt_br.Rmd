@@ -6,7 +6,10 @@ slug: []
 categories: []
 tags: []
 Description: ''
-Tags: []
+tags = [
+    "thumbnail",
+]
+thumbnail= "images/img_post_covar.png"
 Categories: []
 DisableComments: no
 ---
