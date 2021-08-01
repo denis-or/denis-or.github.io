@@ -26,25 +26,6 @@
     </item>
     
     <item>
-      <title>teste</title>
-      <link>https://denis-or.com.br/post/2021-04-03-teste/</link>
-      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://denis-or.com.br/post/2021-04-03-teste/</guid>
-      <description>Criando um vetor de dados aleatórios com uma distribuição normal para testar o chunk do R:</description>
-    </item>
-    
-    <item>
-      <title>hello world 2</title>
-      <link>https://denis-or.com.br/post/2021-03-28-hello-world-2/</link>
-      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://denis-or.com.br/post/2021-03-28-hello-world-2/</guid>
-      <description>Lorem Ipsum gerado via https://www.lipsum.com/
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>https://denis-or.com.br/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
