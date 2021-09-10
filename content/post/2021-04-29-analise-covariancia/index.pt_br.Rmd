@@ -1,5 +1,5 @@
 ---
-title: Testando gráfico
+title: Análise de covariância
 author: Denis
 date: '2021-04-29'
 slug: []
@@ -14,12 +14,12 @@ Categories: []
 DisableComments: no
 ---
 
-### Avaliando covariância
-
-Aula da Professora Fernanda no Youtube:
+Acompanhamento da aula da Professora Fernanda, publicada no dia 14/7/20 no Youtube:
 
 
-https://www.youtube.com/watch?v=EyqkuCNgj2Y&ab_channel=FernandaPeres
+[https://www.youtube.com/watch?v=EyqkuCNgj2Y&ab_channel=FernandaPeres](https://www.youtube.com/watch?v=EyqkuCNgj2Y&ab_channel=FernandaPeres)
+
+
 ```{r}
 dados <- data.frame(
   stringsAsFactors = T,
