@@ -1,12 +1,11 @@
 ---
-title: Testando gráfico
+title: Análise de covariância
 author: Denis
 date: '2021-04-29'
 slug: []
 categories: []
 tags: []
 Description: ''
-Tags: []
 Categories: []
 DisableComments: no
 ---
@@ -14,10 +13,8 @@ DisableComments: no
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="avaliando-covariância" class="section level3">
-<h3>Avaliando covariância</h3>
-<p>Aula da Professora Fernanda no Youtube:</p>
-<p><a href="https://www.youtube.com/watch?v=EyqkuCNgj2Y&amp;ab_channel=FernandaPeres" class="uri">https://www.youtube.com/watch?v=EyqkuCNgj2Y&amp;ab_channel=FernandaPeres</a></p>
+<p>Acompanhamento da aula da Professora Fernanda, publicada no dia 14/7/20 no Youtube:</p>
+<p><a href="https://www.youtube.com/watch?v=EyqkuCNgj2Y&amp;ab_channel=FernandaPeres">https://www.youtube.com/watch?v=EyqkuCNgj2Y&amp;ab_channel=FernandaPeres</a></p>
 <pre class="r"><code>dados &lt;- data.frame(
   stringsAsFactors = T,
            Sujeito = c(1L,2L,3L,4L,5L,6L,7L,8L,
@@ -75,7 +72,7 @@ DisableComments: no
 <pre class="r"><code>ggplot2::ggplot(dados, ggplot2::aes(x = Idade, y = Salário, group = Grau_Instrução, color = Grau_Instrução))+
   ggplot2::geom_point(size = 2) +
   ggplot2::geom_smooth(method = &quot;lm&quot;, se = F, size = .5)</code></pre>
-<p><img src="/post/2021-04-29-testando-gráfico/index.pt_br_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>3 - verificar se o efeito da covariável e o mesmo para todos os níveis da variável independente (VD ~ VI * cov). Vamos comparar as inclinações das retas para cada grupo da VI. Ou seja, se houver homogeineidade nos parâmetros da regressão, observaremos retas com inclinações parecidas.</p>
 <pre class="r"><code>summary(aov(Salário ~ Grau_Instrução*Idade, dados))</code></pre>
 <pre><code>##                      Df Sum Sq Mean Sq F value Pr(&gt;F)  
@@ -127,8 +124,7 @@ DisableComments: no
 <p>No teste de shapiro, temos que a <span class="math inline">\(H_0\)</span> define a distribuição do dados como normal (p &gt;0.05).</p>
 <p>7 - Verificar se há homocedasticidade e outliers:</p>
 <pre class="r"><code>boxplot(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)</code></pre>
-<p><img src="/post/2021-04-29-testando-gráfico/index.pt_br_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)</code></pre>
-<p><img src="/post/2021-04-29-testando-gráfico/index.pt_br_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade, veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando ao contrario, veríamos um funil.</p>
-</div>

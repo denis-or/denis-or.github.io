@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt_br" data-theme=""><head>
+    <title> Denis Rodrigues | Mapa de símbolos proporcionais no R </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde.">
+    
+    <link rel="stylesheet"
+          href="https://denis-or.com.br/css/style.min.d1a85cc2d66015f488efd0e4b45e3373687e7d104dc62af1e168507b6e20ccbe.css"
+          integrity="sha256-0ahcwtZgFfSI79DktF4zc2h&#43;fRBNxirx4WhQe24gzL4="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://denis-or.com.br/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://denis-or.com.br/css/resume_adap.min.4760408459b1b5dcd81717bc97f4e34464409eccc52e2c22a81df3c9cedde610.css"
+        integrity="sha256-R2BAhFmxtdzYFxe8l/TjRGRAnszFLiwiqB3zyc7d5hA="
+        crossorigin="anonymous"
+        media="screen" />
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://denis-or.com.br/css/style.min.d1a85cc2d66015f488efd0e4b45e3373687e7d104dc62af1e168507b6e20ccbe.css"
+        integrity="sha256-0ahcwtZgFfSI79DktF4zc2h&#43;fRBNxirx4WhQe24gzL4="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://denis-or.com.br/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://denis-or.com.br/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://denis-or.com.br/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://denis-or.com.br/favicon-16x16.png">
+
+    <link rel="canonical" href="https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://denis-or.com.br/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mapa de símbolos proporcionais no R"/>
+<meta name="twitter:description" content="Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas: saúde, economia, ciências sociais."/>
+
+
+    
+
+</head>
+<body><div class="sidebar . ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://denis-or.com.br/images/pp.jpg" alt="profile picture">
+            <h3 title=""><a href="/">Denis OR</a></h3>
+            <div class="description">
+                <p>Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde.</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/denis-or/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="http://lattes.cnpq.br/7838408308841051" rel="me" aria-label="lattes">
+                    <i class="fas fa-graduation-cap fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/denis-or" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.instagram.com/catoper.mg/" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://twitter.com/Catoper" rel="me" aria-label="twitter">
+                    <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:catoper@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Denis Rodrigues  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  . ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Inicio</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Blog</a></li>
+        
+            
+            <li><a 
+                   href="/cv_/"
+                        
+                   title="">Currículo</a></li>
+        
+            
+            <li><a 
+                   href="/experience/"
+                        
+                   title="">Experiência Profissional</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">Sobre</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  . ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Mapa de símbolos proporcionais no R</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Thu, Apr 29, 2021 
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time"></span>
+                    </div>
+                
+            </div>
+
+            
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas: saúde, economia, ciências sociais. Eu atribuo isso à ampla divulgação das técnicas, softwares, disponibilidade de dados, a “chegada” ciência de dados e dos cientistas de dados… Embora seja importante a disseminação do conhecimento, sempre me pergunto qual o problema de não fazê-la adequadamente?</p>
+<p>Digo isso lembrando das minhas aulas de cartografia temática na faculdade de Geografia na <a href="https://www.unifal-mg.edu.br/geografia/">Unifal</a>, quando estudávamos que variáveis quantitativas (ou dados de contagem ou valores absolutos, como preferir) são representadas variando o tamanho de forma geométrica. Justamente para demonstrar a proporcionalidade. Ou seja, a medida que o simbolo aumenta de tamanho, os valores do evento representado também aumentam. Eu acho isso muito intuitivo e muito importante.</p>
+<p>Penso que, como o espaço é contínuo, ou seja, as divisões ou demarcações do espaço são imaginárias (sim, nenhuma linha de divisão existe no espaço, nós inventamos), quando expressamos números quantitativos discretos uilizando uma geometria adequada para números contínuos (usando polígonos, por exemplo), não me parece adequado. Quando uso a palavra adequado, penso que poderia usar “errado”. Enfim, mais pra frente pretendo fazer uma pequena revisão da literatura para demonstrar isso.</p>
+<p>Para exemplificar o que estou debatendo acima, vou apresentar um solução em <code>R</code>, pois, neste blog, ainda em fase de teste, quero compartilhar alguns códigos de programação nesta linguagem. E sobre o assunto de produtos cartográficos, recentemente, descobri o pacote <code>mapsf</code>, uma evolução do <code>cartography</code>. Este pacote tem como objetivo permitir a obtenção de um mapa temático com uma qualidade visual similar aos que elaboramos nos sistemas de informação geográfica. Vou mostrar a montagem de um mapa simples de <strong>símbolos proporcionais</strong> quando temos <strong>dados de contagem</strong>.</p>
+<p>Primeiro eu carrego os pacotes que usarei. já existe muito conteúdo sobre o <code>magrittr</code> e <code>dplyr</code> na internet. Prefiro focar no <code>mapsf</code>.</p>
+<pre class="r"><code>library(magrittr)
+library(dplyr)
+library(mapsf)</code></pre>
+<p>Para este exemplo, usarei a malha digital de Roraima. É uma base pequena e rápida para download pelo <code>geobr</code>.</p>
+<pre class="r"><code>mtq &lt;- geobr::read_municipality(&quot;RR&quot;, showProgress = F) %&gt;%
+       dplyr::mutate(munic_res = as.character(substr(code_muni, 1,6))) %&gt;%
+       dplyr::select(munic_res, everything())</code></pre>
+<p>A partir daí, crio uma banco de dados para exemplo, simulando a distribuição de um evento ou doença qualquer. Apenas para treinar. Percebam que eu utilizo a estrutura do mapa, para randomizar os dados.</p>
+<pre class="r"><code>set.seed(15)
+
+
+bd &lt;- data.frame(
+  munic_res = mtq$munic_res,
+  num_casos = as.integer(rnorm(length(mtq$munic_res), mean = 150, sd = 88.42953)))</code></pre>
+<p>E agora, faço um <em>join</em> da base de dados com a base cartográfica. Nosso geocódigo de ligação dos dados tabulares e o mapa será o <code>munic_res</code>.</p>
+<pre class="r"><code>map &lt;- mtq %&gt;% dplyr::left_join(bd)</code></pre>
+<pre><code>## Joining, by = &quot;munic_res&quot;</code></pre>
+<p>Pronto! Agora plotamos nosso mapa. O <code>mapsf</code> possui uma função para cada abordagem na cartografia temática como símbolos proporcionais (que usaremos aqui), mapas coropléticos, mapas de tipologia, símbolos graduados, entre outros. Aqui mostrarei uma visão mais simplificada, mas muito útil e mais elegante do que aqueles “mapas” feitos no <code>ggplot</code>, embora eu use muito.</p>
+<pre class="r"><code># [1]
+mapsf::mf_theme(x = &quot;candy&quot;)
+# [2]
+map %&gt;% 
+  mapsf::mf_map() %&gt;%
+# [3]
+  mapsf::mf_map(var = c(&quot;num_casos&quot;), 
+         type = &quot;prop&quot;,
+         border = &quot;white&quot;,
+         col = &quot;#6B1767&quot;,
+         lwd = 0.5,
+         leg_pos = &quot;topleft&quot;,
+         leg_title = &quot;Número de casos&quot;)
+# [4]
+mapsf::mf_layout(title = &quot;Casos de doença X em Roraima&quot;,
+          arrow = FALSE,
+          frame = TRUE,
+          credits = paste0(&quot;Visualização:\n  Denis de Oliveira Rodrigues
+            Escola Nacional de Saúde Pública Sérgio Arouca\n&quot;,
+                           &quot;mapsf &quot;,
+                           packageVersion(&quot;mapsf&quot;)))
+# [5]
+mapsf::mf_arrow(pos =&#39;topright&#39;, adjust = )</code></pre>
+<p><img src="/post/2021-04-29-mapa-de-simbolos-proporcionais-no-r/index.pt_br_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Bom, explicarei sucintamente as partes do código acima. Coloquei alguns marcadores numerados para facilitar a explicação. No marcador [1] defino o tema. Neste caso, usei o tema <em>candy</em>. No marcador [2] uso a função <code>mf_map</code> para plotar o mapa base. Como bem sabemos (ou deveríamos saber), a montagem de um mapa envolve várias camadas. Esta é a primeira. No marcador [3] temos mais uma camada que, neste caso, está trazendo os dados da variável <em>num_casos</em> e usando o tipo de mapa <code>prop</code>. Eu poderia usar a função <code>mf_prop</code> que daria no mesmo. O símbolo geométrico padrão do tipo <code>prop</code> é o círculo, mas é possível especificar outro. Cores, bordas e tamanho são configuráveis. Aconselho olhar o help para conhecer todos os parâmetros. Notem que já posiciono a legenda no topo à esquerda ( <em>topleft</em>). No marcador [4], eu declaro o layout, colocando título, créditos, escala e o <em>frame</em>, que é uma moldura no conjunto. Notem que preferi desabilitar a seta do norte dentro desta função, pois eu a utilizo de outra forma (marcador [5]). Assim, eu consigo posicioná-la conforme convencionado: escala e seta à direita. Não sei exatamente como essa convenção começou. Só acho que é quase uma boa prática e sigo.</p>
+<p>Gostaria de destacar algumas vantagens deste pacote:</p>
+<ul>
+<li><p>visual agradável e muito bem comportado;</p></li>
+<li><p>podemos usar os temas. Embora não possua um amplo leque de temas, podemos criar e usaá-los de maneira bem simples;</p></li>
+<li><p>podemos usar o <em>pipe</em> do <code>magrittr</code>;</p></li>
+<li><p>temos autonomia para alocar os componentes cartográficos como seta do norte, legenda, título, de uma maneira fácil, relativamente;</p></li>
+<li><p>a legenda fica adequada e própria de um produto cartográfico decente;</p></li>
+<li><p>a programação é, também relativamente, fácil e sem muitos rodeios (ou caixas pretas).</p></li>
+</ul>
+<p>Como desvantagem, já notei que ainda é um pouco lento com bases muito pesadas. Mas tem aí o problema do R também, já que este não tem toda a estrutura dos tradicionais e muito bem conservados sistemas de informação geográfica.</p>
+<p>Bom, era isso que queria mostrar. Sugestão: estudem e usem a cartografia!! Não caiam na tentação de criar mapas de forma fácil mas que não apresentam o objeto de forma intuitiva.</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://denis-or.com.br/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
+              integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw"
+              crossorigin="anonymous"><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js"
+                integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH"
+                crossorigin="anonymous"></script><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+                integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+                crossorigin="anonymous"
+                onload="renderMathInElement(document.body);"></script></body>
+
+</html>
