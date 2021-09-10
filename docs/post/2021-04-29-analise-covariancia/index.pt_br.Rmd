@@ -1,0 +1,129 @@
+---
+title: Testando gráfico
+author: Denis
+date: '2021-04-29'
+slug: []
+categories: []
+tags: []
+Description: ''
+tags = [
+    "thumbnail",
+]
+thumbnail= "images/img_post_covar.png"
+Categories: []
+DisableComments: no
+---
+
+### Avaliando covariância
+
+Aula da Professora Fernanda no Youtube:
+
+
+https://www.youtube.com/watch?v=EyqkuCNgj2Y&ab_channel=FernandaPeres
+```{r}
+dados <- data.frame(
+  stringsAsFactors = T,
+           Sujeito = c(1L,2L,3L,4L,5L,6L,7L,8L,
+                       9L,10L,11L,12L,13L,14L,15L,16L,17L,18L,19L,
+                       20L,21L,22L,23L,24L,25L,26L,27L,28L,29L,30L),
+            Gênero = c("M","F","M","M","F","F",
+                       "M","M","M","M","F","F","F","F","F","M","M","M",
+                       "F","M","M","F","F","F","M","F","F","M","M",
+                       "F"),
+    Grau_Instrução = c("Superior","Superior",
+                       "Superior","Ens Fundamental","Ensino Médio","Superior",
+                       "Ens Fundamental","Superior","Superior","Ensino Médio",
+                       "Superior","Ensino Médio","Ensino Médio","Ensino Médio",
+                       "Ensino Médio","Superior","Superior","Superior",
+                       "Ensino Médio","Ensino Médio","Ens Fundamental",
+                       "Ens Fundamental","Ensino Médio","Superior","Ensino Médio",
+                       "Ens Fundamental","Superior","Ens Fundamental","Superior",
+                       "Superior"),
+          n_Filhos = c(1L,0L,0L,0L,0L,2L,0L,0L,
+                       1L,2L,0L,3L,0L,0L,1L,1L,0L,0L,2L,2L,2L,0L,
+                       0L,2L,4L,1L,1L,0L,0L,1L),
+             Idade = c(31L,25L,33L,20L,23L,37L,
+                       38L,37L,34L,40L,41L,46L,26L,41L,43L,27L,26L,42L,
+                       43L,30L,35L,33L,30L,32L,29L,40L,36L,34L,31L,
+                       35L),
+           Salário = c(8.2,5.3,9.4,2.9,3.7,4.4,
+                       4.7,5.4,5.8,3.2,6,6.9,2,3.4,3.7,4.2,6.4,11.6,
+                       8.6,5.5,6.8,4.1,4.6,6.6,7.3,7.3,8.3,3.8,6.2,8)
+)
+```
+
+```{r echo=TRUE}
+summary(dados)
+```
+
+Neste exemplo, queremos analisar se o grau de instrução desses indivíduos tem efeito sobre os salários, controlando esse efeito pela idade.
+
+Mas, primeiro, vamos analisar os pressupostos de uma análise de covariância. Neste banco temos como variável dependente a variável _Salário_, variável independente _Grau de instrução_ e como covariável _idade_:
+
+1 - vamos verificar se há efeito da variável independente sobre a covariável:
+
+iniciamos com nossa hipótese nula $H_0$: não há efeito da variável independente na covariável (p>0,05).
+
+```{r}
+summary(aov(Idade ~ Grau_Instrução, data = dados))
+```
+
+Dessa forma, temos evidência para não rejeitar $H_0$ e constatar que não há efeito do grau de instrução na idade.
+
+
+2 - verificar se a relação entre a covariável e a variável dependente é linear (VD ~ cov)
+
+```{r message=F}
+ggplot2::ggplot(dados, ggplot2::aes(x = Idade, y = Salário, group = Grau_Instrução, color = Grau_Instrução))+
+  ggplot2::geom_point(size = 2) +
+  ggplot2::geom_smooth(method = "lm", se = F, size = .5)
+
+```
+
+3 - verificar se o efeito da covariável e o mesmo para todos os níveis da variável independente (VD ~ VI * cov). Vamos comparar as inclinações das retas para cada grupo da VI. Ou seja, se houver homogeineidade nos parâmetros da regressão, observaremos retas com inclinações parecidas. 
+```{r}
+summary(aov(Salário ~ Grau_Instrução*Idade, dados))
+```
+```{r}
+car::Anova(aov(Salário ~ Grau_Instrução*Idade, dados), Type = "III")
+```
+
+É necessário que a interação entre grau de instrução e idade não seja significativo. Neste teste, vamos ter a $H_0$ de que há homogeneidade dos parâmetros da regressão (p > 0.05).
+
+
+4 - Verificar se há homogeneidade de variâncias (VD ~ VI)
+
+```{r}
+car::leveneTest(Salário ~ Grau_Instrução, center = mean,  dados)
+```
+
+Temos que a $H_0$ é que as variâncias são homogêneas (P>0.05).
+
+5 -  Ajustar o modelo de ANCOVA (VD ~ cov + VI)
+
+```{r}
+car::Anova(aov(Salário ~ Idade + Grau_Instrução, data = dados), type = "III")
+```
+
+Temos que a $H_0$ é que não há efeito (p >.05). Neste caso, temos o efeito do grau de instrução contralado pela idade. 
+
+
+6 - Verificar a normalidade dos resíduos
+```{r}
+shapiro.test(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)
+```
+
+No teste de shapiro, temos que a $H_0$ define a distribuição do dados como normal (p >0.05).
+
+7 - Verificar se há homocedasticidade e outliers:
+
+```{r}
+boxplot(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)
+```
+
+```{r}
+plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)
+```
+
+Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade, veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando ao contrario, veríamos um funil.
+
