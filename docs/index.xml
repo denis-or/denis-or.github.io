@@ -8,12 +8,21 @@
     <language>pt_br</language>
     <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Curriculo do Denis</title>
+      <link>https://denis-or.com.br/cv_/</link>
+      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/cv_/</guid>
+      <description>link para curriculo teste</description>
+    </item>
+    
+    <item>
       <title>Mapa de símbolos proporcionais no R</title>
       <link>https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/</guid>
-      <description>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas.</description>
+      <description>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas: saúde, economia, ciências sociais.</description>
     </item>
     
     <item>
@@ -54,20 +63,20 @@
     
     <item>
       <title></title>
-      <link>https://denis-or.com.br/cv_/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://denis-or.com.br/cv_/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://denis-or.com.br/experience/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://denis-or.com.br/experience/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://denis-or.com.br/xxxxxx/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/xxxxxx/</guid>
+      <description>Main  Currently a PhD student in Epidemiology in National School of Public Health/Fiocruz Please note that this is a real resume, and I&amp;rsquo;m really looking for a PhD student position at the moment.</description>
     </item>
     
   </channel>

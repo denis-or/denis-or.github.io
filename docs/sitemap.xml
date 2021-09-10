@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://denis-or.com.br/cv_/</loc>
+    <lastmod>2021-08-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://denis-or.com.br/</loc>
     <lastmod>2021-04-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -23,10 +26,10 @@
     <loc>https://denis-or.com.br/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://denis-or.com.br/cv_/</loc>
+    <loc>https://denis-or.com.br/experience/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://denis-or.com.br/experience/</loc>
+    <loc>https://denis-or.com.br/xxxxxx/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://denis-or.com.br/categories/</loc>
