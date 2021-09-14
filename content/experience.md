@@ -8,8 +8,10 @@ date: "2019-02-28"
 description: Currículo vitae
 ---
 
+### Experiência profissional
+
 Minha experiência profissional foi baseada no serviço público, na secretaria
-municipal de saúde de Alfenas, sul de Minas Gerais [Veja Alfenas](https://pt.wikipedia.org/wiki/Alfenas), na qual atuei de 2002 a 2018. Tive oportunidade de atuar em funções como digitador, coordenador e consultor em comissões externas.
+municipal de saúde de Alfenas, sul de Minas Gerais ([Veja Alfenas](https://pt.wikipedia.org/wiki/Alfenas)), na qual atuei de 2002 a 2018. Tive oportunidade de atuar em funções como digitador, coordenador e consultor em comissões externas.
 
 Como digitador, atuei diretamente com os sistemas de informações: SIM, SINASC, SINAN-Net, SINAN-Dengue, SINAN-Influenza, SISVAN, SI-PNI. Em 2020, também estive por um breve período como digitador do E-SUS-VE. Neste periodo, fui me "especializando" em análises de dados com foco em dados e informações de saúde como, por exemplo análises, gráficos comparativos e boletins informativos. Dessa forma, consolidei um conhecimento sobre _Tabwin_, _Tabnet_, _Microsoft Excel_ e _Microsoft Access_. Além disso, desenvolvi pequenos aplicativos online para registro e consultas de vacinas como [Rubéola](http://epidemiologia.alfenas.mg.gov.br/rubeola/) e [Febre Amarela](http://epidemiologia.alfenas.mg.gov.br/fa/).
 
