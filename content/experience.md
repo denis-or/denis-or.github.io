@@ -47,7 +47,7 @@ alguns anos, atuando em investigação de óbito de trabalhadores e acidentes
 registrados no SINAN. Também tive a oportunidade de participar de um projeto
 vencedor da ODM em 2012, na área de prevenção à mortalidade infantil.
 
-Além disso, Desenvolvi pequenos aplicativos online para registro e consultas 
+Além disso, desenvolvi pequenos aplicativos online para registro e consultas 
 de vacinas como [Rubéola](http://epidemiologia.alfenas.mg.gov.br/rubeola/) e [Febre Amarela](http://epidemiologia.alfenas.mg.gov.br/fa/).
 
 Me graduei em geografia pela Universidade Federal de Alfenas (UNIFAL-MG) e 
