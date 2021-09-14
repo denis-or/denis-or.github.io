@@ -17,8 +17,7 @@ SINAN-Net, SINAN-Dengue, SINAN-Influenza, SISVAN, SI-PNI. Em 2020, estive por
 um breve período como digitador do E-SUS-VE.
 
 Estive na coordenação de Vigilância Epidemiológica e Vigilância em Saúde por 
-alguns anos e enfrentei a epidemia de H1N1 em 2009 e epidemias de dengue.
-Junto com a equipe das Vigilâncias, tivemos projetos de grande relevância como:
+alguns anos. Enfrenteamos junto com a equipe das demais Vigilâncias a epidemia de H1N1 em 2009 e epidemias de dengue. Desenvolvemos projetos de grande importância e relevância como:
 
  - [O uso de peixes larvófagos no combate à Dengue;](http://g1.globo.com/mg/sul-de-minas/noticia/2015/12/peixe-e-usado-como-alternativa-no-combate-dengue-em-alfenas-mg.html)
  - [Mutirões de conscientização contra a doença;](http://g1.globo.com/mg/sul-de-minas/noticia/2017/01/funcionarios-e-voluntarios-fazem-mutirao-contra-dengue-em-alfenas.html)
@@ -26,8 +25,8 @@ Junto com a equipe das Vigilâncias, tivemos projetos de grande relevância como
  - [Troca Saudável: troca de depósitos prováveis de focos do mosquito por material escolar](../content/images/troca_saudavel.png)
  - Parcerias com Universidade para participação de palestras e simpósio [2016](https://www.unifenas.br/noticia.asp?note=uni_2368), [2017](https://www.unifenas.br/noticia.asp?note=uni_2640), [2018](https://www.unifenas.br/noticia.asp?note=uni_3009).
  
- Inclusive, tivemos um destaque no Canal Saúde da Fiocruz, em programa Exibido em
- 07/08/2017 [Vídeo Canal Saúde Alfenas](https://www.canalsaude.fiocruz.br/canal/videoAberto/MG-Alfenas-Combate-ao-Aedes-Aegypti-CSE-0104)
+ Inclusive, tivemos um destaque no Canal Saúde da Fiocruz, em programa exibido em
+ 07/08/2017 [Vídeo Canal Saúde Alfenas](https://www.canalsaude.fiocruz.br/canal/videoAberto/MG-Alfenas-Combate-ao-Aedes-Aegypti-CSE-0104).
 
 Também participei ativamente dos Conselhos de Saúde:
 
@@ -35,15 +34,13 @@ Também participei ativamente dos Conselhos de Saúde:
  - Como ministrante de curso [Curso de qualificação de conselheiros municipais](https://saude.mg.gov.br/component/gmg/story/10524-alfenas-realiza-curso-de-qualificacao-de-conselheiros-municipais-de-saude)
  - Como conselheiro [Conferência Municipal de Saúde 2017](https://youtu.be/_hFf0G0U7Y0)
  
-Também tive a oportunidade de participar de um projeto vencedor da ODM em 2012, na área de prevenção à mortalidade infantil, PAGE (Programa de Acompanhamento de Gestantes), em 2011 e 2012.
+Em 2011 e 2012, tive a oportunidade de participar de um projeto [vencedor da 4ª edição Prêmio ODM Brasil pela contribuição para o alcance dos Objetivos de Desenvolvimento do Milênio](http://www.odmbrasil.gov.br/noticias/2012/maio/30-05-2012-organizacoes-sociais-e-prefeituras-recebem-premio-odm-brasil-pela-contribuicao-para-o-alcance-dos-objetivos-de-desenvolvimento-do-milenio) em 2012, na área de prevenção à mortalidade infantil com o PAGE, Programa de Acompanhamento de Gestantes.
 
 Estive como referência da Vigilância da Saúde do Trabalhador por
 alguns anos, atuando em investigação de óbito de trabalhadores e acidentes 
-registrados no SINAN. Implementei a investigação por rumor de mídia, onde todos os acidentes com suspeita de envolvimento de trabalhadores, foram investigados. Adquiri, portanto, uma experiência em epidemiologia de campo.
+registrados no SINAN. Implementei a investigação por rumor de mídia, onde todos osacidentes com suspeita de envolvimento de trabalhadores registrados em sites de notícias (locais ou não), foram realizadas busca ativa em prontuários hospitalares e ambulatoriais e posterior visita domiciliar. Adquiri, portanto, uma experiência em epidemiologia de campo.
 
-No decorrer dos anos, fui me "especializando" em análises de dados com foco em dados e informaçõesde saúde como, por exemplo análises, gráficos comparativos e boletins informativos. Dessa forma, consolidei um conhecimento sobre _Tabwin_, _Tabnet_, _Microsoft Excel_ e _Microsoft Access_.
-
-Além disso, desenvolvi pequenos aplicativos online para registro e consultas de vacinas como [Rubéola](http://epidemiologia.alfenas.mg.gov.br/rubeola/) e [Febre Amarela](http://epidemiologia.alfenas.mg.gov.br/fa/).
+No decorrer dos anos, fui me "especializando" em análises de dados com foco em dados e informaçõesde saúde como, por exemplo análises, gráficos comparativos e boletins informativos. Dessa forma, consolidei um conhecimento sobre _Tabwin_, _Tabnet_, _Microsoft Excel_ e _Microsoft Access_. Além disso, desenvolvi pequenos aplicativos online para registro e consultas de vacinas como [Rubéola](http://epidemiologia.alfenas.mg.gov.br/rubeola/) e [Febre Amarela](http://epidemiologia.alfenas.mg.gov.br/fa/).
 
 
 
