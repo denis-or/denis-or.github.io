@@ -23,7 +23,7 @@ Junto com a equipe das Vigilâncias, tivemos projetos de grande relevância como
  - [O uso de peixes larvófagos](http://g1.globo.com/mg/sul-de-minas/noticia/2015/12/peixe-e-usado-como-alternativa-no-combate-dengue-em-alfenas-mg.html)
  - [Mutirões de conscientização](http://g1.globo.com/mg/sul-de-minas/noticia/2017/01/funcionarios-e-voluntarios-fazem-mutirao-contra-dengue-em-alfenas.html)
  - [Parcerias com o presídio estadual](http://www.alfenas.mg.gov.br/parceria-com-presidio-de-alfenas-fortalece-o-controle-da-dengue/)
- - [Troca Saudável: trocamos depósitos do mosquito por material escolar](images/troca_saudavel.png)
+ - [Troca Saudável: trocamos depósitos do mosquito por material escolar](../content/images/troca_saudavel.png)
  - Parcerias com Universidades para participação de palestras, simpósio, [2016](https://www.unifenas.br/noticia.asp?note=uni_2368), [2017](https://www.unifenas.br/noticia.asp?note=uni_2640), [2018](https://www.unifenas.br/noticia.asp?note=uni_3009)
  
  Inclusive, tivemos um destaque no Canal Saúde da Fiocruz, em programa Exibido em
