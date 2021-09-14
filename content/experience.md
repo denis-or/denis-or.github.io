@@ -24,27 +24,27 @@ Junto com a equipe das Vigilâncias, tivemos projetos de grande relevância como
  - [Mutirões de conscientização contra a doença;](http://g1.globo.com/mg/sul-de-minas/noticia/2017/01/funcionarios-e-voluntarios-fazem-mutirao-contra-dengue-em-alfenas.html)
  - [Parcerias com o presídio estadual;](http://www.alfenas.mg.gov.br/parceria-com-presidio-de-alfenas-fortalece-o-controle-da-dengue/)
  - [Troca Saudável: troca de depósitos prováveis de focos do mosquito por material escolar](../content/images/troca_saudavel.png)
- - Parcerias com Universidades para participação de palestras, simpósio, [2016](https://www.unifenas.br/noticia.asp?note=uni_2368), [2017](https://www.unifenas.br/noticia.asp?note=uni_2640), [2018](https://www.unifenas.br/noticia.asp?note=uni_3009)
+ - Parcerias com Universidade para participação de palestras e simpósio [2016](https://www.unifenas.br/noticia.asp?note=uni_2368), [2017](https://www.unifenas.br/noticia.asp?note=uni_2640), [2018](https://www.unifenas.br/noticia.asp?note=uni_3009).
  
  Inclusive, tivemos um destaque no Canal Saúde da Fiocruz, em programa Exibido em
- 07/08/2017:
-  - [Vídeo Canal Saúde Alfenas](https://www.canalsaude.fiocruz.br/canal/videoAberto/MG-Alfenas-Combate-ao-Aedes-Aegypti-CSE-0104)
+ 07/08/2017 [Vídeo Canal Saúde Alfenas](https://www.canalsaude.fiocruz.br/canal/videoAberto/MG-Alfenas-Combate-ao-Aedes-Aegypti-CSE-0104)
 
 Também participei ativamente dos Conselhos de Saúde:
 
  - Como facilitador [Conferência Estadual de Vigilância em Saúde](http://www.alfenas.mg.gov.br/representantes-de-alfenas-participam-da-i-conferencia-estadual-de-vigilancia-em-saude-de-minas-gerais/)
- 
  - Como ministrante de curso [Curso de qualificação de conselheiros municipais](https://saude.mg.gov.br/component/gmg/story/10524-alfenas-realiza-curso-de-qualificacao-de-conselheiros-municipais-de-saude)
- 
  - Como conselheiro [Conferência Municipal de Saúde 2017](https://youtu.be/_hFf0G0U7Y0)
  
+Também tive a oportunidade de participar de um projeto vencedor da ODM em 2012, na área de prevenção à mortalidade infantil, PAGE (Programa de Acompanhamento de Gestantes), em 2011 e 2012.
+
 Estive como referência da Vigilância da Saúde do Trabalhador por
 alguns anos, atuando em investigação de óbito de trabalhadores e acidentes 
-registrados no SINAN.
+registrados no SINAN. Implementei a investigação por rumor de mídia, onde todos os acidentes com suspeita de envolvimento de trabalhadores, foram investigados. Adquiri, portanto, uma experiência em epidemiologia de campo.
 
-Também tive a oportunidade de participar de um projeto
-vencedor da ODM em 2012, na área de prevenção à mortalidade infantil.
+No decorrer dos anos, fui me "especializando" em análises de dados com foco em dados e informaçõesde saúde como, por exemplo análises, gráficos comparativos e boletins informativos. Dessa forma, consolidei um conhecimento sobre _Tabwin_, _Tabnet_, _Microsoft Excel_ e _Microsoft Access_.
 
-Além disso, desenvolvi pequenos aplicativos online para registro e consultas 
-de vacinas como [Rubéola](http://epidemiologia.alfenas.mg.gov.br/rubeola/) e [Febre Amarela](http://epidemiologia.alfenas.mg.gov.br/fa/).
+Além disso, desenvolvi pequenos aplicativos online para registro e consultas de vacinas como [Rubéola](http://epidemiologia.alfenas.mg.gov.br/rubeola/) e [Febre Amarela](http://epidemiologia.alfenas.mg.gov.br/fa/).
+
+
+
 
