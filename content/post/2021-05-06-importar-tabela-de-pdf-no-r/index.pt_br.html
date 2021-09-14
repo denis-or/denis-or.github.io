@@ -1,0 +1,34 @@
+---
+title: Importar tabela de PDF no R
+author: Denis-OR
+date: '2021-05-06'
+slug: []
+categories:
+  - tabulizer
+  - PDF
+tags: []
+Description: ''
+Tags: []
+Categories: []
+DisableComments: no
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(magrittr)
+library(ggplot2)
+library(gganimate)
+library(tabulizer)</code></pre>
+<pre class="r"><code>url &lt;- &#39;https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/pdfs/energy-economics/statistical-review/bp-stats-review-2021-co2-emissions.pdf&#39;</code></pre>
+<p>Função do <code>Tabulizer</code> <code>extract_tables</code></p>
+<pre class="r"><code>out &lt;- extract_tables(url, pages = 2, output = &quot;data.frame&quot;)</code></pre>

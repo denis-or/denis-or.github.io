@@ -6,7 +6,7 @@
     <description>Recent content on Denis OR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt_br</language>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Curriculo do Denis</title>
       <link>https://denis-or.com.br/cv_/</link>
@@ -14,6 +14,15 @@
       
       <guid>https://denis-or.com.br/cv_/</guid>
       <description>link para curriculo teste</description>
+    </item>
+    
+    <item>
+      <title>Importar tabela de PDF no R</title>
+      <link>https://denis-or.com.br/post/2021-05-06-importar-tabela-de-pdf-no-r/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/post/2021-05-06-importar-tabela-de-pdf-no-r/</guid>
+      <description>library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(magrittr) library(ggplot2) library(gganimate) library(tabulizer) url &amp;lt;- &amp;#39;https://www.</description>
     </item>
     
     <item>
@@ -67,7 +76,7 @@
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://denis-or.com.br/experience/</guid>
-      <description></description>
+      <description>Minha experiência profissional foi baseada no serviço público, na secretaria municipal de saúde de Alfenas, sul de Minas Gerais.</description>
     </item>
     
     <item>

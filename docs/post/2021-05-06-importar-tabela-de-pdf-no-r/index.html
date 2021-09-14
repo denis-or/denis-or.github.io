@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt_br" data-theme=""><head>
-    <title> Denis Rodrigues </title>
+    <title> Denis Rodrigues | Importar tabela de PDF no R </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -45,10 +45,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://denis-or.com.br/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://denis-or.com.br/favicon-16x16.png">
 
-    <link rel="canonical" href="https://denis-or.com.br/">
+    <link rel="canonical" href="https://denis-or.com.br/post/2021-05-06-importar-tabela-de-pdf-no-r/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://denis-or.com.br/index.xml" title="Denis OR" />
     
     
     
@@ -60,8 +59,8 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde."/>
+<meta name="twitter:title" content="Importar tabela de PDF no R"/>
+<meta name="twitter:description" content="library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(magrittr) library(ggplot2) library(gganimate) library(tabulizer) url &lt;- &#39;https://www."/>
 
 
     
@@ -131,7 +130,7 @@
         
         
             
-            <li><a class="current"
+            <li><a 
                    href="/"
                         
                    title="">Inicio</a></li>
@@ -167,102 +166,53 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-
     <div class="post  . ">
-        
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Importar tabela de PDF no R</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Thu, May 6, 2021 
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time"></span>
+                    </div>
+                
+            </div>
 
+            
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(magrittr)
+library(ggplot2)
+library(gganimate)
+library(tabulizer)</code></pre>
+<pre class="r"><code>url &lt;- &#39;https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/pdfs/energy-economics/statistical-review/bp-stats-review-2021-co2-emissions.pdf&#39;</code></pre>
+<p>Função do <code>Tabulizer</code> <code>extract_tables</code></p>
+<pre class="r"><code>out &lt;- extract_tables(url, pages = 2, output = &quot;data.frame&quot;)</code></pre>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
     </div>
 
-    
-    
-
-        <div class="post  . ">
-            
-            <div class="post-title">
-                <h3><a href="/post/2021-05-06-importar-tabela-de-pdf-no-r/">Importar tabela de PDF no R</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part">
-                    <p>library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(magrittr) library(ggplot2) library(gganimate) library(tabulizer) url &lt;- &#39;https://www.</p>
-                    <a href='/post/2021-05-06-importar-tabela-de-pdf-no-r/' class="read_more"></a></div>
-            </div>
-
-            
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Thu, May 6, 2021
-                                             </span>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-        <div class="post  . ">
-            
-            <div class="post-title">
-                <h3><a href="/post/2021-04-29-analise-covariancia/">Análise de covariância</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part">
-                    <p>Acompanhamento da aula da Professora Fernanda, publicada no dia 14/7/20 no Youtube:</p>
-                    <a href='/post/2021-04-29-analise-covariancia/' class="read_more"></a></div>
-            </div>
-
-            
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Thu, Apr 29, 2021
-                                             </span>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-        <div class="post  . ">
-            
-            <div class="post-title">
-                <h3><a href="/post/mapa-de-simbolos-proporcionais-no-r/">Mapa de símbolos proporcionais no R</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part">
-                    <p>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas: saúde, economia, ciências sociais.</p>
-                    <a href='/post/mapa-de-simbolos-proporcionais-no-r/' class="read_more"></a></div>
-            </div>
-
-            
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Thu, Apr 29, 2021
-                                             </span>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    <div class="pagination">
-        
-
-
-    </div>
 
         </div>
     </div>
