@@ -14,15 +14,19 @@ Aside
 Contact info
 ------------------------------------
 
-catoper@gmail.com
+<i class="fa fa-envelope"></i>catoper@gmail.com
+<i class="fa fa-github"></i>https://github.com/denis-or
+
 
 Skills
 ------------------------------------
 
-- One
-- Two
-- Three
-
+Experience in Public
+Health, with an emphasis on 
+Epidemiology, epidemiological 
+surveillance, data analysis, spatial
+data analysis and statistical 
+methods.
 
 Main
 ================================================================================
@@ -30,17 +34,13 @@ Main
 {#title}
 --------------------------------------------------------------------------------
 
-### Atualmente é aluno de doutorado em Epidemiologia pela Escola Nacional de Saúde Pública / Fiocruz
+### Currently a PhD student in Epidemiology at National School of Public Health/Fiocruz
 
-Doutorando em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde
-Pública - ENSP/FIOCRUZ. Mestre em Epidemiologia em Saúde Pública (ENSP/Fiocruz),
-com graduação em Geografia (Bacharelado e Licenciatura) pela Universidade 
-Federal de Alfenas - UNIFAL-MG (2015/2019) e em Tecnologia de Gestão Pública 
-pela Faculdade de Curitiba - Uninter (2008). Possui experiência na área de Saúde
-Pública, com ênfase em Epidemiologia, atuando principalmente com vigilância 
-epidemiológica, análise de dados, análise de dados espaciais e em métodos 
-estatísticos, com conhecimento em Data Science.
-
+PhD student in Epidemiology in Public Health in National School of Public Health
+- ENSP / FIOCRUZ. Master in Epidemiology in Public Health (ENSP / Fiocruz), with
+a degree in Geography (Bachelor and Licentiate Degree) at the Federal University
+of Alfenas - UNIFAL-MG (2015/2019) and in Public Management Technology at the
+Faculty of Curitiba - Uninter (2008).
 
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
