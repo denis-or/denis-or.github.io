@@ -37,5 +37,5 @@ Na área de controle social, participei ativamente dos Conselhos de Saúde:
  - Como ministrante de curso [Curso de qualificação de conselheiros municipais](https://saude.mg.gov.br/component/gmg/story/10524-alfenas-realiza-curso-de-qualificacao-de-conselheiros-municipais-de-saude)
  - Como conselheiro [Conferência Municipal de Saúde 2017](https://youtu.be/_hFf0G0U7Y0)
  
-Como voluntário, atuei de 2015 a 2017 em uma Associação de apoio à pessoas com Esclerose Múlitpla em Minas Gerais, a [AMAPEM](www.amapem.org.br). 
+Como voluntário, atuei de 2015 a 2017 em uma Associação de apoio à pessoas com Esclerose Múlitpla em Minas Gerais, a [AMAPEM](www.amapem.org.br). Foi uma ótima experiência atuar no terceiro setor e entender a forma que o setor público e privado enxergam as associações.
 

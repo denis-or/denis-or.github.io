@@ -14,7 +14,7 @@ Aside
 Contact info
 ------------------------------------
 
-Email, phone number, ...
+catoper@gmail.com
 
 Skills
 ------------------------------------
@@ -30,12 +30,16 @@ Main
 {#title}
 --------------------------------------------------------------------------------
 
-### Currently a PhD student in Epidemiology in National School of Public Health/Fiocruz
+### Atualmente é aluno de doutorado em Epidemiologia pela Escola Nacional de Saúde Pública / Fiocruz
 
-Please note that this is a *real* resume, and I'm really looking for a PhD
-student position at the moment. I made this resume because Yihui asked me
-if I'd like to test the **pagedown** package with my resume. If you are
-interested in my background and skills, please feel free to contact me.
+Doutorando em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde
+Pública - ENSP/FIOCRUZ. Mestre em Epidemiologia em Saúde Pública (ENSP/Fiocruz),
+com graduação em Geografia (Bacharelado e Licenciatura) pela Universidade 
+Federal de Alfenas - UNIFAL-MG (2015/2019) e em Tecnologia de Gestão Pública 
+pela Faculdade de Curitiba - Uninter (2008). Possui experiência na área de Saúde
+Pública, com ênfase em Epidemiologia, atuando principalmente com vigilância 
+epidemiológica, análise de dados, análise de dados espaciais e em métodos 
+estatísticos, com conhecimento em Data Science.
 
 
 Education {data-icon=graduation-cap data-concise=true}
@@ -58,94 +62,17 @@ Public Health
 
 Rio de Janeiro, RJ
 
-2020
+2018 - 2020
 
-Thesis: 
+Thesis: Hospitalizations for Acute Myocardial Infarction and Stroke in the State of Minas Gerais. Spatial pattern of use of health services.
 
 
 ### Federal University of the Alfenas
 
-BS in Geography
+Geography
 
 Alfenas, MG
 
-2019
+2010 - 2015
 
-Thesis: 
-
-
-Professional Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-### Data Scientist, intern
-
-SupStat Inc.
-
-Beijing, China
-
-2014
-
-::: concise
-- Taught R language to beginners. 
-- Wrote Shiny app demos.
-- Converted statistical tutorials from SPSS to R language.
-:::
-
-### Bioinformatician
-
-My Health Gene Technology Co., Ltd.
-
-Beijing, China
-
-2015 - 2016
-
-::: concise
-- Analyzed whole-exome sequencing data. 
-- Wrote analysis pipelines of ChIP-seq, single cell DNA-seq and single cell RNA-seq.
-- Studied tumor metastasis and wrote research reports. 
-- Also did case studies to identify the genetic defect causing rare disease.
-:::
-
-
-Teaching Experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-### Introduction to R Language for Beginners.
-
-Instructor of R and Data Mining Training Courses at SupStat Inc.
-
-Beijing, China
-
-2014
-
-### Computational Biology and Bioinformatics.
-
-Teaching assistant of GBS CB2-201 courses at UAB
-
-AL, USA
-
-2016 - 2017
-
-
-Selected Publications and Posters {data-icon=file}
---------------------------------------------------------------------------------
-
-### Genetic and epigenetic signals are found predictive to the distribution of intra-individual divergence of alternative splicing.
-
-Poster for 2013 International Conference of Genomics
-
-Qingdao, China
-
-2014
-
-**Yu L**, Chen B, Zhang Z.
-
-### ESCRT-0 complex modulates Rbf mutant cell survival by regulating Rhomboid endosomal trafficking and EGFR signaling.
-
-J Cell Sci. 2016 May 15;129(10):2075-84.
-
-N/A
-
-2016 
-
-Sheng Z, **Yu L**, Zhang T, Pei X, Li X, Zhang Z and Du W. 
+Thesis: Region and Health Networks: An Analysis of Regionalization in Southern Minas Gerais
