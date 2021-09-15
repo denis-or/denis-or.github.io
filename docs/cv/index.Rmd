@@ -14,8 +14,9 @@ Aside
 Contact info
 ------------------------------------
 
-<i class="fa fa-envelope"></i>catoper@gmail.com
-<i class="fa fa-github"></i>https://github.com/denis-or
+<i class="fa fa-envelope"></i> catoper@gmail.com
+
+<i class="fa fa-github"></i> https://github.com/denis-or
 
 
 Skills
