@@ -13,6 +13,13 @@ Categories: []
 DisableComments: no
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo      = TRUE, 
+                      warning   = FALSE, 
+                      message   = FALSE, 
+                      fig.align = 'center')
+
+```
 
 ```{r}
 library(dplyr)
@@ -44,7 +51,7 @@ df_out <- as.data.frame(crude_out[[1]])
 ```
 
 
-E aqui temos um ponto interessante. Ao extrairmos a tabela, é possível notar que algumas configurações vêm estranhas. Poderíamos chamar de desconfiguradas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Logo, ao tentarmos encaixá-la em uma estrutura de linhas e colunas, digamos, normal, temos estas dificuldade.
+E aqui temos um ponto interessante. Ao extrairmos a tabela, é possível notar que algumas configurações vêm estranhas. Poderíamos chamar de desconfiguradas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Logo, ao tentarmos encaixá-la em uma estrutura de linhas e colunas, digamos, normal, temos estas dificuldades.
 
 Analisando a tabela, percebemos que as primeiras linhas são o cabeçalho. Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela.
 
@@ -125,7 +132,7 @@ df_co2_l %>% #%>% distinct(Pais) %>% View()
 ```
 
 
-```{r}
+```{r fig.align='center', fig.height=}
 
 top_five <- df_co2_l %>% 
   filter(Ano == 2020) %>% 
