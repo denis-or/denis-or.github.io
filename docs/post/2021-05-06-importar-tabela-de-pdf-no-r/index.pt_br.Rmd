@@ -23,54 +23,64 @@ knitr::opts_chunk$set(echo      = TRUE,
 
 ```
 
+É muito comum, termos a necessidade de extrair alguma informação de um PDF, seja de dados brutos ou de tabelas. Não raras vezes, dá errado. O pacote `tabulizer` é um pacote da linguagem R, disponível no [CRAN](https://cran.r-project.org/package=tabulizer "Link para a página do pacote no CRAN do R") desde 2018. [O pessoal da Curso-R fez um post sobre este pacote também](https://blog.curso-r.com/posts/2021-01-08-tabulizer/ "Link para post no blog da Curso-R"). Sugiro conferirem, até para entenderem a instalação, pois o pacote utiliza a biblioteca \`Tabula\` para extrair tabelas de PDF e depende do \`rJava\` e, por isso, pode ocorrer alguns errinhos marotos.
+
+Bom, nosso intuito aqui é apenas brincar com o pacote e ter uma lista de ferramentas úteis no dia-a-dia do epidemiologista. Embora nosso exemplo seja para área ambiental. Prometo atualizar este post e corrigir este detalhe ou gerar mais um post utilizando algum arquivo de boletim do Ministério da Saúde ou Secretaria Estadual. Juro!
+
+Nosso primeiro passo é carregar algumas bibliotecas úteis. 
+
 ```{r}
 library(dplyr)
 library(magrittr)
 library(ggplot2)
-library(gganimate)
 library(patchwork)
 library(tabulizer)
 ```
+
+Vamos utilizar para o exercício, este pdf disponível anualmente no site 
 
 
 ```{r}
 url <- 'https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/pdfs/energy-economics/statistical-review/bp-stats-review-2021-co2-emissions.pdf'
 ```
 
-Função do `Tabulizer` `extract_tables`
+Função do `Tabulizer`: a `extract_tables`. É aqui que a mágica acontece. 
 
 ```{r}
 crude_out <- tabulizer::extract_tables(url, pages = 2, output = "data.frame")
 ```
 
-
-O objeto `out` é uma lista contendo a estrutura da tabela extraída do _PDF_. Vamos transformar esta estrutura em um dataframe e analisá-la melhor.
-
-
+O objeto `crude_out` é uma lista contendo a estrutura da tabela extraída do *PDF*. Vamos transformar esta estrutura em um dataframe e analisá-la melhor. O primeiro objeto da lista já é nossa tabela.
 
 ```{r}
 df_out <- as.data.frame(crude_out[[1]])
 ```
 
-
 E aqui temos um ponto interessante. Ao extrairmos a tabela, é possível notar que algumas configurações vêm estranhas. Poderíamos chamar de desconfiguradas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Logo, ao tentarmos encaixá-la em uma estrutura de linhas e colunas, digamos, normal, temos estas dificuldades.
 
 Analisando a tabela, percebemos que as primeiras linhas são o cabeçalho. Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela.
 
-
 ```{r}
-head(df_out)
+knitr::kable(
+  head(df_out[1:5]),
+  table.attr = "style='width:100%;margin-left:auto;margin-right: auto;'"
+)
+
 ```
 
-
-Para isso, vamos utilizar a função `colnames`. 
+Para isso, vamos utilizar a função `colnames`.
 
 ```{r}
 colnames(df_out) <- df_out[2,]
-head(df_out)
+
+knitr::kable(
+  head(df_out[1:5]),
+  table.attr = "style='width:100%;margin-left:auto;margin-right: auto;'"
+)
 ```
 
 Depois, deletamos as linhas e colunas indesejadas
+
 ```{r}
 df_co2_w <- df_out[3:85,1:12]
 df_var_co2 <- df_out[3:85,13:14]
@@ -92,7 +102,6 @@ grupo_pais <- c("Brazil","US","Canada","Sweden",
                 "China","Japan","South Africa")
 ```
 
-
 ```{r}
 df_co2_l <- df_co2_w %>%
   tidyr::pivot_longer(cols = "2010":"2020",
@@ -103,6 +112,8 @@ df_co2_l <- df_co2_w %>%
   mutate(Ano = as.integer(Ano)) %>% arrange(desc(CO2_MT))
 ```
 
+
+Vamos visualizar em um gráfico, o que conseguimos extrair da tabela.
 
 ```{r }
 
@@ -126,9 +137,7 @@ df_co2_l %>% #%>% distinct(Pais) %>% View()
   theme(plot.margin = unit(c(0.35, 2, 0.3, 0.35), "cm"),)
 ```
 
-
-Não ficou muito bom. Vamos separar os cinco primeiros dos cinco últimos. 
-
+Não ficou muito bom. Vamos separar os cinco primeiros dos cinco últimos.
 
 ```{r}
 
@@ -158,4 +167,3 @@ gg2 <- ggplot(data = df_co2_l %>% filter(Pais %in% top_bottom),
 
 gg1/gg2
 ```
-

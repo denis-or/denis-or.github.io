@@ -60,7 +60,7 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Importar tabela de PDF no R"/>
-<meta name="twitter:description" content="library(dplyr) library(magrittr) library(ggplot2) library(gganimate) library(patchwork) library(tabulizer) url &lt;- &#39;https://www."/>
+<meta name="twitter:description" content="É muito comum, termos a necessidade de extrair alguma informação de um PDF, seja de dados brutos ou de tabelas."/>
 
 
     
@@ -186,51 +186,143 @@
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
+<p>É muito comum, termos a necessidade de extrair alguma informação de um PDF, seja de dados brutos ou de tabelas. Não raras vezes, dá errado. O pacote <code>tabulizer</code> é um pacote da linguagem R, disponível no <a href="https://cran.r-project.org/package=tabulizer" title="Link para a página do pacote no CRAN do R">CRAN</a> desde 2018. <a href="https://blog.curso-r.com/posts/2021-01-08-tabulizer/" title="Link para post no blog da Curso-R">O pessoal da Curso-R fez um post sobre este pacote também</a>. Sugiro conferirem, até para entenderem a instalação, pois o pacote utiliza a biblioteca `Tabula` para extrair tabelas de PDF e depende do `rJava` e, por isso, pode ocorrer alguns errinhos marotos.</p>
+<p>Bom, nosso intuito aqui é apenas brincar com o pacote e ter uma lista de ferramentas úteis no dia-a-dia do epidemiologista. Embora nosso exemplo seja para área ambiental. Prometo atualizar este post e corrigir este detalhe ou gerar mais um post utilizando algum arquivo de boletim do Ministério da Saúde ou Secretaria Estadual. Juro!</p>
+<p>Nosso primeiro passo é carregar algumas bibliotecas úteis.</p>
 <pre class="r"><code>library(dplyr)
 library(magrittr)
 library(ggplot2)
-library(gganimate)
 library(patchwork)
 library(tabulizer)</code></pre>
+<p>Vamos utilizar para o exercício, este pdf disponível anualmente no site</p>
 <pre class="r"><code>url &lt;- &#39;https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/pdfs/energy-economics/statistical-review/bp-stats-review-2021-co2-emissions.pdf&#39;</code></pre>
-<p>Função do <code>Tabulizer</code> <code>extract_tables</code></p>
+<p>Função do <code>Tabulizer</code>: a <code>extract_tables</code>. É aqui que a mágica acontece.</p>
 <pre class="r"><code>crude_out &lt;- tabulizer::extract_tables(url, pages = 2, output = &quot;data.frame&quot;)</code></pre>
-<p>O objeto <code>out</code> é uma lista contendo a estrutura da tabela extraída do <em>PDF</em>. Vamos transformar esta estrutura em um dataframe e analisá-la melhor.</p>
+<p>O objeto <code>crude_out</code> é uma lista contendo a estrutura da tabela extraída do <em>PDF</em>. Vamos transformar esta estrutura em um dataframe e analisá-la melhor. O primeiro objeto da lista já é nossa tabela.</p>
 <pre class="r"><code>df_out &lt;- as.data.frame(crude_out[[1]])</code></pre>
 <p>E aqui temos um ponto interessante. Ao extrairmos a tabela, é possível notar que algumas configurações vêm estranhas. Poderíamos chamar de desconfiguradas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Logo, ao tentarmos encaixá-la em uma estrutura de linhas e colunas, digamos, normal, temos estas dificuldades.</p>
 <p>Analisando a tabela, percebemos que as primeiras linhas são o cabeçalho. Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela.</p>
-<pre class="r"><code>head(df_out)</code></pre>
-<pre><code>##                                  X    X.1    X.2    X.3    X.4    X.5    X.6
-## 1                                      NA     NA     NA     NA     NA     NA
-## 2 Million tonnes of carbon dioxide 2010.0 2011.0 2012.0 2013.0 2014.0 2015.0
-## 3                           Canada  550.1  554.7  551.1  564.6  571.8  570.2
-## 4                           Mexico  454.8  473.0  476.7  483.2  471.2  475.2
-## 5                               US 5495.0 5348.4 5101.5 5268.3 5277.6 5165.6
-## 6              Total North America 6499.9 6376.1 6129.4 6316.1 6320.5 6211.0
-##      X.7    X.8    X.9   X.10   X.11 Growth.rate.per.annum  X.12
-## 1     NA     NA     NA     NA     NA                       Share
-## 2 2016.0 2017.0 2018.0 2019.0 2020.0          2020 2009-19  2020
-## 3  553.3  565.9  576.2  578.0  517.7           -10.7% 0.8%  1.6%
-## 4  480.4  486.1  477.1  459.8  373.2           -19.0% 0.1%  1.2%
-## 5 5060.8 5003.2 5166.0 5029.4 4457.2          -11.6% -0.5% 13.8%
-## 6 6094.5 6055.2 6219.4 6067.1 5348.1          -12.1% -0.4% 16.6%</code></pre>
+<pre class="r"><code>knitr::kable(
+  head(df_out[1:5]),
+  table.attr = &quot;style=&#39;width:100%;margin-left:auto;margin-right: auto;&#39;&quot;
+)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">X</th>
+<th align="right">X.1</th>
+<th align="right">X.2</th>
+<th align="right">X.3</th>
+<th align="right">X.4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Million tonnes of carbon dioxide</td>
+<td align="right">2010.0</td>
+<td align="right">2011.0</td>
+<td align="right">2012.0</td>
+<td align="right">2013.0</td>
+</tr>
+<tr class="odd">
+<td align="left">Canada</td>
+<td align="right">550.1</td>
+<td align="right">554.7</td>
+<td align="right">551.1</td>
+<td align="right">564.6</td>
+</tr>
+<tr class="even">
+<td align="left">Mexico</td>
+<td align="right">454.8</td>
+<td align="right">473.0</td>
+<td align="right">476.7</td>
+<td align="right">483.2</td>
+</tr>
+<tr class="odd">
+<td align="left">US</td>
+<td align="right">5495.0</td>
+<td align="right">5348.4</td>
+<td align="right">5101.5</td>
+<td align="right">5268.3</td>
+</tr>
+<tr class="even">
+<td align="left">Total North America</td>
+<td align="right">6499.9</td>
+<td align="right">6376.1</td>
+<td align="right">6129.4</td>
+<td align="right">6316.1</td>
+</tr>
+</tbody>
+</table>
 <p>Para isso, vamos utilizar a função <code>colnames</code>.</p>
 <pre class="r"><code>colnames(df_out) &lt;- df_out[2,]
-head(df_out)</code></pre>
-<pre><code>##   Million tonnes of carbon dioxide   2010   2011   2012   2013   2014   2015
-## 1                                      NA     NA     NA     NA     NA     NA
-## 2 Million tonnes of carbon dioxide 2010.0 2011.0 2012.0 2013.0 2014.0 2015.0
-## 3                           Canada  550.1  554.7  551.1  564.6  571.8  570.2
-## 4                           Mexico  454.8  473.0  476.7  483.2  471.2  475.2
-## 5                               US 5495.0 5348.4 5101.5 5268.3 5277.6 5165.6
-## 6              Total North America 6499.9 6376.1 6129.4 6316.1 6320.5 6211.0
-##     2016   2017   2018   2019   2020 2020 2009-19  2020
-## 1     NA     NA     NA     NA     NA              Share
-## 2 2016.0 2017.0 2018.0 2019.0 2020.0 2020 2009-19  2020
-## 3  553.3  565.9  576.2  578.0  517.7  -10.7% 0.8%  1.6%
-## 4  480.4  486.1  477.1  459.8  373.2  -19.0% 0.1%  1.2%
-## 5 5060.8 5003.2 5166.0 5029.4 4457.2 -11.6% -0.5% 13.8%
-## 6 6094.5 6055.2 6219.4 6067.1 5348.1 -12.1% -0.4% 16.6%</code></pre>
+
+knitr::kable(
+  head(df_out[1:5]),
+  table.attr = &quot;style=&#39;width:100%;margin-left:auto;margin-right: auto;&#39;&quot;
+)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Million tonnes of carbon dioxide</th>
+<th align="right">2010</th>
+<th align="right">2011</th>
+<th align="right">2012</th>
+<th align="right">2013</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Million tonnes of carbon dioxide</td>
+<td align="right">2010.0</td>
+<td align="right">2011.0</td>
+<td align="right">2012.0</td>
+<td align="right">2013.0</td>
+</tr>
+<tr class="odd">
+<td align="left">Canada</td>
+<td align="right">550.1</td>
+<td align="right">554.7</td>
+<td align="right">551.1</td>
+<td align="right">564.6</td>
+</tr>
+<tr class="even">
+<td align="left">Mexico</td>
+<td align="right">454.8</td>
+<td align="right">473.0</td>
+<td align="right">476.7</td>
+<td align="right">483.2</td>
+</tr>
+<tr class="odd">
+<td align="left">US</td>
+<td align="right">5495.0</td>
+<td align="right">5348.4</td>
+<td align="right">5101.5</td>
+<td align="right">5268.3</td>
+</tr>
+<tr class="even">
+<td align="left">Total North America</td>
+<td align="right">6499.9</td>
+<td align="right">6376.1</td>
+<td align="right">6129.4</td>
+<td align="right">6316.1</td>
+</tr>
+</tbody>
+</table>
 <p>Depois, deletamos as linhas e colunas indesejadas</p>
 <pre class="r"><code>df_co2_w &lt;- df_out[3:85,1:12]
 df_var_co2 &lt;- df_out[3:85,13:14]
@@ -253,6 +345,7 @@ df_var_co2 &lt;- tidyr::separate(
   rename(Pais = `Million tonnes of carbon dioxide`) %&gt;%
   filter(!stringr::str_detect(Pais, &quot;Total|Non|which|Other|European Union&quot;)) %&gt;%
   mutate(Ano = as.integer(Ano)) %&gt;% arrange(desc(CO2_MT))</code></pre>
+<p>Vamos visualizar em um gráfico, o que conseguimos extrair da tabela.</p>
 <pre class="r"><code>df_co2_l %&gt;% #%&gt;% distinct(Pais) %&gt;% View()
   ggplot(aes(Ano, CO2_MT, group = Pais, color = Pais)) +
   geom_line(show.legend = F) +
