@@ -13,7 +13,7 @@
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://denis-or.com.br/post/2021-05-06-importar-tabela-de-pdf-no-r/</guid>
-      <description>library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(magrittr) library(ggplot2) library(gganimate) library(tabulizer) url &amp;lt;- &amp;#39;https://www.</description>
+      <description>library(dplyr) library(magrittr) library(ggplot2) library(gganimate) library(patchwork) library(tabulizer) url &amp;lt;- &amp;#39;https://www.</description>
     </item>
     
     <item>

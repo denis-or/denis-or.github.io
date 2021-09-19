@@ -17,7 +17,9 @@ DisableComments: no
 knitr::opts_chunk$set(echo      = TRUE, 
                       warning   = FALSE, 
                       message   = FALSE, 
-                      fig.align = 'center')
+                      fig.align = 'center',
+                      fig.height=6,
+                      fig.width=9)
 
 ```
 
@@ -82,7 +84,7 @@ df_var_co2 <- tidyr::separate(
   tibble::add_column(var_2020 = df_var_co2$`2020`)
 ```
 
-Vamos focar em alguns países:
+Vamos focar em alguns países, de forma arbitrária:
 
 ```{r}
 grupo_pais <- c("Brazil","US","Canada","Sweden",
@@ -102,7 +104,7 @@ df_co2_l <- df_co2_w %>%
 ```
 
 
-```{r}
+```{r }
 
 df_co2_l %>% #%>% distinct(Pais) %>% View()
   ggplot(aes(Ano, CO2_MT, group = Pais, color = Pais)) +
@@ -121,40 +123,38 @@ df_co2_l %>% #%>% distinct(Pais) %>% View()
   scale_x_continuous(breaks = seq(2010, 2020, 1), expand = c(0.01, 0)) +
   expand_limits(x = 2022) +
   theme_minimal() +
-  theme(
-    plot.margin = unit(c(0.35, 2, 0.3, 0.35), "cm"),
-  )
+  theme(plot.margin = unit(c(0.35, 2, 0.3, 0.35), "cm"),)
 ```
+
+
+Não ficou muito bom. Vamos separar os cinco primeiros dos cinco últimos. 
+
 
 ```{r}
 
-
-```
-
-
-```{r fig.align='center', fig.height=}
-
-top_five <- df_co2_l %>% 
-  filter(Ano == 2020) %>% 
-  head(5) %>% 
+top_five <- df_co2_l %>%
+  filter(Ano == 2020) %>%
+  head(5) %>%
   pull(Pais)
 
-top_bottom <- df_co2_l %>% 
-  filter(Ano == 2020) %>% 
-  tail(5) %>% 
+top_bottom <- df_co2_l %>%
+  filter(Ano == 2020) %>%
+  tail(5) %>%
   pull(Pais)
 
-gg1 <- ggplot(data = df_co2_l %>% filter(Pais %in% top_five), 
-       aes(Ano, CO2_MT, group = Pais, color = Pais)) +
+gg1 <- ggplot(data = df_co2_l %>% filter(Pais %in% top_five),
+              aes(Ano, CO2_MT, group = Pais, color = Pais)) +
   geom_line() +
   geom_point(size = 2) +
-  labs(color = "Top five")
+  labs(color = "Top five") +
+  theme_minimal()
 
-gg2 <- ggplot(data = df_co2_l %>% filter(Pais %in% top_bottom), 
-       aes(Ano, CO2_MT, group = Pais, color = Pais)) +
+gg2 <- ggplot(data = df_co2_l %>% filter(Pais %in% top_bottom),
+              aes(Ano, CO2_MT, group = Pais, color = Pais)) +
   geom_line() +
   geom_point(size = 2) +
-  labs(color = "Bottom five")
+  labs(color = "Bottom five") +
+  theme_minimal()
 
 gg1/gg2
 ```
