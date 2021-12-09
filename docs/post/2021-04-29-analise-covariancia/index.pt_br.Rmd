@@ -1,12 +1,17 @@
 ---
-title: Análise de covariância
-author: Denis
+title: "Análise de covariância"
+author: "Denis OR"
 date: '2021-04-29'
-slug: []
-categories: []
-tags: []
-Description: ''
-Categories: []
+image: "images/post_cov.png"
+categories:
+  - R
+  - Visualização de dados
+  - car
+  - ggplot2
+  - rstats
+  
+# thumbnail: "images/new_image.png"
+Description: 'Análise de covariância no R'
 DisableComments: no
 ---
 
@@ -70,7 +75,15 @@ Dessa forma, temos evidência para não rejeitar $H_0$ e constatar que não há 
 2 - verificar se a relação entre a covariável e a variável dependente é linear (VD ~ cov)
 
 ```{r message=F}
-ggplot2::ggplot(dados, ggplot2::aes(x = Idade, y = Salário, group = Grau_Instrução, color = Grau_Instrução))+
+ggplot2::ggplot(
+  dados,
+  ggplot2::aes(
+    x = Idade,
+    y = Salário,
+    group = Grau_Instrução,
+    color = Grau_Instrução
+  )
+) +
   ggplot2::geom_point(size = 2) +
   ggplot2::geom_smooth(method = "lm", se = F, size = .5)
 
@@ -123,3 +136,6 @@ plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)
 
 Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade, veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando ao contrario, veríamos um funil.
 
+Finalizo aqui os ensinamentos da Profa. Fernanda e espero que seja útil para vocês.
+
+Bom trabalho!

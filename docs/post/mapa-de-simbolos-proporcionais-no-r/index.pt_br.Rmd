@@ -1,6 +1,6 @@
 ---
-title: Mapa de símbolos proporcionais no R
-author: Denis
+title: "Mapa de símbolos proporcionais no R"
+author: "Denis OR"
 date: '2021-04-29'
 image: "images/post_mapas_prop.png"
 slug: mapa-de-simbolos-proporcionais-no-r
@@ -110,3 +110,6 @@ Gostaria de destacar algumas vantagens deste pacote:
 Como desvantagem, já notei que ainda é um pouco lento com bases muito pesadas. Mas tem aí o problema do R também, já que este não tem toda a estrutura dos tradicionais e muito bem conservados sistemas de informação geográfica.
 
 Bom, era isso que queria mostrar. Sugestão: estudem e usem a cartografia!! Não caiam na tentação de criar mapas de forma fácil mas que não apresentam o objeto de forma intuitiva.
+
+
+Bom trabalho!

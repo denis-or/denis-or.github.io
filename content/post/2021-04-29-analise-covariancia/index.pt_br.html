@@ -1,12 +1,17 @@
 ---
-title: Análise de covariância
-author: Denis
+title: "Análise de covariância"
+author: "Denis OR"
 date: '2021-04-29'
-slug: []
-categories: []
-tags: []
-Description: ''
-Categories: []
+image: "images/post_cov.png"
+categories:
+  - R
+  - Visualização de dados
+  - car
+  - ggplot2
+  - rstats
+  
+# thumbnail: "images/new_image.png"
+Description: 'Análise de covariância no R'
 DisableComments: no
 ---
 
@@ -69,7 +74,15 @@ DisableComments: no
 ## Residuals      27 1215.4   45.02</code></pre>
 <p>Dessa forma, temos evidência para não rejeitar <span class="math inline">\(H_0\)</span> e constatar que não há efeito do grau de instrução na idade.</p>
 <p>2 - verificar se a relação entre a covariável e a variável dependente é linear (VD ~ cov)</p>
-<pre class="r"><code>ggplot2::ggplot(dados, ggplot2::aes(x = Idade, y = Salário, group = Grau_Instrução, color = Grau_Instrução))+
+<pre class="r"><code>ggplot2::ggplot(
+  dados,
+  ggplot2::aes(
+    x = Idade,
+    y = Salário,
+    group = Grau_Instrução,
+    color = Grau_Instrução
+  )
+) +
   ggplot2::geom_point(size = 2) +
   ggplot2::geom_smooth(method = &quot;lm&quot;, se = F, size = .5)</code></pre>
 <p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
@@ -128,3 +141,5 @@ DisableComments: no
 <pre class="r"><code>plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)</code></pre>
 <p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade, veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando ao contrario, veríamos um funil.</p>
+<p>Finalizo aqui os ensinamentos da Profa. Fernanda e espero que seja útil para vocês.</p>
+<p>Bom trabalho!</p>

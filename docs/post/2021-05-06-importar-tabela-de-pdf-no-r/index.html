@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt_br" data-theme=""><head>
-    <title> Denis Rodrigues | Importar tabela de PDF no R </title>
+    <title> Denis Rodrigues | Mapa de símbolos proporcionais no R </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde.">
+    <meta name="description" content="Exemplo de uso do Tabulizer ">
     
     <link rel="stylesheet"
           href="https://denis-or.com.br/css/style.min.ec90534bd483a69c99d31feecb66a42ba1b16cc35c9e70784530296b76927163.css"
@@ -59,8 +59,8 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Importar tabela de PDF no R"/>
-<meta name="twitter:description" content="É muito comum, termos a necessidade de extrair alguma informação de um PDF, seja de dados brutos ou de tabelas."/>
+<meta name="twitter:title" content="Mapa de símbolos proporcionais no R"/>
+<meta name="twitter:description" content="Exemplo de uso do Tabulizer "/>
 
 
     
@@ -176,7 +176,7 @@
         <div class="post-content">
             
             <div class="post-title">
-                <h3>Importar tabela de PDF no R</h3>
+                <h3>Mapa de símbolos proporcionais no R</h3>
                 
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
@@ -354,9 +354,11 @@ df_var_co2 &lt;- tidyr::separate(
   dplyr::arrange(desc(CO2_MT))</code></pre>
 <p>Vamos visualizar em um gráfico, o que conseguimos extrair da tabela.</p>
 <pre class="r"><code>df_co2_l %&gt;% #%&gt;% distinct(Pais) %&gt;% View()
-  ggplot2::ggplot(
-    ggplot2::aes(Ano, CO2_MT, group = Pais, color = Pais)
-    ) +
+  ggplot2::ggplot(ggplot2::aes(
+    Ano,
+    CO2_MT,
+    group = Pais, 
+    color = Pais)) +
   ggplot2::geom_line(show.legend = F) +
   ggplot2::geom_point(size = 2, show.legend = F) +
   ggplot2::geom_text(
@@ -369,12 +371,11 @@ df_var_co2 &lt;- tidyr::separate(
     show.legend = F
   ) +
   ggplot2::scale_y_log10() +
-  ggplot2::scale_x_continuous(
-    breaks = seq(2010, 2020, 1),
-    expand = c(0.01, 0)) +
+  ggplot2::scale_x_continuous(breaks = seq(2010, 2020, 1),
+                              expand = c(0.01, 0)) +
   ggplot2::expand_limits(x = 2022) +
   ggplot2::theme_minimal() +
-  ggplot2::theme(plot.margin =ggplot2::unit(c(0.35, 2, 0.3, 0.35), &quot;cm&quot;),)</code></pre>
+  ggplot2::theme(plot.margin = ggplot2::unit(c(0.35, 2, 0.3, 0.35), &quot;cm&quot;))</code></pre>
 <p><img src="/post/2021-05-06-importar-tabela-de-pdf-no-r/index.pt_br_files/figure-html/unnamed-chunk-10-1.png" width="864" style="display: block; margin: auto;" /></p>
 <p>Não ficou muito bom. Vamos separar os cinco primeiros dos cinco últimos.</p>
 <pre class="r"><code>top_five &lt;- df_co2_l %&gt;%
@@ -404,10 +405,11 @@ gg2 &lt;-  ggplot2::ggplot(data = dplyr::filter(df_co2_l, Pais %in% top_bottom),
 gg1/gg2</code></pre>
 <p><img src="/post/2021-05-06-importar-tabela-de-pdf-no-r/index.pt_br_files/figure-html/unnamed-chunk-11-1.png" width="864" style="display: block; margin: auto;" /></p>
 <p>Parece que agora ficou um pouco melhor. Contudo a ideia era falar sobre o uso do pacote que extrai a tabela do PDF. Ele ainda tem várias funcionalidades bacanerrímas. Precisa explorá-lo.</p>
+<p>Bom trabalho!</p>
 </div>
         <div class="post-footer">
             <div class="info">
-                
+                <span class="separator"><a class="category" href="/categories/r/">R</a><a class="category" href="/categories/visualiza%C3%A7%C3%A3o-de-dados/">Visualização de dados</a><a class="category" href="/categories/tabulizer/">tabulizer</a><a class="category" href="/categories/janitor/">janitor</a><a class="category" href="/categories/dplyr/">dplyr</a><a class="category" href="/categories/ggplot2/">ggplot2</a><a class="category" href="/categories/rstats/">rstats</a></span>
                 
             </div>
         </div>

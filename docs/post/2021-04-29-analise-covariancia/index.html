@@ -4,7 +4,7 @@
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde.">
+    <meta name="description" content="Análise de covariância no R">
     
     <link rel="stylesheet"
           href="https://denis-or.com.br/css/style.min.ec90534bd483a69c99d31feecb66a42ba1b16cc35c9e70784530296b76927163.css"
@@ -60,7 +60,7 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Análise de covariância"/>
-<meta name="twitter:description" content="Acompanhamento da aula da Professora Fernanda, publicada no dia 14/7/20 no Youtube:"/>
+<meta name="twitter:description" content="Análise de covariância no R"/>
 
 
     
@@ -248,7 +248,15 @@
 ## Residuals      27 1215.4   45.02</code></pre>
 <p>Dessa forma, temos evidência para não rejeitar <span class="math inline">\(H_0\)</span> e constatar que não há efeito do grau de instrução na idade.</p>
 <p>2 - verificar se a relação entre a covariável e a variável dependente é linear (VD ~ cov)</p>
-<pre class="r"><code>ggplot2::ggplot(dados, ggplot2::aes(x = Idade, y = Salário, group = Grau_Instrução, color = Grau_Instrução))+
+<pre class="r"><code>ggplot2::ggplot(
+  dados,
+  ggplot2::aes(
+    x = Idade,
+    y = Salário,
+    group = Grau_Instrução,
+    color = Grau_Instrução
+  )
+) +
   ggplot2::geom_point(size = 2) +
   ggplot2::geom_smooth(method = &quot;lm&quot;, se = F, size = .5)</code></pre>
 <p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
@@ -307,10 +315,12 @@
 <pre class="r"><code>plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)</code></pre>
 <p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade, veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando ao contrario, veríamos um funil.</p>
+<p>Finalizo aqui os ensinamentos da Profa. Fernanda e espero que seja útil para vocês.</p>
+<p>Bom trabalho!</p>
 </div>
         <div class="post-footer">
             <div class="info">
-                
+                <span class="separator"><a class="category" href="/categories/r/">R</a><a class="category" href="/categories/visualiza%C3%A7%C3%A3o-de-dados/">Visualização de dados</a><a class="category" href="/categories/car/">car</a><a class="category" href="/categories/ggplot2/">ggplot2</a><a class="category" href="/categories/rstats/">rstats</a></span>
                 
             </div>
         </div>

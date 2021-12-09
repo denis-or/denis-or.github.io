@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ggplot2 on Denis OR</title>
-    <link>https://denis-or.com.br/categories/ggplot2/</link>
-    <description>Recent content in ggplot2 on Denis OR</description>
+    <title>rstats on Denis OR</title>
+    <link>https://denis-or.com.br/categories/rstats/</link>
+    <description>Recent content in rstats on Denis OR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt_br</language>
-    <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/categories/ggplot2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/categories/rstats/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Importar tabela de PDF no R - Parte 2</title>
       <link>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</link>
@@ -32,6 +32,15 @@
       
       <guid>https://denis-or.com.br/post/2021-04-29-analise-covariancia/</guid>
       <description>Acompanhamento da aula da Professora Fernanda, publicada no dia 14/7/20 no Youtube:</description>
+    </item>
+    
+    <item>
+      <title>Mapa de símbolos proporcionais no R</title>
+      <link>https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/post/mapa-de-simbolos-proporcionais-no-r/</guid>
+      <description>Tenho notado uma certa popularização de produtos cartográficos que, de alguma forma, têm chegado em diversas áreas: saúde, economia, ciências sociais.</description>
     </item>
     
   </channel>
