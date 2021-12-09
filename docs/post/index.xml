@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Denis OR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt_br</language>
-    <lastBuildDate>Thu, 06 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Importar tabela de PDF no R - Parte 2</title>
+      <link>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</guid>
+      <description>Na primeira parte do post que eu utilizei o Tabulizer, lá no começo do ano, mostrei a função extract_tables, a qual repito aqui.</description>
+    </item>
+    
     <item>
       <title>Importar tabela de PDF no R</title>
       <link>https://denis-or.com.br/post/2021-05-06-importar-tabela-de-pdf-no-r/</link>

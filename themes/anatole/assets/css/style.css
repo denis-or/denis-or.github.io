@@ -473,6 +473,7 @@ a:active {
 .post .post-footer .meta a {
     text-decoration: none;
     color: var(--body-color);
+    padding-right: 10px;
 }
 
 .post .post-footer .meta a:hover {
@@ -922,6 +923,14 @@ print {
 
     .post-title h3 {
         line-height: 1.6;
+    }
+    /* denis */
+    .post-title {
+        width: 55%;
+    }
+
+    .post-content{
+        width: 50%;
     }
 
     .content {

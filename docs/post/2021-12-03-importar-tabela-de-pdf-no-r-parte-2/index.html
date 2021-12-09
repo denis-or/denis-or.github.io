@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt_br" data-theme=""><head>
+    <title> Denis Rodrigues | Importar tabela de PDF no R - Parte 2 </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="teste">
+    
+    <link rel="stylesheet"
+          href="https://denis-or.com.br/css/style.min.ec90534bd483a69c99d31feecb66a42ba1b16cc35c9e70784530296b76927163.css"
+          integrity="sha256-7JBTS9SDppyZ0x/uy2akK6GxbMNcnnB4RTApa3aScWM="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://denis-or.com.br/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://denis-or.com.br/css/resume_adap.min.4760408459b1b5dcd81717bc97f4e34464409eccc52e2c22a81df3c9cedde610.css"
+        integrity="sha256-R2BAhFmxtdzYFxe8l/TjRGRAnszFLiwiqB3zyc7d5hA="
+        crossorigin="anonymous"
+        media="screen" />
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://denis-or.com.br/css/style.min.ec90534bd483a69c99d31feecb66a42ba1b16cc35c9e70784530296b76927163.css"
+        integrity="sha256-7JBTS9SDppyZ0x/uy2akK6GxbMNcnnB4RTApa3aScWM="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://denis-or.com.br/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://denis-or.com.br/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://denis-or.com.br/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://denis-or.com.br/favicon-16x16.png">
+
+    <link rel="canonical" href="https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://denis-or.com.br/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Importar tabela de PDF no R - Parte 2"/>
+<meta name="twitter:description" content="teste"/>
+
+
+    
+
+</head>
+<body><div class="sidebar . ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://denis-or.com.br/images/pp.jpg" alt="profile picture">
+            <h3 title=""><a href="/">Denis OR</a></h3>
+            <div class="description">
+                <p>Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde.</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/denis-or/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0003-3748-876X" rel="me" aria-label="Orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="http://lattes.cnpq.br/7838408308841051" rel="me" aria-label="lattes">
+                    <i class="fas fa-graduation-cap fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/denis-or" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.instagram.com/catoper.mg/" rel="me" aria-label="instagram">
+                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://twitter.com/Catoper" rel="me" aria-label="twitter">
+                    <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:catoper@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Denis Rodrigues  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  . ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Inicio</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Blog</a></li>
+        
+            
+            <li><a 
+                   href="/cv_/"
+                        
+                   title="">Currículo</a></li>
+        
+            
+            <li><a 
+                   href="/experience/"
+                        
+                   title="">Experiência Profissional</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">Sobre</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  . ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Importar tabela de PDF no R - Parte 2</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Fri, Dec 3, 2021 
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time"></span>
+                    </div>
+                
+            </div>
+
+            
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Na primeira parte do post que eu utilizei o <code>Tabulizer</code>, lá no começo do ano, mostrei a função <code>extract_tables</code>, a qual repito aqui. Um <em>plus</em> em referência à primeira postagem é que aqui veremos o gráfico chamado <strong>aluvial</strong>.</p>
+<p>Como exemplo, vou utilizar o restado do processo seletivo da Escola Nacional de Saúde Pública (ENSP) para o programa de Saúde Pública, turma 2022. Neste processo, os candidatos realizaram duas provas e utilizaremos as notas em cada prova para nosso gráfico.</p>
+<p>Primeiro, vamos olhar a formatação da tabela do <em>pdf</em> :</p>
+<center>
+<p><img src="/images/post_prova_ensp.png" /></p>
+</center>
+<p>Este processo seletivo, como todo ato de ofício público, está publicizado no site da ENSP. Os nomes dos candidatos estão “protegidos” pelo código de inscrição, embora não seja ilegal a publicização dos nomes.</p>
+<p>Percebemos que nossa tabela tem três colunas, sendo a primeira referente a indexação do candidato, a segunda a nota na etapa, na qual o processo denomina etapa II, e a terceira coluna seria a nota na etapa III.</p>
+<p>Vamos extrair esta tabela diretamente do arquivo:</p>
+<pre class="r"><code>url &lt;- &#39;http://ensino.ensp.fiocruz.br/documentos_upload/Resultado_das_ETAPAS_II_e_III_Prova_Espec%C3%ADfica_Doutorado_SP.pdf&#39;
+
+tab &lt;- tabulizer::extract_tables(url)</code></pre>
+<p>Vamos avaliar o que conseguimos de retorno:</p>
+<pre class="r"><code>dplyr::glimpse(tab)</code></pre>
+<pre><code>## List of 2
+##  $ : chr [1:34, 1:3] &quot;No Inscrição&quot; &quot;Plataforma SIGA&quot; &quot;166398-012021&quot; &quot;166442-012021&quot; ...
+##  $ : chr [1:23, 1:3] &quot;No Inscrição&quot; &quot;Plataforma SIGA&quot; &quot;167200-012021&quot; &quot;167206-012021&quot; ...</code></pre>
+<p>A função <code>extrac_tables</code> possui um parâmetro chamado <em>output</em> que <u>tenta</u> converter o resultado retornado em <em>data.frame</em> (entre outros formatos). Maaas, vamos dar uma volta para resolver. Será mais sadio. Precebemos que retornou uma lista com dois elementos. Estes elementos são vetores do tipo <em>character</em> que corresponde às tabelas da primeira e segunda página do arquivo.</p>
+<p>Vamos fazer um truque para montar nosso <em>data.frame</em>, anexando o primeiro e segundo elemento e já transformando em uma <em>tibble</em> e, além disso, já formatando o título, usando a função <code>clean_names</code> do pacote <code>janitor</code> (muuito útil). Usamos o parâmetro <em>.name_repair</em> para que as colunas fiquem como estão, por enquanto:</p>
+<pre class="r"><code>tab_f &lt;- rbind(janitor::clean_names(tibble::as_tibble(tab[[1]], .name_repair = &quot;minimal&quot;)),
+               janitor::clean_names(tibble::as_tibble(tab[[2]], .name_repair = &quot;minimal&quot;)))</code></pre>
+<p>Agora, vamos consertar os errinhos na mão mesmo:</p>
+<pre class="r"><code>tab_f &lt;- tab_f[-c(1,2,35,36),]</code></pre>
+<p>E agora, vamos corrigir formato, tirar a vírgula, converter para número e arrendondar para facilitar nosso entendimento, além de transformar as colunas em <em>factor</em>. Também vamos criar uma nova coluna chamada nota, que será útil para nosso gráfico. Percebam que é uma arrumação boa na tabela.</p>
+<pre class="r"><code>tab_f &lt;- dplyr::mutate(tab_f,
+                       v2 = as.numeric(gsub(&#39;,&#39;, &#39;.&#39;, x_2)),
+                       v3 = as.numeric(gsub(&#39;,&#39;, &#39;.&#39;, x_3)),
+                       v4 = factor(trunc(v2), levels = 1:10),
+                       v5 = factor(trunc(v3), levels = 1:10),
+                       nota = ifelse(v3 &gt;= 7, &quot;7-10&quot;, &quot;1-6&quot;))</code></pre>
+<p>Agora, para nosso gráfico aluvial, precisamos ter um consolidado de candidatos por nota:</p>
+<pre class="r"><code>tab_c &lt;- dplyr::count(tab_f, v4,v5, nota)</code></pre>
+<p>E vamos para nosso gráfico. Notem que, primeiro, temos fazer um truque para que meu site interprete bem o pacote <code>ggalluvial</code> . Mas vocês podem evitar isso apenas chamando o pacote via <em>library</em>.</p>
+<pre class="r"><code>StatStratum &lt;- ggalluvial::StatStratum</code></pre>
+<pre class="r"><code>ggplot2::ggplot(data = tab_c,
+                ggplot2::aes(axis1 = v4, axis2 = v5, y = n)) +
+  ggplot2::scale_x_discrete(limits = 
+                              c(&quot;Nota na \nProva Objetiva&quot;,
+                                &quot;Nota na \nProva Discursiva&quot;),
+                            expand = c(.2, .05)) +
+  ggplot2::scale_y_continuous(breaks = seq(0,sum(tab_c$n),10)) +
+  ggplot2::ylab(&quot;Nùmero de alunos&quot;) +
+  ggalluvial::geom_alluvium(ggplot2::aes(fill = nota), show.legend = F) +
+  ggalluvial::geom_stratum(size = 0.1) +
+  ggplot2::scale_fill_brewer(type = &quot;qual&quot;, palette = &quot;Set1&quot;) +
+  ggplot2::geom_text(stat = &quot;stratum&quot;, ggplot2::aes(label = ggplot2::after_stat(stratum))) +
+  ggplot2::theme_minimal()</code></pre>
+<p><img src="/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/index.pt_br_files/figure-html/unnamed-chunk-8-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p>E temos nosso gráfico. Podemos perceber que alguns candidatos que conseguiram passar na prova objetiva (ou segunda etapa), iveram notas bem inferiores a sete na prova discursiva. Inclusive, chama a atenção alguns que obtiveram nota maior que 9 na prova 1 e não conseguiram aprovação na prova 2.</p>
+<p>Enfim, temos mais um exemplo de uso da função e mais um exemplo de visualização de dados.</p>
+<p>Sugiro que, caso tenham dúvidas, tentem revisar o <em>help</em> das funções e pacotes. Nada apresentado aqui é muito cabuloso ou misterioso.</p>
+<p>Bom trabalho!!</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/r/">R</a><a class="category" href="/categories/visualiza%C3%A7%C3%A3o-de-dados/">Visualização de dados</a><a class="category" href="/categories/tabulizer/">tabulizer</a><a class="category" href="/categories/janitor/">janitor</a><a class="category" href="/categories/dplyr/">dplyr</a><a class="category" href="/categories/ggplot2/">ggplot2</a></span>
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://denis-or.com.br/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css"
+              integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw"
+              crossorigin="anonymous"><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js"
+                integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH"
+                crossorigin="anonymous"></script><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+                integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+                crossorigin="anonymous"
+                onload="renderMathInElement(document.body);"></script></body>
+
+</html>

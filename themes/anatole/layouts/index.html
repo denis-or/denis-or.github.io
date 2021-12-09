@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <!-- (Optional) Home
             -- on top of `mainSections` content (aka posts) ;
@@ -10,9 +10,9 @@
         {{ .Content }}
     </div>
 
-    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+<!--    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}-->
     {{ range $paginator.Pages }}
-
+<!--
         <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
             {{ if .Params.thumbnail }}
             <div class="post-thumbnail">
@@ -21,6 +21,17 @@
                 </a>
             </div>
             {{ end }}
+-->
+
+        <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+            {{ if (isset .Params "image") }}
+            <a href = "{{ .RelPermalink }}">
+                <div style = "float: right; width: 40%;">
+                <img src = "../{{ .Params.image }}" width = "220px"></img>
+                </div>
+            </a>
+            {{ end }}
+
             <div class="post-title">
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </h3>
@@ -42,7 +53,7 @@
                         <em class="fas fa-calendar-day"></em>
                             <span class="date">{{ if isset .Site.Params "indexdateformat" }}
                                                  {{ .Date.Format .Site.Params.indexDateFormat }}
-                                             {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}}
+                                             {{ else }} {{.Date.Format "Mon, 2 Jan, 2006"}}
                                              {{ end }}</span>
                         {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
                         {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}

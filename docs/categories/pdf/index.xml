@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDF on Denis OR</title>
+    <link>https://denis-or.com.br/categories/pdf/</link>
+    <description>Recent content in PDF on Denis OR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt_br</language>
+    <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/categories/pdf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Importar tabela de PDF no R - Parte 2</title>
+      <link>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</guid>
+      <description>Na primeira parte do post que eu utilizei o Tabulizer, lá no começo do ano ([Veja aqui]), mostrei apenas a função</description>
+    </item>
+    
+  </channel>
+</rss>

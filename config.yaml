@@ -23,14 +23,17 @@ params:
   mainSections: post
   math:
     enable: true
-    use: katex
+    use: "katex"
   # profilePicture: images/profile.jpg
-  profilePicture: images/pp.jpg
+  profilePicture: "images/pp.jpg"
   simpleAnalytics: {}
   socialIcons:
     - icon: fab fa-linkedin
       title: Linkedin
       url: https://www.linkedin.com/in/denis-or/
+    - icon: fab fa-orcid
+      title: Orcid
+      url: https://orcid.org/0000-0003-3748-876X
     - icon: fas fa-graduation-cap
       title: lattes
       url: http://lattes.cnpq.br/7838408308841051

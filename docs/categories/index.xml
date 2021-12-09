@@ -5,6 +5,61 @@
     <link>https://denis-or.com.br/categories/</link>
     <description>Recent content in Categories on Denis OR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt_br</language><atom:link href="https://denis-or.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt_br</language>
+    <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dplyr</title>
+      <link>https://denis-or.com.br/categories/dplyr/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/categories/dplyr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot2</title>
+      <link>https://denis-or.com.br/categories/ggplot2/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/categories/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>janitor</title>
+      <link>https://denis-or.com.br/categories/janitor/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/categories/janitor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://denis-or.com.br/categories/r/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tabulizer</title>
+      <link>https://denis-or.com.br/categories/tabulizer/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/categories/tabulizer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualização de dados</title>
+      <link>https://denis-or.com.br/categories/visualiza%C3%A7%C3%A3o-de-dados/</link>
+      <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/categories/visualiza%C3%A7%C3%A3o-de-dados/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

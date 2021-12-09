@@ -2,16 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://denis-or.com.br/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/categories/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/categories/dplyr/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/categories/ggplot2/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/categories/janitor/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/post/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/categories/r/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/categories/tabulizer/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://denis-or.com.br/categories/visualiza%C3%A7%C3%A3o-de-dados/</loc>
+    <lastmod>2021-12-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://denis-or.com.br/cv_x/</loc>
     <lastmod>2021-08-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://denis-or.com.br/</loc>
-    <lastmod>2021-05-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://denis-or.com.br/post/2021-05-06-importar-tabela-de-pdf-no-r/</loc>
-    <lastmod>2021-05-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://denis-or.com.br/post/</loc>
     <lastmod>2021-05-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://denis-or.com.br/post/2021-04-29-analise-covariancia/</loc>
@@ -37,8 +61,6 @@
   </url><url>
     <loc>https://denis-or.com.br/xxxxxx/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://denis-or.com.br/categories/</loc>
   </url><url>
     <loc>https://denis-or.com.br/tags/index/</loc>
   </url><url>
