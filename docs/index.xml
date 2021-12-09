@@ -8,6 +8,15 @@
     <language>pt_br</language>
     <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title></title>
+      <link>https://denis-or.com.br/contact/</link>
+      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/contact/</guid>
+      <description>Contato Entre em contato comigo (se achar o botão de enviar, hahahah).</description>
+    </item>
+    
+    <item>
       <title>Importar tabela de PDF no R - Parte 2</title>
       <link>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</link>
       <pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
@@ -23,6 +32,15 @@
       
       <guid>https://denis-or.com.br/cv_x/</guid>
       <description>link para curriculo teste</description>
+    </item>
+    
+    <item>
+      <title>Gráfico de coorte</title>
+      <link>https://denis-or.com.br/post/grafico-de-coorte/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/post/grafico-de-coorte/</guid>
+      <description>Paciente &amp;lt;- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29) tempos &amp;lt;-c(1,2,3,3,3,5,5,16,16,16,16,16,16,16,16,1,1,1,1,4,5,7,8,10,10,12,16,16,16) censura &amp;lt;- c(0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,1,1,1,0,0,0,0,0) tratamento &amp;lt;- c (&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;) #crio o dataframe Dados_Hepatite &amp;lt;- data.</description>
     </item>
     
     <item>
@@ -58,15 +76,6 @@
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://denis-or.com.br/archives/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://denis-or.com.br/contact/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://denis-or.com.br/contact/</guid>
       <description></description>
     </item>
     
