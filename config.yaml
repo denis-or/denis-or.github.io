@@ -21,6 +21,8 @@ params:
   # images: images/site-feature-image.png
   keywords: ''
   mainSections: post
+  contactFormAction: 'https://formspree.io/f/mnqwqpqg'
+  contact: true
   math:
     enable: true
     use: "katex"
@@ -61,10 +63,6 @@ menu:
       name: Blog
       url: /post/
       weight: 200
-    - identifier: about
-      name: Sobre
-      url: /about/
-      weight: 300
     - identifier: cv
       name: Currículo
       url: /cv_/
@@ -72,8 +70,12 @@ menu:
     - identifier: experience
       name: Experiência Profissional
       url: /experience/
-      weight: 300
-    # - identifier: contact
-    #   name: Contact
-    #   url: /contact/
-    #   weight: 400
+      weight: 400
+    - identifier: contact
+      name: Contato
+      url: /contact/
+      weight: 500
+    - identifier: about
+      name: Sobre
+      url: /about/
+      weight: 600
