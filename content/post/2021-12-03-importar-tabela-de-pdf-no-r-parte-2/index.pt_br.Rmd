@@ -10,9 +10,10 @@ categories:
   - janitor
   - dplyr
   - ggplot2
+  - rstats
   
 # thumbnail: "images/new_image.png"
-Description: 'teste'
+Description: 'Exemplo de uso do Tanulizer e gráfico aluvial'
 DisableComments: no
 ---
 
@@ -118,6 +119,6 @@ E temos nosso gráfico. Podemos perceber que alguns candidatos que conseguiram p
 
 Enfim, temos mais um exemplo de uso da função e mais um exemplo de visualização de dados.
 
-Sugiro que, caso tenham dúvidas, tentem revisar o _help_ das funções e pacotes. Nada apresentado aqui é muito cabuloso ou misterioso.
+Sugiro que, caso tenham dúvidas, tentem revisar o *help* das funções e pacotes. Nada apresentado aqui é muito cabuloso ou misterioso.
 
 Bom trabalho!!

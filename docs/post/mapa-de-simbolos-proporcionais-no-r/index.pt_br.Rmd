@@ -2,18 +2,17 @@
 title: Mapa de símbolos proporcionais no R
 author: Denis
 date: '2021-04-29'
+image: "images/post_mapas_prop.png"
 slug: mapa-de-simbolos-proporcionais-no-r
 categories:
+  - R
   - map
   - cartography
-  - R
   - mapsf
   - sf
   - rstats
-tags: []
-Description: ''
-Tags: []
-Categories: []
+  
+Description: 'Mapa de símbolos proporcionais no R'
 DisableComments: no
 ---
 
@@ -61,6 +60,8 @@ map <- mtq %>% dplyr::left_join(bd)
 
 Pronto! Agora plotamos nosso mapa. O `mapsf` possui uma função para cada abordagem na cartografia temática como símbolos proporcionais (que usaremos aqui), mapas coropléticos, mapas de tipologia, símbolos graduados, entre outros. Aqui mostrarei uma visão mais simplificada, mas muito útil e mais elegante do que aqueles "mapas" feitos no `ggplot`, embora eu use muito.
 
+<center>
+
 ```{r warning=FALSE}
 
 # [1]
@@ -87,6 +88,8 @@ mapsf::mf_layout(title = "Casos de doença X em Roraima",
 # [5]
 mapsf::mf_arrow(pos ='topright', adjust = )
 ```
+
+</center>
 
 Bom, explicarei sucintamente as partes do código acima. Coloquei alguns marcadores numerados para facilitar a explicação. No marcador [1] defino o tema. Neste caso, usei o tema *candy*. No marcador [2] uso a função `mf_map` para plotar o mapa base. Como bem sabemos (ou deveríamos saber), a montagem de um mapa envolve várias camadas. Esta é a primeira. No marcador [3] temos mais uma camada que, neste caso, está trazendo os dados da variável *num_casos* e usando o tipo de mapa `prop`. Eu poderia usar a função `mf_prop` que daria no mesmo. O símbolo geométrico padrão do tipo `prop` é o círculo, mas é possível especificar outro. Cores, bordas e tamanho são configuráveis. Aconselho olhar o help para conhecer todos os parâmetros. Notem que já posiciono a legenda no topo à esquerda ( *topleft*). No marcador [4], eu declaro o layout, colocando título, créditos, escala e o *frame*, que é uma moldura no conjunto. Notem que preferi desabilitar a seta do norte dentro desta função, pois eu a utilizo de outra forma (marcador [5]). Assim, eu consigo posicioná-la conforme convencionado: escala e seta à direita. Não sei exatamente como essa convenção começou. Só acho que é quase uma boa prática e sigo.
 
