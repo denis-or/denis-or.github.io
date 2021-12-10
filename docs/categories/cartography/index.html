@@ -123,6 +123,22 @@
         
     </ul>
     
+    <div class="description" style="margin: 0 0 100% 30%;">
+        <p>Translator/Tradutor</p>
+        <div id = "google_translate_element"></div>
+    <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'pt',
+        autoDisplay: 'true',
+        layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+
+
     <div class="footer">
         <div class="by_farbox">&copy; Denis Rodrigues  2021 </div>
     </div>

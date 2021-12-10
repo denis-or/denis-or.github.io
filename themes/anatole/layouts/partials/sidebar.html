@@ -17,8 +17,9 @@
             </li>
         {{ end }}
     </ul>
-    <!-- ideia maluca
-    <div class="description">
+    <!-- ideia maluca -->
+    <div class="description" style="margin: 0 0 100% 30%;">
+        <p>Translator/Tradutor</p>
         <div id = "google_translate_element"></div>
     <script>
     function googleTranslateElementInit() {
@@ -32,7 +33,7 @@
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </div>
 
-fim da ideia maluca -->
+<!-- fim da ideia maluca -->
     <div class="footer">
         <div class="by_farbox">&copy; {{ .Site.Params.author }} {{ if isset .Site.Params "copyright" }} {{ .Site.Params.copyright }} {{ else }} {{ now.Format "2006"}} {{end}}</div>
     </div>
