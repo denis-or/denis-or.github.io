@@ -933,6 +933,12 @@ print {
         width: 50%;
     }
 
+    .post-image{
+        float: left;
+        width: 40%;
+
+    }
+
     .content {
         margin-top: 420px;
         width: 100%;
