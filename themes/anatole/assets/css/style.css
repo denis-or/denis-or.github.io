@@ -896,6 +896,7 @@ a.btn {
     display: none;
 }
 
+
 @media screen and (max-width: 960px),
 print {
     .sidebar {
@@ -926,11 +927,11 @@ print {
     }
     /* denis */
     .post-title {
-        width: 55%;
+        width: 100%;
     }
 
     .post-content{
-        width: 50%;
+        width: 100%;
     }
 
     .post-image{
@@ -1166,7 +1167,7 @@ print {
     cursor: pointer;
     color: var(--body-color);
     text-decoration: none;
-    width: 100%;
+    width: 50%;
 }
 .form-style ul li input[type="button"]:hover,
 .form-style ul li input[type="submit"]:hover {

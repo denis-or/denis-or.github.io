@@ -7,4 +7,4 @@ description: Contact Page
 
 ### Contato
 
-Entre em contato comigo (se achar o botão de enviar, hahahah). Se preferir, minhas redes estão ao lado.
+Entre em contato comigo. Se preferir, minhas redes estão ao lado.
