@@ -35,15 +35,6 @@
     </item>
     
     <item>
-      <title>Gráfico de coorte</title>
-      <link>https://denis-or.com.br/post/grafico-de-coorte/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://denis-or.com.br/post/grafico-de-coorte/</guid>
-      <description>Paciente &amp;lt;- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29) tempos &amp;lt;-c(1,2,3,3,3,5,5,16,16,16,16,16,16,16,16,1,1,1,1,4,5,7,8,10,10,12,16,16,16) censura &amp;lt;- c(0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,1,1,1,0,0,0,0,0) tratamento &amp;lt;- c (&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Controle&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;,&amp;quot;Esteroide&amp;quot;) #crio o dataframe Dados_Hepatite &amp;lt;- data.</description>
-    </item>
-    
-    <item>
       <title>IMPORTAR TABELA DE PDF NO R</title>
       <link>https://denis-or.com.br/post/2021-05-06-importar-tabela-de-pdf-no-r/</link>
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
