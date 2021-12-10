@@ -18,6 +18,8 @@ DisableComments: no
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
 
 
 <p>É muito comum, termos a necessidade de extrair alguma informação de um PDF, seja de dados brutos ou de tabelas. Não raras vezes, dá errado. O pacote <code>tabulizer</code> é um pacote da linguagem R, disponível no <a href="https://cran.r-project.org/package=tabulizer" title="Link para a página do pacote no CRAN do R">CRAN</a> desde 2018. <a href="https://blog.curso-r.com/posts/2021-01-08-tabulizer/" title="Link para post no blog da Curso-R">O pessoal da Curso-R fez um post sobre este pacote também</a>. Sugiro conferirem, até para entenderem a instalação, pois o pacote utiliza a biblioteca `Tabula` para extrair tabelas de PDF e depende do `rJava` e, por isso, pode ocorrer alguns errinhos marotos.</p>
@@ -35,153 +37,300 @@ library(tabulizer)</code></pre>
 <p>O objeto <code>crude_out</code> é uma lista contendo a estrutura da tabela extraída do <em>PDF</em>. Vamos transformar esta estrutura em um dataframe e analisá-la melhor. O primeiro objeto da lista já é nossa tabela.</p>
 <pre class="r"><code>df_out &lt;- as.data.frame(crude_out[[1]])</code></pre>
 <p>E aqui temos um ponto interessante. Ao extrairmos a tabela, é possível notar que algumas configurações vêm estranhas. Poderíamos chamar de desconfiguradas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Logo, ao tentarmos encaixá-la em uma estrutura de linhas e colunas, digamos, normal, temos estas dificuldades.</p>
-<p>Analisando a tabela, percebemos que as primeiras linhas são o cabeçalho. Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela.</p>
-<pre class="r"><code>knitr::kable(
-  head(df_out[1:5]),
-  table.attr = &quot;style=&#39;width:100%;margin-left:auto;margin-right: auto;&#39;&quot;
-)</code></pre>
-<table>
+<p>Analisando a tabela, percebemos que o cabeçalho está estranho (em amarelo). Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela. A primeira linha vamos excluí-la.</p>
+<pre class="r"><code>kableExtra::kbl(head(df_out[1:5]))|&gt;
+  kableExtra::kable_paper(
+    bootstrap_options = c(&quot;striped&quot;,
+                          &quot;hover&quot;,
+                          &quot;condensed&quot;),
+    full_width = F,
+    position = &quot;center&quot;
+  )|&gt;
+  kableExtra::row_spec(c(1:2), background = &quot;yellow&quot;)</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">X</th>
-<th align="right">X.1</th>
-<th align="right">X.2</th>
-<th align="right">X.3</th>
-<th align="right">X.4</th>
+<tr>
+<th style="text-align:left;">
+X
+</th>
+<th style="text-align:right;">
+X.1
+</th>
+<th style="text-align:right;">
+X.2
+</th>
+<th style="text-align:right;">
+X.3
+</th>
+<th style="text-align:right;">
+X.4
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left"></td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;background-color: yellow !important;">
+</td>
+<td style="text-align:right;background-color: yellow !important;">
+NA
+</td>
+<td style="text-align:right;background-color: yellow !important;">
+NA
+</td>
+<td style="text-align:right;background-color: yellow !important;">
+NA
+</td>
+<td style="text-align:right;background-color: yellow !important;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">Million tonnes of carbon dioxide</td>
-<td align="right">2010.0</td>
-<td align="right">2011.0</td>
-<td align="right">2012.0</td>
-<td align="right">2013.0</td>
+<tr>
+<td style="text-align:left;background-color: yellow !important;">
+Million tonnes of carbon dioxide
+</td>
+<td style="text-align:right;background-color: yellow !important;">
+2010.0
+</td>
+<td style="text-align:right;background-color: yellow !important;">
+2011.0
+</td>
+<td style="text-align:right;background-color: yellow !important;">
+2012.0
+</td>
+<td style="text-align:right;background-color: yellow !important;">
+2013.0
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Canada</td>
-<td align="right">550.1</td>
-<td align="right">554.7</td>
-<td align="right">551.1</td>
-<td align="right">564.6</td>
+<tr>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:right;">
+550.1
+</td>
+<td style="text-align:right;">
+554.7
+</td>
+<td style="text-align:right;">
+551.1
+</td>
+<td style="text-align:right;">
+564.6
+</td>
 </tr>
-<tr class="even">
-<td align="left">Mexico</td>
-<td align="right">454.8</td>
-<td align="right">473.0</td>
-<td align="right">476.7</td>
-<td align="right">483.2</td>
+<tr>
+<td style="text-align:left;">
+Mexico
+</td>
+<td style="text-align:right;">
+454.8
+</td>
+<td style="text-align:right;">
+473.0
+</td>
+<td style="text-align:right;">
+476.7
+</td>
+<td style="text-align:right;">
+483.2
+</td>
 </tr>
-<tr class="odd">
-<td align="left">US</td>
-<td align="right">5495.0</td>
-<td align="right">5348.4</td>
-<td align="right">5101.5</td>
-<td align="right">5268.3</td>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:right;">
+5495.0
+</td>
+<td style="text-align:right;">
+5348.4
+</td>
+<td style="text-align:right;">
+5101.5
+</td>
+<td style="text-align:right;">
+5268.3
+</td>
 </tr>
-<tr class="even">
-<td align="left">Total North America</td>
-<td align="right">6499.9</td>
-<td align="right">6376.1</td>
-<td align="right">6129.4</td>
-<td align="right">6316.1</td>
+<tr>
+<td style="text-align:left;">
+Total North America
+</td>
+<td style="text-align:right;">
+6499.9
+</td>
+<td style="text-align:right;">
+6376.1
+</td>
+<td style="text-align:right;">
+6129.4
+</td>
+<td style="text-align:right;">
+6316.1
+</td>
 </tr>
 </tbody>
 </table>
 <p>Para isso, vamos utilizar a função <code>colnames</code>.</p>
 <pre class="r"><code>colnames(df_out) &lt;- df_out[2,]
 
-knitr::kable(
-  head(df_out[1:5]),
-  table.attr = &quot;style=&#39;width:100%;margin-left:auto;margin-right: auto;&#39;&quot;
-)</code></pre>
-<table>
+kableExtra::kbl(head(df_out[1:5])) |&gt;
+  kableExtra::kable_paper(
+    bootstrap_options = c(&quot;striped&quot;,
+                          &quot;hover&quot;,
+                          &quot;condensed&quot;),
+    full_width = F,
+    position = &quot;center&quot;
+  )</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">Million tonnes of carbon dioxide</th>
-<th align="right">2010</th>
-<th align="right">2011</th>
-<th align="right">2012</th>
-<th align="right">2013</th>
+<tr>
+<th style="text-align:left;">
+Million tonnes of carbon dioxide
+</th>
+<th style="text-align:right;">
+2010
+</th>
+<th style="text-align:right;">
+2011
+</th>
+<th style="text-align:right;">
+2012
+</th>
+<th style="text-align:right;">
+2013
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left"></td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">Million tonnes of carbon dioxide</td>
-<td align="right">2010.0</td>
-<td align="right">2011.0</td>
-<td align="right">2012.0</td>
-<td align="right">2013.0</td>
+<tr>
+<td style="text-align:left;">
+Million tonnes of carbon dioxide
+</td>
+<td style="text-align:right;">
+2010.0
+</td>
+<td style="text-align:right;">
+2011.0
+</td>
+<td style="text-align:right;">
+2012.0
+</td>
+<td style="text-align:right;">
+2013.0
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Canada</td>
-<td align="right">550.1</td>
-<td align="right">554.7</td>
-<td align="right">551.1</td>
-<td align="right">564.6</td>
+<tr>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:right;">
+550.1
+</td>
+<td style="text-align:right;">
+554.7
+</td>
+<td style="text-align:right;">
+551.1
+</td>
+<td style="text-align:right;">
+564.6
+</td>
 </tr>
-<tr class="even">
-<td align="left">Mexico</td>
-<td align="right">454.8</td>
-<td align="right">473.0</td>
-<td align="right">476.7</td>
-<td align="right">483.2</td>
+<tr>
+<td style="text-align:left;">
+Mexico
+</td>
+<td style="text-align:right;">
+454.8
+</td>
+<td style="text-align:right;">
+473.0
+</td>
+<td style="text-align:right;">
+476.7
+</td>
+<td style="text-align:right;">
+483.2
+</td>
 </tr>
-<tr class="odd">
-<td align="left">US</td>
-<td align="right">5495.0</td>
-<td align="right">5348.4</td>
-<td align="right">5101.5</td>
-<td align="right">5268.3</td>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:right;">
+5495.0
+</td>
+<td style="text-align:right;">
+5348.4
+</td>
+<td style="text-align:right;">
+5101.5
+</td>
+<td style="text-align:right;">
+5268.3
+</td>
 </tr>
-<tr class="even">
-<td align="left">Total North America</td>
-<td align="right">6499.9</td>
-<td align="right">6376.1</td>
-<td align="right">6129.4</td>
-<td align="right">6316.1</td>
+<tr>
+<td style="text-align:left;">
+Total North America
+</td>
+<td style="text-align:right;">
+6499.9
+</td>
+<td style="text-align:right;">
+6376.1
+</td>
+<td style="text-align:right;">
+6129.4
+</td>
+<td style="text-align:right;">
+6316.1
+</td>
 </tr>
 </tbody>
 </table>
-<p>Depois, deletamos as linhas e colunas indesejadas</p>
-<pre class="r"><code>df_co2_w &lt;- df_out[3:85,1:12]
-df_var_co2 &lt;- df_out[3:85,13:14]
+<p>Depois, deletamos as linhas e colunas indesejadas e arrumamos as colunas e formato.</p>
+<pre class="r"><code>df_co2_w &lt;- df_out[3:85, 1:12]
+df_var_co2 &lt;- df_out[3:85, 13:14]
 
 df_var_co2 &lt;- tidyr::separate(
   df_var_co2,
   col = c(`2020 2009-19`),
   into = c(&quot;2020&quot;, &quot;2009-19&quot;),
   sep = &quot; &quot;
-) %&gt;%
+) |&gt;
   tibble::add_column(var_2020 = df_var_co2$`2020`)</code></pre>
-<p>Vamos focar em alguns países, de forma arbitrária:</p>
+<p>A partir daqui, vamos focar em alguns países. De forma arbitrária.</p>
 <pre class="r"><code>grupo_pais &lt;- c(&quot;Brazil&quot;,&quot;US&quot;,&quot;Canada&quot;,&quot;Sweden&quot;,
                 &quot;Russian Federation&quot;,
                 &quot;China&quot;,&quot;Japan&quot;,&quot;South Africa&quot;)</code></pre>
-<pre class="r"><code>df_co2_l &lt;- df_co2_w %&gt;%
+<pre class="r"><code>df_co2_l &lt;- df_co2_w |&gt;
   tidyr::pivot_longer(cols = &quot;2010&quot;:&quot;2020&quot;,
                       names_to = &quot;Ano&quot;,
-                      values_to = &quot;CO2_MT&quot;) %&gt;%
-  dplyr::rename(Pais = `Million tonnes of carbon dioxide`) %&gt;%
-  dplyr::filter(!stringr::str_detect(Pais, &quot;Total|Non|which|Other|European Union&quot;)) %&gt;%
-  dplyr::mutate(Ano = as.integer(Ano)) %&gt;%
+                      values_to = &quot;CO2_MT&quot;) |&gt;
+  dplyr::rename(Pais = `Million tonnes of carbon dioxide`) |&gt;
+  dplyr::filter(!stringr::str_detect(Pais, &quot;Total|Non|which|Other|European Union&quot;)) |&gt;
+  dplyr::mutate(Ano = as.integer(Ano)) |&gt;
   dplyr::arrange(desc(CO2_MT))</code></pre>
 <p>Vamos visualizar em um gráfico, o que conseguimos extrair da tabela.</p>
-<pre class="r"><code>df_co2_l %&gt;% #%&gt;% distinct(Pais) %&gt;% View()
+<pre class="r"><code>df_co2_l |&gt;
   ggplot2::ggplot(ggplot2::aes(
     Ano,
     CO2_MT,
@@ -206,14 +355,14 @@ df_var_co2 &lt;- tidyr::separate(
   ggplot2::theme(plot.margin = ggplot2::unit(c(0.35, 2, 0.3, 0.35), &quot;cm&quot;))</code></pre>
 <p><img src="/post/2021-05-06-importar-tabela-de-pdf-no-r/index.pt_br_files/figure-html/unnamed-chunk-10-1.png" width="864" style="display: block; margin: auto;" /></p>
 <p>Não ficou muito bom. Vamos separar os cinco primeiros dos cinco últimos.</p>
-<pre class="r"><code>top_five &lt;- df_co2_l %&gt;%
-  dplyr::filter(Ano == 2020) %&gt;%
-  head(5) %&gt;%
+<pre class="r"><code>top_five &lt;- df_co2_l |&gt;
+  dplyr::filter(Ano == 2020) |&gt;
+  head(5) |&gt;
   dplyr::pull(Pais)
 
-top_bottom &lt;- df_co2_l %&gt;%
-  dplyr::filter(Ano == 2020) %&gt;%
-  tail(5) %&gt;%
+top_bottom &lt;- df_co2_l |&gt;
+  dplyr::filter(Ano == 2020) |&gt;
+  tail(5) |&gt;
   dplyr::pull(Pais)
 
 gg1 &lt;-  ggplot2::ggplot(data =  dplyr::filter(df_co2_l, Pais %in% top_five),

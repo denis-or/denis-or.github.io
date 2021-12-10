@@ -63,13 +63,19 @@ df_out <- as.data.frame(crude_out[[1]])
 
 E aqui temos um ponto interessante. Ao extrairmos a tabela, é possível notar que algumas configurações vêm estranhas. Poderíamos chamar de desconfiguradas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Logo, ao tentarmos encaixá-la em uma estrutura de linhas e colunas, digamos, normal, temos estas dificuldades.
 
-Analisando a tabela, percebemos que as primeiras linhas são o cabeçalho. Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela.
+Analisando a tabela, percebemos que o cabeçalho está estranho (em amarelo). Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela. A primeira linha vamos excluí-la.
 
 ```{r}
-knitr::kable(
-  head(df_out[1:5]),
-  table.attr = "style='width:100%;margin-left:auto;margin-right: auto;'"
-)
+
+kableExtra::kbl(head(df_out[1:5]))|>
+  kableExtra::kable_paper(
+    bootstrap_options = c("striped",
+                          "hover",
+                          "condensed"),
+    full_width = F,
+    position = "center"
+  )|>
+  kableExtra::row_spec(c(1:2), background = "yellow")
 
 ```
 
@@ -78,28 +84,35 @@ Para isso, vamos utilizar a função `colnames`.
 ```{r}
 colnames(df_out) <- df_out[2,]
 
-knitr::kable(
-  head(df_out[1:5]),
-  table.attr = "style='width:100%;margin-left:auto;margin-right: auto;'"
-)
+kableExtra::kbl(head(df_out[1:5])) |>
+  kableExtra::kable_paper(
+    bootstrap_options = c("striped",
+                          "hover",
+                          "condensed"),
+    full_width = F,
+    position = "center"
+  )
+
+
 ```
 
-Depois, deletamos as linhas e colunas indesejadas
+Depois, deletamos as linhas e colunas indesejadas e arrumamos as colunas e formato.
 
 ```{r}
-df_co2_w <- df_out[3:85,1:12]
-df_var_co2 <- df_out[3:85,13:14]
+df_co2_w <- df_out[3:85, 1:12]
+df_var_co2 <- df_out[3:85, 13:14]
 
 df_var_co2 <- tidyr::separate(
   df_var_co2,
   col = c(`2020 2009-19`),
   into = c("2020", "2009-19"),
   sep = " "
-) %>%
+) |>
   tibble::add_column(var_2020 = df_var_co2$`2020`)
 ```
 
-Vamos focar em alguns países, de forma arbitrária:
+
+A partir daqui, vamos focar em alguns países. De forma arbitrária.
 
 ```{r}
 grupo_pais <- c("Brazil","US","Canada","Sweden",
@@ -108,13 +121,13 @@ grupo_pais <- c("Brazil","US","Canada","Sweden",
 ```
 
 ```{r}
-df_co2_l <- df_co2_w %>%
+df_co2_l <- df_co2_w |>
   tidyr::pivot_longer(cols = "2010":"2020",
                       names_to = "Ano",
-                      values_to = "CO2_MT") %>%
-  dplyr::rename(Pais = `Million tonnes of carbon dioxide`) %>%
-  dplyr::filter(!stringr::str_detect(Pais, "Total|Non|which|Other|European Union")) %>%
-  dplyr::mutate(Ano = as.integer(Ano)) %>%
+                      values_to = "CO2_MT") |>
+  dplyr::rename(Pais = `Million tonnes of carbon dioxide`) |>
+  dplyr::filter(!stringr::str_detect(Pais, "Total|Non|which|Other|European Union")) |>
+  dplyr::mutate(Ano = as.integer(Ano)) |>
   dplyr::arrange(desc(CO2_MT))
 ```
 
@@ -123,7 +136,7 @@ Vamos visualizar em um gráfico, o que conseguimos extrair da tabela.
 
 ```{r }
 
-df_co2_l %>% #%>% distinct(Pais) %>% View()
+df_co2_l |>
   ggplot2::ggplot(ggplot2::aes(
     Ano,
     CO2_MT,
@@ -152,14 +165,14 @@ Não ficou muito bom. Vamos separar os cinco primeiros dos cinco últimos.
 
 ```{r}
 
-top_five <- df_co2_l %>%
-  dplyr::filter(Ano == 2020) %>%
-  head(5) %>%
+top_five <- df_co2_l |>
+  dplyr::filter(Ano == 2020) |>
+  head(5) |>
   dplyr::pull(Pais)
 
-top_bottom <- df_co2_l %>%
-  dplyr::filter(Ano == 2020) %>%
-  tail(5) %>%
+top_bottom <- df_co2_l |>
+  dplyr::filter(Ano == 2020) |>
+  tail(5) |>
   dplyr::pull(Pais)
 
 gg1 <-  ggplot2::ggplot(data =  dplyr::filter(df_co2_l, Pais %in% top_five),
