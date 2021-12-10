@@ -10,7 +10,7 @@ description: Currículo vitae
 
 ### Currículo do Denis
 
-Abaixo apresento duas formas de representação daquilo que a sociedade "gosta" de visualizar como listagem de habilidades e capacidades de um ser humano. Coloquei o link do escavador apenas como provocação, pois muitos entendem que o site é invasivo, mas poucos regulam seus próprios dados no ambiente online. O site Escador é apenas um espelho do _Lattes_.
+Abaixo apresento duas formas de representação daquilo que a sociedade "gosta" de visualizar como listagem de habilidades e capacidades de um ser humano. Coloquei o link do escavador apenas como provocação, pois muitos entendem que o site é invasivo, mas poucos regulam seus próprios dados no ambiente online. O site Escavador é apenas um espelho do _Lattes_.
 
 
 [Link para currículo _Lattes_](http://lattes.cnpq.br/7838408308841051)
