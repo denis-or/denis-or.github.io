@@ -196,6 +196,10 @@ a:active {
     background-color: #fff;
 }
 
+.description_google{
+    margin: 0 0 100% 20%;
+}
+
 .page-top {
     width: 80%;
     position: fixed;
@@ -897,6 +901,7 @@ a.btn {
 }
 
 
+
 @media screen and (max-width: 960px),
 print {
     .sidebar {
@@ -939,9 +944,12 @@ print {
         width: 40%;
 
     }
+    .description_google{
+        margin: 0 0 100% 30%;
+    }
 
     .content {
-        margin-top: 420px;
+        margin-top: 580px;
         width: 100%;
         z-index: 2;
         position: absolute;

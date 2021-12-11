@@ -18,19 +18,21 @@
         {{ end }}
     </ul>
     <!-- ideia maluca -->
-    <div class="description" style="margin: 0 0 100% 30%;">
+    <div class="description_google">
         <p>Translator/Tradutor</p>
         <div id = "google_translate_element"></div>
-    <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'pt',
-        autoDisplay: 'true',
-        layout: google.translate.TranslateElement.InlineLayout.VERTICAL
-      }, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script>
+              function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'pt',
+                            autoDisplay: 'true',
+                             layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+                        }, 'google_translate_element');
+                    }
+             </script>
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+
+            </script>
     </div>
 
 <!-- fim da ideia maluca -->
