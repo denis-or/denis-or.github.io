@@ -1,8 +1,11 @@
 ---
-author: Hugo Authors
+aliases:
+- contact
+- Contato
+author: Denis Rodrigues
 contact: true
 date: "2021-12-08"
-description: Contact Page
+description: Contato
 ---
 
 ### Contato

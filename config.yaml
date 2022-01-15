@@ -64,7 +64,7 @@ menu:
       url: /post/
       weight: 200
     - identifier: apps
-      name: Aplicações
+      name: Aplicações em shiny
       url: /apps/
       weight: 300
     - identifier: cv
