@@ -63,19 +63,23 @@ menu:
       name: Blog
       url: /post/
       weight: 200
+    - identifier: apps
+      name: Aplicações
+      url: /apps/
+      weight: 300
     - identifier: cv
       name: Currículo
       url: /cv_/
-      weight: 300
+      weight: 400
     - identifier: experience
       name: Experiência Profissional
       url: /experience/
-      weight: 400
+      weight: 500
     - identifier: contact
       name: Contato
       url: /contact/
-      weight: 500
+      weight: 600
     - identifier: about
       name: Sobre
       url: /about/
-      weight: 600
+      weight: 700
