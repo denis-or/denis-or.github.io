@@ -331,7 +331,7 @@
 ## Residuals      91.467 26                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>Temos que a <span class="math inline">\(H_0\)</span> é que não há efeito (p &gt;.05). Neste caso, temos o efeito do grau de instrução contralado pela idade.</p>
+<p>Temos que a <span class="math inline">\(H_0\)</span> é que não há efeito (p &gt;.05). Neste caso, temos o efeito do grau de instrução controlado pela idade.</p>
 <p>6 - Verificar a normalidade dos resíduos</p>
 <pre class="r"><code>shapiro.test(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)</code></pre>
 <pre><code>## 
@@ -345,7 +345,7 @@
 <p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)</code></pre>
 <p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<p>Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade, veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando ao contrario, veríamos um funil.</p>
+<p>Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade (variância constante), veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando o contrário, veríamos um funil.</p>
 <p>Finalizo aqui os ensinamentos da Profa. Fernanda e espero que seja útil para vocês.</p>
 <p>Bom trabalho!</p>
 </div>
