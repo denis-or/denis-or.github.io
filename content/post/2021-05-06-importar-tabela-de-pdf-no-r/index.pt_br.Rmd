@@ -28,11 +28,11 @@ knitr::opts_chunk$set(echo      = TRUE,
 
 ```
 
-É muito comum, termos a necessidade de extrair alguma informação de um PDF, seja de dados brutos ou de tabelas. Não raras vezes, dá errado. O pacote `tabulizer` é um pacote da linguagem R, disponível no [CRAN](https://cran.r-project.org/package=tabulizer "Link para a página do pacote no CRAN do R") desde 2018. [O pessoal da Curso-R fez um post sobre este pacote também](https://blog.curso-r.com/posts/2021-01-08-tabulizer/ "Link para post no blog da Curso-R"). Sugiro conferirem, até para entenderem a instalação, pois o pacote utiliza a biblioteca \`Tabula\` para extrair tabelas de PDF e depende do \`rJava\` e, por isso, pode ocorrer alguns errinhos marotos.
+É muito comum a necessidade de extrairmos algum dado de um PDF, sejam dados brutos ou presentes em tabelas. Não raras vezes, dá errado. O pacote `tabulizer` é um pacote da linguagem R, disponível no [CRAN](https://cran.r-project.org/package=tabulizer "Link para a página do pacote no CRAN do R") desde 2018. [O pessoal da Curso-R fez um post sobre este pacote também](https://blog.curso-r.com/posts/2021-01-08-tabulizer/ "Link para post no blog da Curso-R"). Sugiro conferirem, até para entenderem a instalação. O pacote utiliza a biblioteca \`Tabula\` para extrair tabelas de PDF e depende do \`rJava\` e, por isso, podem ocorrer alguns errinhos marotos.
 
-Bom, nosso intuito aqui é apenas brincar com o pacote e ter uma lista de ferramentas úteis no dia-a-dia do epidemiologista. Embora nosso exemplo seja para área ambiental. Prometo atualizar este post e corrigir este detalhe ou gerar mais um post utilizando algum arquivo de boletim do Ministério da Saúde ou Secretaria Estadual. Juro!
+Bom, meu intuito aqui é apenas brincar com o pacote e ter uma lista de ferramentas úteis no dia-a-dia do epidemiologista, embora nosso exemplo seja para área ambiental. Prometo atualizar este post e corrigir este detalhe ou gerar mais um post utilizando algum arquivo de boletim do Ministério da Saúde ou Secretaria Estadual. Juro!
 
-Nosso primeiro passo é carregar algumas bibliotecas úteis. 
+Meu primeiro passo é carregar algumas bibliotecas úteis. 
 
 ```{r}
 library(dplyr)
@@ -42,29 +42,29 @@ library(patchwork)
 library(tabulizer)
 ```
 
-Vamos utilizar para o exercício, este pdf disponível anualmente no site 
+Vou utilizar para o exercício, este pdf disponível anualmente no site descrito abaixo. Não abordarei a origem do site e nem o propósito da empresa. Apenas usarei como exemplo.
 
 
 ```{r}
 url <- 'https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/pdfs/energy-economics/statistical-review/bp-stats-review-2021-co2-emissions.pdf'
 ```
 
-Função do `Tabulizer`: a `extract_tables`. É aqui que a mágica acontece. Note que alguns *warnings* ocorrem. Talvez, se tivéssemos o download do arquivo e depois a importação com o `Tabulizer`, isso não aconteceria.
+Função do `Tabulizer`: a `extract_tables`. É aqui que a mágica acontece. Note que alguns *warnings* ocorrem. Talvez, se eu realizasse o download do arquivo antes e depois a importação com o `Tabulizer`, isso não aconteceria.
 
 
 ```{r}
 crude_out <- tabulizer::extract_tables(url, pages = 2, output = "data.frame")
 ```
 
-O objeto `crude_out` é uma lista contendo a estrutura da tabela extraída do *PDF*. Vamos transformar esta estrutura em um dataframe e analisá-la melhor. O primeiro objeto da lista já é nossa tabela.
+O objeto `crude_out` é uma lista contendo a estrutura da tabela extraída do *PDF*. Vou transformar este objeto em um dataframe e analisá-la melhor. O primeiro item da lista já é nossa tabela. Logo, posso simplesmente 'jogá-la' em um outro objeto.
 
 ```{r}
 df_out <- as.data.frame(crude_out[[1]])
 ```
 
-E aqui temos um ponto interessante. Ao extrairmos a tabela, é possível notar que algumas configurações vêm estranhas. Poderíamos chamar de desconfiguradas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Logo, ao tentarmos encaixá-la em uma estrutura de linhas e colunas, digamos, normal, temos estas dificuldades.
+E aqui encontro um ponto interessante. Ao extrair a tabela, é possível perceber algumas configurações estranhas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Ao tentar encaixá-la em uma estrutura de linhas e colunas, digamos, normal, estas dificuldades aparecem.
 
-Analisando a tabela, percebemos que o cabeçalho está estranho (em amarelo). Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela. A primeira linha vamos excluí-la.
+Vamos analisar a tabela. Percebemos que o cabeçalho está estranho (em amarelo). Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela. A primeira linha vamos excluí-la.
 
 ```{r}
 
@@ -76,7 +76,9 @@ kableExtra::kbl(head(df_out[1:5]))|>
     full_width = F,
     position = "center"
   )|>
-  kableExtra::row_spec(c(1:2), background = "yellow")
+  kableExtra::row_spec(c(1:2), 
+                       background = "yellow"
+                       )
 
 ```
 
@@ -194,7 +196,7 @@ gg1/gg2
 ```
 
 
-Parece que agora ficou um pouco melhor. Contudo a ideia era falar sobre o uso do pacote que extrai a tabela do PDF. Ele ainda tem várias funcionalidades bacanerrímas. Precisa explorá-lo.
+Parece que agora ficou um pouco melhor. Contudo, a ideia era falar sobre o uso do pacote que extrai a tabela do PDF. Ele ainda tem várias funcionalidades bacanerrímas. Precisa explorá-lo.
 
 Bom trabalho!
 

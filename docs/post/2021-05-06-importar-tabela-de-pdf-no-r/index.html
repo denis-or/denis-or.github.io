@@ -225,22 +225,22 @@
 <link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
 
 
-<p>É muito comum, termos a necessidade de extrair alguma informação de um PDF, seja de dados brutos ou de tabelas. Não raras vezes, dá errado. O pacote <code>tabulizer</code> é um pacote da linguagem R, disponível no <a href="https://cran.r-project.org/package=tabulizer" title="Link para a página do pacote no CRAN do R">CRAN</a> desde 2018. <a href="https://blog.curso-r.com/posts/2021-01-08-tabulizer/" title="Link para post no blog da Curso-R">O pessoal da Curso-R fez um post sobre este pacote também</a>. Sugiro conferirem, até para entenderem a instalação, pois o pacote utiliza a biblioteca `Tabula` para extrair tabelas de PDF e depende do `rJava` e, por isso, pode ocorrer alguns errinhos marotos.</p>
-<p>Bom, nosso intuito aqui é apenas brincar com o pacote e ter uma lista de ferramentas úteis no dia-a-dia do epidemiologista. Embora nosso exemplo seja para área ambiental. Prometo atualizar este post e corrigir este detalhe ou gerar mais um post utilizando algum arquivo de boletim do Ministério da Saúde ou Secretaria Estadual. Juro!</p>
-<p>Nosso primeiro passo é carregar algumas bibliotecas úteis.</p>
+<p>É muito comum a necessidade de extrairmos algum dado de um PDF, sejam dados brutos ou presentes em tabelas. Não raras vezes, dá errado. O pacote <code>tabulizer</code> é um pacote da linguagem R, disponível no <a href="https://cran.r-project.org/package=tabulizer" title="Link para a página do pacote no CRAN do R">CRAN</a> desde 2018. <a href="https://blog.curso-r.com/posts/2021-01-08-tabulizer/" title="Link para post no blog da Curso-R">O pessoal da Curso-R fez um post sobre este pacote também</a>. Sugiro conferirem, até para entenderem a instalação. O pacote utiliza a biblioteca `Tabula` para extrair tabelas de PDF e depende do `rJava` e, por isso, podem ocorrer alguns errinhos marotos.</p>
+<p>Bom, meu intuito aqui é apenas brincar com o pacote e ter uma lista de ferramentas úteis no dia-a-dia do epidemiologista, embora nosso exemplo seja para área ambiental. Prometo atualizar este post e corrigir este detalhe ou gerar mais um post utilizando algum arquivo de boletim do Ministério da Saúde ou Secretaria Estadual. Juro!</p>
+<p>Meu primeiro passo é carregar algumas bibliotecas úteis.</p>
 <pre class="r"><code>library(dplyr)
 library(magrittr)
 library(ggplot2)
 library(patchwork)
 library(tabulizer)</code></pre>
-<p>Vamos utilizar para o exercício, este pdf disponível anualmente no site</p>
+<p>Vou utilizar para o exercício, este pdf disponível anualmente no site descrito abaixo. Não abordarei a origem do site e nem o propósito da empresa. Apenas usarei como exemplo.</p>
 <pre class="r"><code>url &lt;- &#39;https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/pdfs/energy-economics/statistical-review/bp-stats-review-2021-co2-emissions.pdf&#39;</code></pre>
-<p>Função do <code>Tabulizer</code>: a <code>extract_tables</code>. É aqui que a mágica acontece. Note que alguns <em>warnings</em> ocorrem. Talvez, se tivéssemos o download do arquivo e depois a importação com o <code>Tabulizer</code>, isso não aconteceria.</p>
+<p>Função do <code>Tabulizer</code>: a <code>extract_tables</code>. É aqui que a mágica acontece. Note que alguns <em>warnings</em> ocorrem. Talvez, se eu realizasse o download do arquivo antes e depois a importação com o <code>Tabulizer</code>, isso não aconteceria.</p>
 <pre class="r"><code>crude_out &lt;- tabulizer::extract_tables(url, pages = 2, output = &quot;data.frame&quot;)</code></pre>
-<p>O objeto <code>crude_out</code> é uma lista contendo a estrutura da tabela extraída do <em>PDF</em>. Vamos transformar esta estrutura em um dataframe e analisá-la melhor. O primeiro objeto da lista já é nossa tabela.</p>
+<p>O objeto <code>crude_out</code> é uma lista contendo a estrutura da tabela extraída do <em>PDF</em>. Vou transformar este objeto em um dataframe e analisá-la melhor. O primeiro item da lista já é nossa tabela. Logo, posso simplesmente ‘jogá-la’ em um outro objeto.</p>
 <pre class="r"><code>df_out &lt;- as.data.frame(crude_out[[1]])</code></pre>
-<p>E aqui temos um ponto interessante. Ao extrairmos a tabela, é possível notar que algumas configurações vêm estranhas. Poderíamos chamar de desconfiguradas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Logo, ao tentarmos encaixá-la em uma estrutura de linhas e colunas, digamos, normal, temos estas dificuldades.</p>
-<p>Analisando a tabela, percebemos que o cabeçalho está estranho (em amarelo). Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela. A primeira linha vamos excluí-la.</p>
+<p>E aqui encontro um ponto interessante. Ao extrair a tabela, é possível perceber algumas configurações estranhas. Mas é normal, pois a formatação das tabelas, geralmente, incluem células mescladas, por exemplo. Ao tentar encaixá-la em uma estrutura de linhas e colunas, digamos, normal, estas dificuldades aparecem.</p>
+<p>Vamos analisar a tabela. Percebemos que o cabeçalho está estranho (em amarelo). Vamos nos concentrar na segunda linha, pois faremos dela, o cabeçalho da nossa tabela. A primeira linha vamos excluí-la.</p>
 <pre class="r"><code>kableExtra::kbl(head(df_out[1:5]))|&gt;
   kableExtra::kable_paper(
     bootstrap_options = c(&quot;striped&quot;,
@@ -249,7 +249,9 @@ library(tabulizer)</code></pre>
     full_width = F,
     position = &quot;center&quot;
   )|&gt;
-  kableExtra::row_spec(c(1:2), background = &quot;yellow&quot;)</code></pre>
+  kableExtra::row_spec(c(1:2), 
+                       background = &quot;yellow&quot;
+                       )</code></pre>
 <table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -584,7 +586,7 @@ gg2 &lt;-  ggplot2::ggplot(data = dplyr::filter(df_co2_l, Pais %in% top_bottom),
 
 gg1/gg2</code></pre>
 <p><img src="/post/2021-05-06-importar-tabela-de-pdf-no-r/index.pt_br_files/figure-html/unnamed-chunk-11-1.png" width="864" style="display: block; margin: auto;" /></p>
-<p>Parece que agora ficou um pouco melhor. Contudo a ideia era falar sobre o uso do pacote que extrai a tabela do PDF. Ele ainda tem várias funcionalidades bacanerrímas. Precisa explorá-lo.</p>
+<p>Parece que agora ficou um pouco melhor. Contudo, a ideia era falar sobre o uso do pacote que extrai a tabela do PDF. Ele ainda tem várias funcionalidades bacanerrímas. Precisa explorá-lo.</p>
 <p>Bom trabalho!</p>
 </div>
         <div class="post-footer">

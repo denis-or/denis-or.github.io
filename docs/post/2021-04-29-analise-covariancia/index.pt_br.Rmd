@@ -89,10 +89,12 @@ ggplot2::ggplot(
 
 ```
 
-3 - verificar se o efeito da covariável e o mesmo para todos os níveis da variável independente (VD ~ VI * cov). Vamos comparar as inclinações das retas para cada grupo da VI. Ou seja, se houver homogeineidade nos parâmetros da regressão, observaremos retas com inclinações parecidas. 
+3 - verificar se o efeito da covariável e o mesmo para todos os níveis da variável independente (VD ~ VI * cov). Vamos comparar as inclinações das retas para cada grupo da VI. Ou seja, se houver homogeineidade nos parâmetros da regressão, observaremos retas com inclinações parecidas.
+
 ```{r}
 summary(aov(Salário ~ Grau_Instrução*Idade, dados))
 ```
+
 ```{r}
 car::Anova(aov(Salário ~ Grau_Instrução*Idade, dados), Type = "III")
 ```
@@ -114,7 +116,7 @@ Temos que a $H_0$ é que as variâncias são homogêneas (P>0.05).
 car::Anova(aov(Salário ~ Idade + Grau_Instrução, data = dados), type = "III")
 ```
 
-Temos que a $H_0$ é que não há efeito (p >.05). Neste caso, temos o efeito do grau de instrução contralado pela idade. 
+Temos que a $H_0$ é que não há efeito (p >.05). Neste caso, temos o efeito do grau de instrução controlado pela idade. 
 
 
 6 - Verificar a normalidade dos resíduos
@@ -134,7 +136,7 @@ boxplot(aov(Salário ~ Idade + Grau_Instrução, data = dados)$residuals)
 plot(aov(Salário ~ Idade + Grau_Instrução, data = dados), which = 1)
 ```
 
-Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade, veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando ao contrario, veríamos um funil.
+Neste gráfico vemos a distribuição dos resíduos. Se houver homocedasticidade (variância constante), veremos um padrão disperso (talvez mais retangular) dos resíduos. Quando o contrário, veríamos um funil.
 
 Finalizo aqui os ensinamentos da Profa. Fernanda e espero que seja útil para vocês.
 
