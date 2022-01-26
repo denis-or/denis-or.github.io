@@ -8,9 +8,11 @@ date: "2019-02-28"
 description: Sobre o novo site
 ---
 
-### Sobre o site
+### Sobre o site (e minhas ideias)
 
-Este site é um produto de um projeto pessoal que tem como objetivo concentrar todas as minhas iniciativas de ter um site e um blog. Além disso, havia a necessidade de ter um local onde minhas experiências profissionais e acadêmicas estivessem acessíveis, de forma simples, num formato que atendesse aos devaneios da minha criatividade e, claro, utilizando uma plataforma open source (embora o github tenha suas considerações por ser filhote da microsoft).
+![](/images/lofi.png)
+
+Este site é um produto de um projeto pessoal, com o objetivo de concentrar as minhas iniciativas de ter um site e um blog. Além disso, havia a necessidade de um local onde as minhas experiências profissionais e acadêmicas estivessem acessíveis, de forma simples, num formato que atendesse aos devaneios da minha criatividade. Além disso, utilizando uma plataforma open source, é claro (embora o github tenha suas considerações por ser filhote da microsoft).
 
 As fases deste projeto são:
 
@@ -36,4 +38,4 @@ Boa parte das fases estão completas ou em andamento. Neste momento, ainda tenho
 
 Está sendo um desafio, pois o funcionamento do github e hugo não é tão intuitivo, os erros são bem atípicos e temos uma curva de aprendizado meio ardilosa. O uso do pacote `usethis` e `blogdown` foram essenciais para a caminhada.
 
-Let's que let's.
+Let's que let's (expressão engraçada em português, mas que não faz sentido ao ser traduzida para inglês).
