@@ -1,0 +1,270 @@
+---
+title: 'Fazendo tabelas bonitas no R'
+author: "Denis OR"
+date: '2022-01-27'
+categories:
+  - gt
+Description: 'Formatando tabelas usando o pacote gt'
+DisableComments: no
+---
+
+Este post se originou do acompanhamento do vídeo do Rich Iannone (@riannone) no canal da RStudio [Making Beautiful Tables with {gt}](https://www.youtube.com/watch?v=z0UGmMOxl-c&ab_channel=RStudio "Ir para o vídeo"). Adaptei alguns detalhes no script que é apresentado. Algumas expressões eu traduzi de forma literal, então peço desculpas pelos erros eventuais.
+
+Bom, para quem não conhece o pacote `gt` é uma ótima ajuda para montar aquela "Tabela 1" do artigo (ou todas as tabelas), colocar uma tabela em uma trabalho ou relatório. Vale a pena conferir. Aqui, vou mostrar o passo-a-passo apresentado pelo Rich no vídeo e, obviamente, alguns pacotes serão necessários como o `gt` e o `palmerpenguins`. Vou usar o novo pipe, então quem não tem a nova versão do `R`, utilizem o pipe do pacote `magrittr` mesmo.
+
+```{r}
+library(gt)
+library(palmerpenguins)
+```
+
+Iniciamos com uma tabela simples, visualizando uma parte do banco. Vejam como ela renderiza, a extensão e também as linhas, colunas...
+
+```{r}
+penguins |> 
+  head(10) |>
+  kableExtra::kbl() |>
+  kableExtra::kable_classic_2(full_width = F)
+```
+
+Mas, e com o `gt`? Podemos colocar um título, subtítulo, como é? Sim, vamos colocar o título no cabeçalho da tabela. Notem que usarei uma função chamada `md` . Essa função é muito interessante para formatações em *markdown*. Poderíamos usar a função `html` que permite o uso de mais elementos. É claro que se você não conhece estas funções, é necessário um entendimento básico para a brincadeira ficar tão legal quanto foi para mim.
+
+```{r}
+penguins |>
+  dplyr::sample_frac(.05) |>
+  gt::gt() |>
+  gt::tab_header(
+    title = gt::md("Banco de dados `penguins`"),
+    subtitle = gt::md(
+      "**Três** anos de observações de pinguins em *três* ilhas do arquipélago Palmer"
+    )
+  ) |>
+  gt::opt_align_table_header(align = "left") 
+```
+
+Mas, como a tabela está extensa e estamos usando uma amostra dela para visualizar nossos dados, vamos seguir para algumas manipulações do banco. Assim, vamos utilizar funções do pacote do universo *tidy* (`tidyverse`) para isso, inclusive, para sumarizar nossos dados:
+
+```{r}
+penguins |>
+  dplyr::group_by(species) |>
+  dplyr::summarize_at(
+    .vars = c(
+      "bill_length_mm",
+      "bill_depth_mm",
+      "flipper_length_mm",
+      "body_mass_g"
+    ),
+    .funs = ~ mean(., na.rm = T)
+  ) |>
+  gt::gt()
+```
+
+Vou salvar este núcleo em um novo objeto para utilizamos nos próximos códigos.
+
+```{r}
+tabela <- penguins |>
+  dplyr::group_by(species) |>
+  dplyr::summarize_at(
+    .vars = c(
+      "bill_length_mm",
+      "bill_depth_mm",
+      "flipper_length_mm",
+      "body_mass_g"
+    ),
+    .funs = ~ mean(., na.rm = T)
+  )
+```
+
+Agora, seguimos com mais alterações na nossa tabela para contemplar esses dados que sumarizamos. Notem que estou usando um truque com parênteses aqui. Este comando salva o que fizemos em um objeto chamado `tabela` e também plota o resultado na tela:
+
+```{r}
+(tabela <- tabela |>
+  gt::gt(rowname_col = "species") |>
+  gt::tab_header(
+    title = gt::md("Síntese do banco de dados `penguins`"),
+    subtitle = gt::md(
+      "**Três** anos de observações de pinguins em *três* ilhas do Arquipélago Palmer"
+    )
+  ) |>
+  gt::opt_align_table_header(align = "left")) 
+```
+
+Bom, o nome das colunas está como o nome direto das variáveis. Vamos dar um nome à elas:
+
+```{r}
+(tabela <- tabela |>
+  gt::cols_label(
+    bill_length_mm = gt::html("Comprimento<br>médio do<br>bico (<em>mm</em>)"),
+    bill_depth_mm = gt::html("Profundidade<br>média do<br>bico (<em>mm</em>)"),
+    flipper_length_mm = gt::html("Comprimento<br>médio da<br> nadadeira (<em>mm</em>)"),
+    body_mass_g = gt::html("Média da<br>massa<br>corporal (<em>g</em>)"),
+    
+  ))
+```
+
+Também vamos diminuir o número de dígitos das médias, que tal? Vamos fazer para as quatro colunas de dados e, por isso, podemos usar a função `everything` do pacote `gt`.
+
+```{r}
+(tabela <- tabela |>
+  gt::fmt_number(columns = gt::everything()))
+```
+
+<br> A coluna de média de massa corporal está em gramas. Vamos alterar para quilograma. Vamos mudar a *label* da coluna também. Não se preocupe com a linha anterior que definimos a *label*. O pacote substitui naturalmente. Perceba como alteramos a escala do valor. É um detalhe que serve somente para este tipo de dado em um contexto parecido (gramas para quilogramas).
+
+```{r}
+(
+  tabela <- tabela |>
+    gt::fmt_number(columns = body_mass_g, scale_by = 1 / 1000) |>
+    gt::cols_label(
+      body_mass_g = gt::html("Média da<br>massa<br>corporal (<em>kg</em>)")
+    )
+)
+```
+
+<br>
+
+Podemos alterar um pouco a largura das colunas.
+
+```{r}
+
+(
+  tabela <- tabela |>
+    gt::cols_width(
+      bill_length_mm ~ gt::px(130),
+      bill_depth_mm ~ gt::px(130),
+      flipper_length_mm ~ gt::px(150),
+      body_mass_g ~ gt::px(120)
+    )
+)
+```
+
+<br>
+
+Agora, vamos colocar a fonte dos dados. É comum que esta informação apareça como uma nota no rodapé da tabela. O pacote `gt` também possui uma função para isso. Fiquei impressionado pela quantidade de funções disponíveis para formatar a tabela.
+
+```{r}
+(tabela <- tabela |>
+   gt::tab_source_note(
+     source_note = gt::md("Fonte: Banco de dados do pacote `palmerpenguis`")
+   ))
+```
+
+<br>
+
+Se quiséssemos colocar alguma nota, alguma referência em alguma célula da tabela, para adicionar alguma informação ou esclarecer algum detalhe, é possível também. Vamos fazer uma referência na espécie *Gentoo*. Apenas como exercício.
+
+```{r}
+(
+  tabela <- tabela |>
+    gt::tab_footnote(
+      footnote = "A maior das três espécies do estudo.",
+      locations = gt::cells_stub(rows = "Gentoo")
+    )
+)
+```
+
+<br>
+
+Perceba que podemos incluir várias notas de rodapé.
+
+```{r}
+tabela |>
+  gt::tab_footnote(
+    footnote = "O tamanho da nadadeira foi medida por uma fita métrica.",
+    locations = gt::cells_column_labels(columns = flipper_length_mm)
+  ) |>
+  gt::tab_footnote(
+    footnote = "A fita métrica sofreu alguns estragos com o frio.",
+    locations = gt::cells_column_labels(columns = flipper_length_mm)
+  )
+
+```
+
+<br> Inclusive, podemos definir quais marcadores serão usados. Isso é muito útil em tabelas para artigos científicos que queremos, às vezes, destacar um valor de p, um intervalo de confiança.
+
+```{r}
+(
+tabela |>
+    gt::tab_footnote(
+      footnote = "Medições realizadas com uma fita métrica.",
+      locations = gt::cells_column_labels(columns = flipper_length_mm)
+    ) |>
+    gt::tab_footnote(
+      footnote = "A fita métrica sofreu alguns estragos com o frio.",
+      locations = list(
+        gt::cells_body(columns = flipper_length_mm),
+        gt::cells_column_labels(columns = bill_length_mm)
+        
+      )
+    ) |>
+    gt::opt_footnote_marks(marks = c("*", "**", "&"))
+)
+```
+
+Nossa tabela ainda não possui um rótulo para a primeira coluna, que apresentas espécies dos pinguins. Esta alteração é simples e possui as mesmas configurações possíveis mostradas acima.
+
+```{r}
+(tabela <- tabela |>
+  gt::tab_stubhead(label = gt::md("*Espécies* de pinguim")))
+```
+
+<br> Além disso, podemos alterar a fonte e seus estilos.
+
+```{r}
+tabela |>
+  gt::opt_table_font(font = gt::google_font("Montserrat"),
+                     weight = 600,
+                     style = "italic")
+```
+
+<br> Outra forma de destaque disponível no pacote `gt` é o uso de cores em linhas ou colunas. No próximo exemplo, definimos que a última linha e em todas as colunas desta linha, o destaque será com um tom de azul, cor da fonte branca e um estilo mais forte.
+
+```{r}
+(tabela |>
+  gt::tab_style(
+    locations = gt::cells_body(columns = gt::everything(),
+                               rows = "Gentoo"),
+    style = list(
+      gt::cell_fill(color = "#5599FF"),
+      gt::cell_text(color = "white", weight = "bold")
+    )
+  ))
+```
+
+<br> Já neste exemplo, utilizamos algo mais sofisticado, digamos assim, para definir uma escala de cores para uma coluna específica.
+
+```{r}
+tabela |>
+  gt::data_color(
+    columns = bill_depth_mm,
+    colors = scales::col_numeric(
+      palette = c("red","orange","green"),
+      domain = NULL
+    )
+  )
+```
+
+<br> Cada coluna pode ter um estilo de cores diferentes.
+
+```{r}
+tabela |>
+  gt::data_color(
+    columns = bill_depth_mm,
+    colors = scales::col_numeric(
+      palette = c("red","orange","green"),
+      domain = NULL
+    )
+  ) |>
+    gt::data_color(
+    columns = bill_length_mm,
+    colors = scales::col_numeric(
+      palette = c("red","orange","green"),
+      domain = c(30, 50)
+    )
+  )
+```
+
+E finalizamos junto com o vídeo. Se desejarem saber um pouco mais sobre o banco de dados de pinguins veja [aqui](https://allisonhorst.github.io/palmerpenguins/reference/penguins.html). Assim como o site do pacote `gt` [aqui](https://gt.rstudio.com/). Inclusive tem umas figuras legais sobre a estrutura que o pacote enxerga na tabela:
+
+![](https://gt.rstudio.com/reference/figures/gt_parts_of_a_table.svg)
+
+Bom trabalho!
