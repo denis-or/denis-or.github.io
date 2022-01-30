@@ -8,7 +8,7 @@ Description: 'Formatando tabelas usando o pacote gt'
 DisableComments: no
 ---
 
-Este post se originou do acompanhamento do vídeo do Rich Iannone (@riannone) no canal da RStudio [Making Beautiful Tables with {gt}](https://www.youtube.com/watch?v=z0UGmMOxl-c&ab_channel=RStudio "Ir para o vídeo"). Adaptei alguns detalhes no script que é apresentado. Algumas expressões eu traduzi de forma literal, então peço desculpas pelos erros eventuais.
+Este post se originou do acompanhamento do vídeo do Richard Iannone (@riannone) no canal da RStudio [Making Beautiful Tables with {gt}](https://www.youtube.com/watch?v=z0UGmMOxl-c&ab_channel=RStudio "Ir para o vídeo"){target="_blank"}. Adaptei alguns detalhes no script que é apresentado. Algumas expressões eu traduzi de forma literal, então peço desculpas pelos erros eventuais.
 
 Bom, para quem não conhece o pacote `gt` é uma ótima ajuda para montar aquela "Tabela 1" do artigo (ou todas as tabelas), colocar uma tabela em uma trabalho ou relatório. Vale a pena conferir. Aqui, vou mostrar o passo-a-passo apresentado pelo Rich no vídeo e, obviamente, alguns pacotes serão necessários como o `gt` e o `palmerpenguins`. Vou usar o novo pipe, então quem não tem a nova versão do `R`, utilizem o pipe do pacote `magrittr` mesmo.
 
