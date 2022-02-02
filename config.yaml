@@ -14,7 +14,7 @@ params:
   author: "Denis Rodrigues"
   customCss: ['css/resume_adap.css','css/style.css']
   customJs: []
-  description: "Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde."
+  description: "Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde. Apaixonado por estatística espacial, ciência de dados, mineração de dados e geosaúde."
   doNotLoadAnimations: true
   disableThemeSwitcher: true # Theme switcher is enabled by default
   # favicon: favicons/
