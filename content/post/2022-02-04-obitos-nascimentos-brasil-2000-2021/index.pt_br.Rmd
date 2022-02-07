@@ -16,8 +16,6 @@ DisableComments: no
 
 Recentemente, o [Nathan Yau](https://twitter.com/flowingdata){target="_blank"}, do blog [*Flowing Data*](https://flowingdata.com/), montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos. O número geral de mortes em 2021 foi muito próximo (e até maior em alguns meses) do número geral de nascimentos (vide figura abaixo e [link para publicação original aqui](https://flowingdata.com/2022/02/03/when-there-were-more-deaths-than-births-in-the-u-s/){target="_blank"}).
 
-![](https://pbs.twimg.com/media/FKsBV1hVEAYIbhy?format=jpg&name=4096x4096)
-
 Os dados de 2021 apresentados são preliminares, mas também são reveladores, considerando toda a dinâmica referente à pandemia de Covid-19. Achei muito interessante. E muito curioso também. Houve um grande aumento nos óbitos, digamos um excesso, que sugere uma correlação com a pandemia. Além disso, o número de nascimento foi mais baixo.
 
 Bom, como um epidemiologista em formação, fui analisar o cenário do Brasil. Me fiz a pergunta: será que a série temporal de nascimentos brasileira teve alguma mudança em 2021, se comparada a série temporal de mortalidade, no mesmo período?
