@@ -22,10 +22,12 @@ Bom, como um epidemiologista em formação, fui analisar o cenário do Brasil. M
 
 Para isso, coletei os dados lá no Datasus (dados atualizados até janeiro de 2022 e preliminares para os anos 2020 e 2021). Usei o Sistema de Informação de Mortalidade e Sistema de Informação de Nascidos Vivos do Ministério da Saúde. Eu trunquei a série de 2021 em setembro, pois há dados até outubro e, possivelmente, muito incompleta nesse mês. Usei basicamente `ggplot2` no `R` e algumas recursos "avançados" para montar o gráfico.
 
-Peço licença ao Nathan para copiar o estilo do gráfico dele. Assim há possibilidade de comparação. E *tcharamm*: de fato. **Há um aumento no número de óbitos que se aproxima do número de nascimentos nos meses de março e abril de 2021.** Não observei nada comparado a esse aumento nos últimos 20 anos.[Clique aqui para visualizar o gráfico dos Estados Unidos.](https://pbs.twimg.com/media/FKsBV1hVEAYIbhy?format=jpg&name=4096x4096){target="_blank"}
+Peço licença ao Nathan para copiar o estilo do gráfico dele. Assim há possibilidade de comparação. E *tcharamm*: de fato. **Há um aumento no número de óbitos que se aproxima do número de nascimentos nos meses de março e abril de 2021.** Não observei nada comparado a esse aumento nos últimos 20 anos. [Clique aqui para visualizar o gráfico dos Estados Unidos.](https://pbs.twimg.com/media/FKsBV1hVEAYIbhy?format=jpg&name=4096x4096){target="_blank"}
 
 ![](/images/plot_death_brith_brazil_2000_2021_denis.png)
 
 Pois bem, esses dados sugerem algo que pode ser investigado. Com um conhecimento prévio que temos, a pandemia parece ser o fator central na mudança. Aliás, tudo indica que há alguma correlação com a pandemia. Obviamente, seria muito bom testar com uma estrutura estatística para afirmar a correlação entre as séries. Mas, de qualquer maneira, já temos um indicativo para hipóteses. Deixo para vocês.
 
 Bom trabalho!
+
+**Alteração em 7/2/2022, 15h25:** No repositório do Datasus já tinha uma versão mais recente dos dados preliminares de 2020 que eu não tinha. Gráfico atualizado! \\o/ [Vejam o gráfico antigo aqui](/images/plot_death_brith_brazil_2000_2021_denis_old.jpeg){target="_blank"}.
