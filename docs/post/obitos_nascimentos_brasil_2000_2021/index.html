@@ -4,7 +4,7 @@
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde. Apaixonado por estatística espacial, ciência de dados, mineração de dados e geosaúde.">
+    <meta name="description" content="Em 2021, o número de óbitos se aproximou do número de nascimentos nos meses de março e abril. Situação é inédita no Brasil.">
     
     <link rel="stylesheet"
           href="https://denis-or.com.br/css/style.min.0539a996fdd335cb2cbe4b57f488464bbc5598963be67125cb2a45189c8855ec.css"
@@ -60,7 +60,7 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Óbitos e nascimentos no Brasil de 2000 a 2021"/>
-<meta name="twitter:description" content="Recentemente, o Nathan Yau, do blog Flowing Data, montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos."/>
+<meta name="twitter:description" content="Em 2021, o número de óbitos se aproximou do número de nascimentos nos meses de março e abril. Situação é inédita no Brasil."/>
 
 
     
@@ -223,7 +223,7 @@
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>Recentemente, o <a href="https://twitter.com/flowingdata" target="_blank">Nathan Yau</a>, do blog <a href="https://flowingdata.com/"><em>Flowing Data</em></a>, montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos. O número geral de mortes em 2021 foi muito próximo (e até maior em alguns meses) do número geral de nascimentos (vide figura abaixo e <a href="https://flowingdata.com/2022/02/03/when-there-were-more-deaths-than-births-in-the-u-s/" target="_blank">link para publicação original aqui</a>).</p>
+<p>Recentemente, o <a href="https://twitter.com/flowingdata" target="_blank">Nathan Yau</a>, do blog <a href="https://flowingdata.com/"><em>Flowing Data</em></a>, montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos e eu resolvi fazer o mesmo, mas com dados do Brasil. O número geral de mortes em 2021 foi muito próximo (e até maior em alguns meses) do número geral de nascimentos (vide figura abaixo e <a href="https://flowingdata.com/2022/02/03/when-there-were-more-deaths-than-births-in-the-u-s/" target="_blank">link para publicação original aqui</a>).</p>
 <p>Os dados de 2021 apresentados são preliminares, mas também são reveladores, considerando toda a dinâmica referente à pandemia de Covid-19. Achei muito interessante. E muito curioso também. Houve um grande aumento nos óbitos, digamos um excesso, que sugere uma correlação com a pandemia. Além disso, o número de nascimento foi mais baixo.</p>
 <p>Bom, como um epidemiologista em formação, fui analisar o cenário do Brasil. Me fiz a pergunta: será que a série temporal de nascimentos brasileira teve alguma mudança em 2021, se comparada a série temporal de mortalidade, no mesmo período?</p>
 <p>Para isso, coletei os dados lá no Datasus (dados atualizados até janeiro de 2022 e preliminares para os anos 2020 e 2021). Usei o Sistema de Informação de Mortalidade e Sistema de Informação de Nascidos Vivos do Ministério da Saúde. Eu trunquei a série de 2021 em setembro, pois há dados até outubro e, possivelmente, muito incompleta nesse mês. Usei basicamente <code>ggplot2</code> no <code>R</code> e algumas recursos “avançados” para montar o gráfico.</p>
