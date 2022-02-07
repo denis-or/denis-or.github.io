@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt_br" data-theme=""><head>
-    <title> Denis Rodrigues | ggplot2 </title>
+    <title> Denis Rodrigues | Óbitos e nascimento no Brasil de 2000 a 2021 </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -45,10 +45,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://denis-or.com.br/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://denis-or.com.br/favicon-16x16.png">
 
-    <link rel="canonical" href="https://denis-or.com.br/categories/ggplot2/">
+    <link rel="canonical" href="https://denis-or.com.br/post/obitos_nascimentos_brasil_2000_2021/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://denis-or.com.br/categories/ggplot2/index.xml" title="Denis OR" />
     
     
     
@@ -60,8 +59,8 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ggplot2"/>
-<meta name="twitter:description" content="Geógrafo, Doutorando e Mestre em Epidemiologia em Saúde Pública pela Escola Nacional de Saúde Pública - ENSP/FIOCRUZ. Experiência na área de Saúde Pública, com ênfase em Epidemiologia e Vigilância em Saúde. Apaixonado por estatística espacial, ciência de dados, mineração de dados e geosaúde."/>
+<meta name="twitter:title" content="Óbitos e nascimento no Brasil de 2000 a 2021"/>
+<meta name="twitter:description" content="Recentemente, o Nathan Yau, do blog Flowing Data, montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos."/>
 
 
     
@@ -204,53 +203,46 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-    <div class="archive  . ">
-        <ul class="list-with-title">
+    <div class="post  . ">
+        <div class="post-content">
             
-                <div class="listing-title">2022</div>
+            <div class="post-title">
+                <h3>Óbitos e nascimento no Brasil de 2000 a 2021</h3>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://denis-or.com.br/post/obitos_nascimentos_brasil_2000_2021/" title="Óbitos e nascimento no Brasil de 2000 a 2021">Óbitos e nascimento no Brasil de 2000 a 2021</a>
-                                <div class="post-time"><span class="date"> 5 Feb
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Sat,5 Feb, 2022
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time"></span>
+                    </div>
                 
+            </div>
+
             
-                <div class="listing-title">2021</div>
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Recentemente, o <a href="https://twitter.com/flowingdata" target="_blank">Nathan Yau</a>, do blog <a href="https://flowingdata.com/"><em>Flowing Data</em></a>, montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos. O número geral de mortes em 2021 foi muito próximo (e até maior em alguns meses) do número geral de nascimentos (vide figura abaixo e <a href="https://flowingdata.com/2022/02/03/when-there-were-more-deaths-than-births-in-the-u-s/" target="_blank">link para publicação original aqui</a>).</p>
+<p><img src="https://pbs.twimg.com/media/FKsBV1hVEAYIbhy?format=jpg&amp;name=4096x4096" /></p>
+<p>Os dados de 2021 apresentados são preliminares, mas também são reveladores, considerando toda a dinâmica referente à pandemia de Covid-19. Achei muito interessante. E muito curioso também. Houve um grande aumento nos óbitos, digamos um excesso, que sugere uma correlação com a pandemia. Além disso, o número de nascimento foi mais baixo.</p>
+<p>Bom, como um epidemiologista em formação, fui analisar o cenário do Brasil. Me fiz a pergunta: será que a série temporal de nascimentos brasileira teve alguma mudança em 2021, se comparada a série temporal de mortalidade, no mesmo período?</p>
+<p>Para isso, coletei os dados lá no Datasus (dados atualizados até janeiro de 2022 e preliminares para os anos 2020 e 2021). Usei o Sistema de Informação de Mortalidade e Sistema de Informação de Nascidos Vivos do Ministério da Saúde. Eu trunquei a série de 2021 em setembro, pois há dados até outubro e, possivelmente, muito incompleta nesse mês. Usei basicamente <code>ggplot2</code> no <code>R</code> e algumas recursos “avançados” para montar o gráfico.</p>
+<p>Peço licença ao Nathan para copiar o estilo do gráfico dele. Assim há possibilidade de comparação. E <em>tcharamm</em>: de fato. <strong>Há um aumento no número de óbitos que se aproxima do número de nascimentos nos meses de março e abril de 2021.</strong> Não observei nada comparado a este aumento nos últimos 20 anos.</p>
+<p><img src="/images/plot_death_brith_brazil_2000_2021_denis.png" /></p>
+<p>Pois bem, esses dados sugerem algo que pode ser investigado. Como um conhecimento prévio que temos, a pandemia parece ser o fator central na mudança. Aliás, tudo indica que há alguma correlação com a pandemia. Obviamente, seria muito bom testar com uma estrutura estatística para afirmar a correlação entre as séries. Mas, de qualquer maneira, já temos um indicativo para hipóteses. Deixo para vocês.</p>
+<p>Bom trabalho!</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/ggplot2/">ggplot2</a><a class="category" href="/categories/r/">R</a><a class="category" href="/categories/rstats/">rstats</a><a class="category" href="/categories/visualiza%C3%A7%C3%A3o-de-dados/">Visualização de dados</a></span>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/" title="Importar tabela de PDF no R - Parte 2">Importar tabela de PDF no R - Parte 2</a>
-                                <div class="post-time"><span class="date"> 3 Dec
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://denis-or.com.br/post/2021-05-06-importar-tabela-de-pdf-no-r/" title="Importar tabela de dentro um arquivo PDF para o R">Importar tabela de dentro um arquivo PDF para o R</a>
-                                <div class="post-time"><span class="date"> 6 May
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://denis-or.com.br/post/2021-04-29-analise-covariancia/" title="Análise de covariância">Análise de covariância</a>
-                                <div class="post-time"><span class="date"> 29 Apr
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-            
-        </ul>
+            </div>
+        </div>
+
+        
     </div>
+
 
         </div>
     </div>

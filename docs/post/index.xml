@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Denis OR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt_br</language>
-    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Óbitos e nascimento no Brasil de 2000 a 2021</title>
+      <link>https://denis-or.com.br/post/obitos_nascimentos_brasil_2000_2021/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/post/obitos_nascimentos_brasil_2000_2021/</guid>
+      <description>Recentemente, o Nathan Yau, do blog Flowing Data, montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos.</description>
+    </item>
+    
     <item>
       <title>Fazendo tabelas bonitas no R</title>
       <link>https://denis-or.com.br/post/2022-01-27-fazendo-tabelas-bonitas-no-r/</link>

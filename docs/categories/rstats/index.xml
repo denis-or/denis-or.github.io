@@ -6,7 +6,16 @@
     <description>Recent content in rstats on Denis OR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt_br</language>
-    <lastBuildDate>Fri, 03 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/categories/rstats/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://denis-or.com.br/categories/rstats/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Óbitos e nascimento no Brasil de 2000 a 2021</title>
+      <link>https://denis-or.com.br/post/obitos_nascimentos_brasil_2000_2021/</link>
+      <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://denis-or.com.br/post/obitos_nascimentos_brasil_2000_2021/</guid>
+      <description>Recentemente, o Nathan Yau, do blog Flowing Data, montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos.</description>
+    </item>
+    
     <item>
       <title>Importar tabela de PDF no R - Parte 2</title>
       <link>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</link>
