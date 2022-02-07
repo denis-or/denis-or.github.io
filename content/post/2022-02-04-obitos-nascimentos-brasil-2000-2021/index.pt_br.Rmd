@@ -26,6 +26,6 @@ Peço licença ao Nathan para copiar o estilo do gráfico dele. Assim há possib
 
 ![](/images/plot_death_brith_brazil_2000_2021_denis.png)
 
-Pois bem, esses dados sugerem algo que pode ser investigado. Como um conhecimento prévio que temos, a pandemia parece ser o fator central na mudança. Aliás, tudo indica que há alguma correlação com a pandemia. Obviamente, seria muito bom testar com uma estrutura estatística para afirmar a correlação entre as séries. Mas, de qualquer maneira, já temos um indicativo para hipóteses. Deixo para vocês.
+Pois bem, esses dados sugerem algo que pode ser investigado. Com um conhecimento prévio que temos, a pandemia parece ser o fator central na mudança. Aliás, tudo indica que há alguma correlação com a pandemia. Obviamente, seria muito bom testar com uma estrutura estatística para afirmar a correlação entre as séries. Mas, de qualquer maneira, já temos um indicativo para hipóteses. Deixo para vocês.
 
 Bom trabalho!
