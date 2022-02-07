@@ -1,0 +1,33 @@
+---
+title: "Óbitos e nascimento no Brasil de 2000 a 2021"
+author: Denis OR
+date: '2022-02-05'
+image: "images/tb_plot_death_brith_brazil_2000_2021_denis.png"
+slug: obitos_nascimentos_brasil_2000_2021
+categories:
+  - ggplot2
+  - R
+  - rstats
+  - Visualização de dados
+tags: []
+Description: ''
+DisableComments: no
+---
+
+Recentemente, o [Nathan Yau](https://twitter.com/flowingdata){target="_blank"}, do blog [*Flowing Data*](https://flowingdata.com/), montou um gráfico muito legal de nascimentos e mortes nos Estados Unidos. O número geral de mortes em 2021 foi muito próximo (e até maior em alguns meses) do número geral de nascimentos (vide figura abaixo e [link para publicação original aqui](https://flowingdata.com/2022/02/03/when-there-were-more-deaths-than-births-in-the-u-s/){target="_blank"}).
+
+![](https://pbs.twimg.com/media/FKsBV1hVEAYIbhy?format=jpg&name=4096x4096)
+
+Os dados de 2021 apresentados são preliminares, mas também são reveladores, considerando toda a dinâmica referente à pandemia de Covid-19. Achei muito interessante. E muito curioso também. Houve um grande aumento nos óbitos, digamos um excesso, que sugere uma correlação com a pandemia. Além disso, o número de nascimento foi mais baixo.
+
+Bom, como um epidemiologista em formação, fui analisar o cenário do Brasil. Me fiz a pergunta: será que a série temporal de nascimentos brasileira teve alguma mudança em 2021, se comparada a série temporal de mortalidade, no mesmo período?
+
+Para isso, coletei os dados lá no Datasus (dados atualizados até janeiro de 2022 e preliminares para os anos 2020 e 2021). Usei o Sistema de Informação de Mortalidade e Sistema de Informação de Nascidos Vivos do Ministério da Saúde. Eu trunquei a série de 2021 em setembro, pois há dados até outubro e, possivelmente, muito incompleta nesse mês. Usei basicamente `ggplot2` no `R` e algumas recursos "avançados" para montar o gráfico.
+
+Peço licença ao Nathan para copiar o estilo do gráfico dele. Assim há possibilidade de comparação. E *tcharamm*: de fato. **Há um aumento no número de óbitos que se aproxima do número de nascimentos nos meses de março e abril de 2021.** Não observei nada comparado a este aumento nos últimos 20 anos.
+
+![](/images/plot_death_brith_brazil_2000_2021_denis.png)
+
+Pois bem, esses dados sugerem algo que pode ser investigado. Como um conhecimento prévio que temos, a pandemia parece ser o fator central na mudança. Aliás, tudo indica que há alguma correlação com a pandemia. Obviamente, seria muito bom testar com uma estrutura estatística para afirmar a correlação entre as séries. Mas, de qualquer maneira, já temos um indicativo para hipóteses. Deixo para vocês.
+
+Bom trabalho!
