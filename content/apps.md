@@ -24,7 +24,7 @@ description: Aplicações
 >
 > [Clique aqui e acesse o app](https://denis-or.shinyapps.io/conta_clique/)
 >
-> Aplicativo com o objetivo de apresentar um botão que conta o clique. Com um visual diferente e bem-humorado, o aplicativo é parte do Desafio em R proposto pela [Curso-R](https://blog.curso-r.com/posts/2022-03-15-desafio-1/)
+> Aplicativo com o objetivo de apresentar um botão que conta o clique. Com um visual bem-humorado, o aplicativo é parte doa desafioa em R propostoa pela [Curso-R](https://blog.curso-r.com/posts/2022-03-15-desafio-1/).
 >
 
 
