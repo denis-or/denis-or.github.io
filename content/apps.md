@@ -19,6 +19,15 @@ description: Aplicações
 > -   Depois, o app importa este CSV e plota o mapa.
 
 
+
+> **Desafio: criar um app com um contador de cliques**
+>
+> [Clique aqui e acesse o app](https://denis-or.shinyapps.io/conta_clique/)
+>
+> Aplicativo com o objetivo de apresentar um botão que conta o clique. Com um visual diferente e bem-humorado, o aplicativo é parte do Desafio em R proposto pela [Curso-R](https://blog.curso-r.com/posts/2022-03-15-desafio-1/)
+>
+
+
 > **Valor preditivo de um teste diagnóstico**
 >
 > [Clique aqui e acesse o app](https://denis-or.shinyapps.io/valor_preditivo/)
