@@ -13,7 +13,7 @@ categories:
   - rstats
 
 # thumbnail: "images/post_tabulizer.png"
-Description: 'Exemplo de uso do Tabulizer '
+Description: 'Exemplo de uso do Tabulizer'
 DisableComments: no
 # contact: true
 ---
