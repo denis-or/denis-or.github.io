@@ -38,4 +38,4 @@ Boa parte das fases estão completas ou em andamento. Neste momento, ainda tenho
 
 Está sendo um desafio, pois o funcionamento do github e hugo não é tão intuitivo, os erros são bem atípicos e temos uma curva de aprendizado meio ardilosa. O uso do pacote `usethis` e `blogdown` foram essenciais para a caminhada.
 
-Let's que let's (expressão engraçada em português, mas que não faz sentido ao ser traduzida para inglês). ;)
+Let's que let's (expressão engraçada em português, mas que não faz sentido ao ser traduzida para inglês).
