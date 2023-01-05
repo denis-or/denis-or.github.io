@@ -141,7 +141,7 @@
 
 
     <div class="footer">
-        <div class="by_farbox">&copy; Denis Rodrigues  2022 </div>
+        <div class="by_farbox">&copy; Denis Rodrigues  2023 </div>
     </div>
 </div>
 <div class="main">
@@ -220,7 +220,6 @@
             </div>
 
             
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p>Acompanhamento da aula da Professora Fernanda, publicada no dia 14/7/20 no Youtube:</p>
@@ -290,6 +289,8 @@
 ) +
   ggplot2::geom_point(size = 2) +
   ggplot2::geom_smooth(method = &quot;lm&quot;, se = F, size = .5)</code></pre>
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.</code></pre>
 <p><img src="/post/2021-04-29-analise-covariancia/index.pt_br_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>3 - verificar se o efeito da covariável e o mesmo para todos os níveis da variável independente (VD ~ VI * cov). Vamos comparar as inclinações das retas para cada grupo da VI. Ou seja, se houver homogeineidade nos parâmetros da regressão, observaremos retas com inclinações parecidas.</p>
 <pre class="r"><code>summary(aov(Salário ~ Grau_Instrução*Idade, dados))</code></pre>
