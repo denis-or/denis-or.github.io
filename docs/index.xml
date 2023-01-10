@@ -13,7 +13,7 @@
       <pubDate>Thu, 05 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://denis-or.com.br/post/relatorio_transicao_saude/</guid>
-      <description>Recentemente, após uma vitória apertada, Lula retorna ao governo. Pós eleição, campanha encerrada, a equipe de transição “entra em campo” para levantar a situação do governo e se inteirar da organização da equipe que até então estava à frente das políticas públicas no país.</description>
+      <description>Recentemente, após uma vitória apertada, Lula retorna ao governo. Pós eleição, campanha encerrada, a equipe de transição “entra em campo” para levantar a situação do governo e se inteirar da organização da equipe que, até então, estava à frente das políticas públicas no país.</description>
     </item>
     
     <item>
@@ -50,15 +50,6 @@
       
       <guid>https://denis-or.com.br/post/2021-12-03-importar-tabela-de-pdf-no-r-parte-2/</guid>
       <description>Na primeira parte do post que eu utilizei o Tabulizer, lá no começo do ano, mostrei a função extract_tables, a qual repito aqui.</description>
-    </item>
-    
-    <item>
-      <title>Curriculo do Denis</title>
-      <link>https://denis-or.com.br/cv_x/</link>
-      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://denis-or.com.br/cv_x/</guid>
-      <description>link para curriculo teste</description>
     </item>
     
     <item>
@@ -131,15 +122,6 @@
       
       <guid>https://denis-or.com.br/experience/</guid>
       <description>Experiência profissional Minha experiência profissional foi baseada no serviço público, na secretaria municipal de saúde de Alfenas, sul de Minas Gerais (Veja Alfenas), na qual atuei de 2002 a 2018.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://denis-or.com.br/xxxxxx/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://denis-or.com.br/xxxxxx/</guid>
-      <description>Main  Currently a PhD student in Epidemiology in National School of Public Health/Fiocruz Please note that this is a real resume, and I&amp;rsquo;m really looking for a PhD student position at the moment.</description>
     </item>
     
   </channel>
